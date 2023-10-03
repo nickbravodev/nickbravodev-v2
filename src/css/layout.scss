@@ -1,10 +1,11 @@
 // Section and Container Layouts
 section {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 5rem 0rem;
 }
 
 .container {
@@ -15,7 +16,7 @@ section {
   align-items: center;
   justify-content: center;
 
-  @media (min-width: 992px) {
+  @media (--lg) {
     flex-direction: row;
   }
 }

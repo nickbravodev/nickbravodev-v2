@@ -13,17 +13,25 @@ html {
 }
 
 body {
-  overflow-x: hidden !important;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // overflow-x: hidden !important;
+  // display: grid;
   // max-width: 100svw;
   min-height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  // grid-template-rows: auto 1fr auto;
   margin: 0;
   color: $bravo-light-200;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-color: $bravo-dark-900;
   font-family: $font-family-base, sans-serif;
+}
+
+main {
+  margin-block: auto;
+  height: 100%;
 }
 
 img,
