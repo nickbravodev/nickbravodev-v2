@@ -1,0 +1,23 @@
+img {
+  width: 100%;
+}
+
+.hero-image {
+  display: none;
+
+  // sm breakpoint
+  @media (min-width: 576px) {
+    display: block;
+    padding: 1rem;
+  }
+
+  // md breakpoint
+  @media (min-width: 768px) {
+    padding: 3rem;
+  }
+
+  // lg breakpoint
+  @media (min-width: 992px) {
+    padding: 5rem;
+  }
+}

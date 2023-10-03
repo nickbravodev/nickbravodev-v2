@@ -1,0 +1,43 @@
+// Flexbox Layouts
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: $spacer;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+}
+
+  // Flex align-items
+.align-items-start {
+  align-items: start;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: end;
+}
+
+  // Flex justify-content
+.justify-content-start {
+  justify-content: start;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: end;
+}

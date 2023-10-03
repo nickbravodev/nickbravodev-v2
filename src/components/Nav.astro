@@ -1,0 +1,71 @@
+---
+// Library imports
+import { Icon } from 'astro-icon';
+
+// Component imports
+import Link from './Link.astro';
+
+// Data imports
+import navData from '../data/navData';
+
+// Style import
+// import "../css/nav.scss";
+---
+    <header class="flex align-items-center">
+      <!-- Brand logo SVG -->
+      <a class="nav-logo" href="/" aria-label="Home">
+        <Icon name="nickbravodev" />
+        <!-- Brand name -->
+        <span class="brand-text">Nick Bravo</span>
+      </a> 
+
+      <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+        <span class="sr-only">Menu</span>
+        <Icon name="nav-toggle" />
+      </button>
+
+      <nav class="flex justify-content-end">
+        <ul id="primary-navigation" data-visible="false" class="primary-navigation">
+          {
+            navData.map((item) => (
+              <Link
+                text={item.name}
+                href={item.path}
+                target={item.target}
+                class={item.classes}
+                aria-label={item.name}
+                icon={item.icon}
+              />
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
+
+<script>
+  const primaryNav = document.querySelector('.primary-navigation');
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+
+  navToggle.addEventListener('click', () => {
+    const visibility = primaryNav.getAttribute('data-visible');
+
+    if (visibility === 'false') {
+      primaryNav.setAttribute('data-visible', 'true');
+      navToggle.setAttribute('aria-expanded', 'true');
+    } else if (visibility === 'true') {
+      primaryNav.setAttribute('data-visible', 'false');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+  });
+
+  // ESC key to close nav on mobile
+  navToggle.addEventListener('keydown', function (e) {
+    const visibility = primaryNav.getAttribute('data-visible');
+
+    if (e.key === 'Escape' && (visibility === 'true')) {
+      primaryNav.setAttribute('data-visible', 'false');
+      navToggle.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>

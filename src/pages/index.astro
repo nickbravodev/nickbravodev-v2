@@ -1,0 +1,43 @@
+---
+// Library imports
+import { Icon } from 'astro-icon';
+
+// Layout imports
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout
+  title="NickBravo.dev - Designer. Developer. Problem solver."
+  description="I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms."
+  og_image="https://nickbravo.com/images/opengraph.png"
+  og_url="https://nickbravo.dev/"
+>
+  <main>
+  <!-- Hero section -->
+      <section id="home" class="">
+        <div class="container">
+          <!-- Hero text -->
+          <div class="grid-2">
+            <div>
+              <p class="superheading">Nick Bravo.</p>
+              <h1>Designer. Developer. Problem solver.</h1>
+              <div class="hr-div"></div>
+              <p class="subheading">
+                I build engaging, privacy-focused websites, graphics, and digital assets to solidify brand authority and trust across platforms.
+              </p>
+              <!-- CTA buttons -->
+              <div class="flex-row">
+                <a class="cta" href="#contact" aria-label="Contact">Contact me</a>
+                <a class="cta" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-label="Resume" aria-controls="resume"
+                  href="#">Resume</a>
+              </div>
+            </div>
+            <!-- Hero image SVG -->
+            <div class="hero-image">
+              <Icon name="nickbravodev" />
+            </div>
+          </div>
+        </div>
+      </section>
+  </main>
+</MainLayout>

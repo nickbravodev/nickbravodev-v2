@@ -1,0 +1,31 @@
+---
+// Library imports
+import { Icon } from 'astro-icon';
+
+// Component imports
+import Link from './Link.astro';
+
+// Data imports
+import socialData from '../data/socialData';
+---
+
+    <footer>
+      <div class="footer-social">
+        {
+          socialData.map((item) => (
+            <a href={item.path} target={item.target} aria-label={item.name}>
+              <Icon name={item.icon} />
+            </a>
+          ))
+        }
+      </div>
+      <div class="copyright">
+        Copyright &copy; <span id="copyright"></span> NickBravo.dev. All rights resrved.
+      </div>
+    </footer>
+    
+    <script>
+      document.querySelector('#copyright').textContent = new Date()
+        .getFullYear()
+        .toString();
+    </script>

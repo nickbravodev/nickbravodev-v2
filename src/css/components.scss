@@ -1,0 +1,23 @@
+.hr-div {
+  height: .15rem;
+  width: 6rem;
+  background-color: $bravo-light-200;
+  margin: 1.5rem 0;
+}
+
+.hr-div-dark {
+  @extend .hr-div;
+  background-color: $bravo-dark-700;
+  margin: 1.5rem auto;
+}
+
+.superheading {
+  font: 700 2rem/130% $font-family-base, sans-serif;
+  color: $bravo-light-100;
+  margin-bottom: $spacer;
+}
+
+.subheading {
+  font: 500 1.5rem/130% $font-family-base, sans-serif;
+  margin-bottom: $spacer * 1.5;
+}

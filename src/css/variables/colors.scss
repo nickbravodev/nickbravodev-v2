@@ -1,0 +1,29 @@
+// NickBravo.dev color scheme
+$bravo-dark-900: #272b2a !default;
+$bravo-dark-700: #607466 !default;
+$bravo-light-100: #edefce !default;
+$bravo-light-200: #dde0bd !default;
+$danger: #ba3f1d !default;
+
+// NickBravo.dev alternate color scheme
+// $bravo-dark-900: #111 !default;
+// $bravo-dark-700: #555 !default;
+// $bravo-light-100: #fafafa !default;
+// $bravo-light-200: #e8e8e8 !default;
+// $danger: #ae1515 !default;
+
+.color-dark-900 {
+  color: $bravo-dark-900;
+}
+
+.color-dark-700 {
+  color: $bravo-dark-700;
+}
+
+.color-light-100 {
+  color: $bravo-light-100;
+}
+
+.color-light-200 {
+  color: $bravo-light-200;
+}
