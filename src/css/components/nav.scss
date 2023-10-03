@@ -32,12 +32,7 @@ header {
   justify-content: space-between;
   z-index: 1000;
 
-  // nav {
-  //   width: 100%;
-  //   overflow-x: hidden !important;
-  // }
-
-  ul {
+  .primary-navigation {
     display: flex;
     gap: $spacer;
     align-items: center;
@@ -45,9 +40,9 @@ header {
     list-style: none;
     padding: 1rem 2rem;
     min-height: $nav-min-height;
+    z-index: -1;
 
     @media (--md-max) {
-      // background-color: rgba($bravo-light-200, 0.5);
       gap: ($spacer * 2);
       background-color: $nav-background-color;
       backdrop-filter: blur(0.7rem);
@@ -71,9 +66,6 @@ header {
       &[data-visible="true"] {
         display: flex;
         transform: translateX(0%);
-      }
-
-      &.flex {
       }
     }
   }
@@ -135,15 +127,15 @@ header {
   @media (--md-max) {
     display: block;
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 1.5rem;
     color: $nav-link-color;
     background: none;
     border: 0;
     z-index: 9999;
 
     svg {
-      width: 3rem;
+      width: 2rem;
       aspect-ratio: 1;
     }
 
@@ -159,7 +151,6 @@ header {
   align-items: center;
   justify-content: flex-start;
   margin-inline-start: 2rem;
-  // width: 15rem;
 
   svg {
     height: 3.5rem;
