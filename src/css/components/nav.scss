@@ -32,11 +32,10 @@ header {
   justify-content: space-between;
   z-index: 1000;
 
-  nav {
-    width: 100%;
-    overflow-x: hidden !important;
-  }
-  // overflow-y: visible;
+  // nav {
+  //   width: 100%;
+  //   overflow-x: hidden !important;
+  // }
 
   ul {
     display: flex;
@@ -157,7 +156,7 @@ header {
   align-items: center;
   justify-content: flex-start;
   margin-inline-start: 2rem;
-  width: 15rem;
+  // width: 15rem;
 
   svg {
     height: 3.5rem;
