@@ -140,9 +140,12 @@ header {
     color: $nav-link-color;
     background: none;
     border: 0;
-    width: 3rem;
-    aspect-ratio: 1;
     z-index: 9999;
+
+    svg {
+      width: 3rem;
+      aspect-ratio: 1;
+    }
 
     &:hover {
       color: $nav-link-hover-color;
