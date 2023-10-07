@@ -1,4 +1,24 @@
 // NickBravo.dev color scheme
+:root {
+  --bravo-dark-900: #272b2a;
+  --bravo-dark-700: #607466;
+  --bravo-light-100: #edefce;
+  --bravo-light-200: #dde0bd;
+  --danger: #ba3f1d;
+
+  // LIGHT MODE
+  // Text variables
+  --clr-txt-body: var(--bravo-light-200);
+  --clr-txt-heading: var(--bravo-light-100);
+
+  --clr-bg-body: var(--bravo-dark-900);
+
+  --nav-link-color: var(--bravo-light-200);
+  --nav-link-hover-color: var(--bravo-light-100);
+  --nav-link-button-hover-color: var(--bravo-dark-900);
+}
+
+// NickBravo.dev color scheme
 $bravo-dark-900: #272b2a !default;
 $bravo-dark-700: #607466 !default;
 $bravo-light-100: #edefce !default;

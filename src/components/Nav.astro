@@ -24,8 +24,8 @@ import navData from '../data/navData';
         <Icon name="nav-toggle" />
       </button>
 
-      <nav class="flex justify-content-end">
-        <ul id="primary-navigation" data-visible="false" class="primary-navigation">
+      <nav>
+        <ul id="primary-navigation" data-visible="false">
           {
             navData.map((item) => (
               <Link
@@ -43,7 +43,7 @@ import navData from '../data/navData';
     </header>
 
 <script>
-  const primaryNav = document.querySelector('.primary-navigation');
+  const primaryNav = document.querySelector('#primary-navigation');
   const navToggle = document.querySelector('.mobile-nav-toggle');
 
   navToggle.addEventListener('click', () => {

@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon';
 
 // Layout imports
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
 ---
 
 <MainLayout
@@ -26,10 +27,20 @@ import MainLayout from "../layouts/MainLayout.astro";
                 I build engaging, privacy-focused websites, graphics, and digital assets to solidify brand authority and trust across platforms.
               </p>
               <!-- CTA buttons -->
-              <div class="flex-row">
-                <a class="cta" href="#contact" aria-label="Contact Me">Contact me</a>
-                <a class="cta" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-label="Resume" aria-controls="resume"
-                  href="#">Resume</a>
+              <div class="flex gap flex-row">
+                <Button 
+                  text="Send Me a Message"
+                  href="#"
+                  type="outline"
+                />
+                <Button 
+                  text="Check Out My Resume"
+                  href="#"
+                  type="outline"
+                />
+                <!-- <a class="cta" href="#contact" aria-label="Contact Me">Contact me</a> -->
+                <!-- <a class="cta" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-label="Resume" aria-controls="resume"
+                  href="#">Resume</a> -->
               </div>
             </div>
             <!-- Hero image SVG -->

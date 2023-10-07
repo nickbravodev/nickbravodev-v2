@@ -1,25 +1,9 @@
 // NAV Variables
-
 $nav-min-height: 5.5rem;
 $nav-background-color: rgba($bravo-dark-900, 0.85) !default;
-$nav-link-color: rgba($bravo-light-200, 0.75) !default;
+$nav-link-color: rgba($bravo-light-200, 1) !default;
 $nav-link-hover-color: rgba($bravo-light-100, 1) !default;
 $nav-link-button-hover-color: rgba($bravo-dark-900, 1) !default;
-
-// Navbar text and toggler
-// $navbar-dark-color: rgba($bravo-light-200, 1) !default;
-// $navbar-dark-hover-color: rgba($bravo-light-100, 1) !default;
-// $navbar-dark-active-color: rgba($bravo-light-100, 1) !default;
-// $navbar-dark-disabled-color: rgba($bravo-light-200, 0.99) !default;
-// $navbar-dark-toggler-icon-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-// $navbar-dark-toggler-border-color: rgba($bravo-light-100, 0.1) !default;
-
-// $nav-link-padding-y: 0.5rem !default;
-// $nav-link-padding-x: 1rem !default;
-// $nav-link-font-size: 0.9rem;
-// $nav-link-font-weight: 700;
-// $nav-link-transition: color 0.15s ease-in-out,
-//   background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !default;
 
 header {
   position: fixed;
@@ -28,6 +12,15 @@ header {
   min-height: $nav-min-height;
   justify-content: space-between;
   z-index: 1000;
+  padding: 1rem 2rem;
+
+  @media (--lg) {
+    padding-inline: 3.5rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
 
   &::before {
     content: "";
@@ -48,9 +41,8 @@ header {
     align-items: center;
     justify-content: center;
     list-style: none;
-    padding: 1rem 2rem;
-    min-height: $nav-min-height;
     z-index: 1;
+    margin: 0;
 
     @media (--md-max) {
       gap: ($spacer * 2);
@@ -100,11 +92,46 @@ header {
     align-items: center;
     justify-content: center;
 
-    @media (--md-max) {
-      width: 100%;
+    a {
+      display: inline-flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 0.25rem;
+      color: $nav-link-color;
+      text-decoration: inherit;
+
+      &::after {
+        content: "";
+        opacity: 1;
+        background: $nav-link-hover-color;
+        position: absolute;
+        display: inline-block;
+        width: 0%;
+        height: 0.15rem;
+        margin-top: 1.5rem;
+        z-index: 1;
+        top: 0;
+        transition: width 150ms ease-out;
+      }
+
+      &:hover,
+      &:focus {
+        color: $nav-link-hover-color;
+        text-decoration: none;
+        outline: none;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        width: 100%;
+
+        @media (--lg) {
+          margin-top: 1.7rem;
+        }
+      }
     }
 
-    &:last-of-type {
+    &:last-of-type > a {
       color: $nav-link-color;
       cursor: pointer;
       border: 2px solid $nav-link-color;
@@ -113,68 +140,17 @@ header {
       transition: 150ms ease-in-out;
       display: flex;
 
-      @media (--md-max) {
-      }
-
       &:hover,
       &:focus {
         background: $nav-link-hover-color;
         border-color: $nav-link-hover-color;
-
-        & > a {
-          color: $nav-link-button-hover-color;
-        }
+        color: $nav-link-button-hover-color;
+        outline: none;
 
         &:after {
           width: 0%;
-
-          @media (--lg) {
-            margin-top: 1.7rem;
-          }
         }
       }
-    }
-
-    &::after {
-      content: "";
-      opacity: 1;
-      background: $nav-link-hover-color;
-      position: absolute;
-      display: block;
-      width: 0%;
-      height: 0.15rem;
-      margin-top: 1.5rem;
-      z-index: 1;
-      top: 0;
-      transition: width 150ms ease-out;
-    }
-
-    &:hover,
-    &:focus {
-      color: $nav-link-hover-color;
-      text-decoration: none;
-    }
-
-    &:hover::after,
-    &:focus::after {
-      width: 100%;
-
-      @media (min-width: 992px) {
-        margin-top: 1.7rem;
-      }
-    }
-  }
-
-  a {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.25rem;
-    color: $nav-link-color;
-    text-decoration: none;
-
-    &:hover {
-      color: $nav-link-hover-color;
     }
   }
 }
@@ -197,7 +173,8 @@ header {
       aspect-ratio: 1;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $nav-link-hover-color;
       cursor: pointer;
     }
@@ -208,16 +185,19 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-inline-start: 2rem;
+  // margin-inline-start: 2rem;
 
   svg {
     height: 3.5rem;
     width: auto;
   }
 
-  &:hover,
+  // &:hover,
   &:focus {
     text-decoration: none;
+    outline: 2px solid rgba($bravo-light-200, 1);
+    outline-offset: 0.25rem;
+    border-radius: 0.1rem;
   }
 }
 
@@ -225,4 +205,5 @@ header {
   font: 700 1.2rem/120% $font-family-base, sans-serif;
   color: $bravo-light-100;
   margin-left: 0.8rem;
+  text-decoration: none;
 }

@@ -1,3 +1,101 @@
+:root {
+  // Primary Button Colors
+  --clr-btn-primary: var(--nav-link-color);
+  --clr-btn-primary-text: var(--bravo-dark-900);
+  --clr-btn-primary-hover: var(--nav-link-hover-color);
+
+  // Secondary Button Colors
+  --clr-btn-secondary: var(--mav-white);
+  --clr-btn-secondary-text: var(--mav-black);
+  --clr-btn-secondary-hover: var(--mav-black);
+}
+
+// Button Component Styles
+button,
+input[type="submit"],
+.button {
+  color: var(--clr-btn-primary-text);
+  background-color: var(--clr-btn-primary);
+  border: 2px solid var(--clr-btn-primary);
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  // font-family: $font-family-base;
+  font-weight: bold;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  transition: all 150ms ease-in-out;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: var(--clr-btn-primary-text);
+    background-color: var(--clr-btn-primary-hover);
+    border-color: var(--clr-btn-primary-hover);
+  }
+
+  span {
+    text-align: center;
+    // margin-block-end: -0.2em;
+  }
+
+  &.lg {
+    padding: 1rem 2rem;
+  }
+
+  &.sm {
+    border-radius: 15em;
+    padding: 0.5rem 2rem;
+  }
+
+  &.secondary {
+    color: var(--clr-btn-secondary-text);
+    background-color: var(--clr-btn-secondary);
+    border-color: var(--clr-btn-secondary);
+
+    &:hover,
+    &:focus {
+      color: var(--clr-btn-primary-text);
+      background-color: var(--clr-btn-secondary-hover);
+      border-color: var(--clr-btn-secondary-hover);
+    }
+
+    &.outline {
+      color: var(--clr-btn-secondary);
+      background-color: transparent;
+
+      &:hover,
+      &:focus {
+        // Solid Hover
+        color: var(--clr-btn-primary-text);
+        background-color: var(--clr-btn-secondary-hover);
+        border-color: var(--clr-btn-secondary-hover);
+
+        // Outline Hover
+        // color: var(--clr-btn-secondary-hover);
+      }
+    }
+  }
+
+  &.outline {
+    color: var(--clr-btn-primary);
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+      // Solid Hover
+      color: var(--clr-btn-primary-text);
+      background-color: var(--clr-btn-primary-hover);
+      border-color: var(--clr-btn-primary-hover);
+
+      // Outline Hover
+      // color: var(--clr-btn-primary-hover);
+    }
+  }
+}
+
 // CTA buttons
 .cta {
   display: flex;
@@ -13,7 +111,7 @@
   background-color: transparent;
   border: 2px solid $bravo-light-100;
   border-radius: $border-radius;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
   transition: all 150ms ease-in-out;
 
   &:hover,

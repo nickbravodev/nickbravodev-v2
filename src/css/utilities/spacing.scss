@@ -1,14 +1,69 @@
 $spacer: 1rem !default;
-$spacers: (0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-  6: $spacer * 4,
-  7: $spacer * 5,
-  8: $spacer * 6,
-  9: $spacer * 8,
-  10: $spacer * 10,
-) !default;
+$spacer-1: $spacer * 0.25;
+$spacer-2: $spacer * 0.5;
+$spacer-3: $spacer;
+$spacer-4: $spacer * 1.5;
+$spacer-5: $spacer * 3;
+$spacer-6: $spacer * 4;
+$spacer-7: $spacer * 5;
+$spacer-8: $spacer * 6;
+$spacer-9: $spacer * 8;
+$spacer-10: $spacer * 10;
 
+.gap {
+  gap: $spacer;
+}
+
+.gap-1 {
+  gap: $spacer-1;
+}
+
+.gap-2 {
+  gap: $spacer-2;
+}
+
+.gap-3 {
+  gap: $spacer-3;
+}
+
+.gap-4 {
+  gap: $spacer-4;
+}
+
+.gap-5 {
+  gap: $spacer-5;
+}
+
+.gap-6 {
+  gap: $spacer-6;
+}
+
+.gap-7 {
+  gap: $spacer-7;
+}
+
+.gap-8 {
+  gap: $spacer-8;
+}
+
+.gap-9 {
+  gap: $spacer-9;
+}
+
+.gap-10 {
+  gap: $spacer-10;
+}
+
+// $spacer: 1rem !default;
+// $spacers: (0: 0,
+//   1: $spacer * .25,
+//   2: $spacer * .5,
+//   3: $spacer,
+//   4: $spacer * 1.5,
+//   5: $spacer * 3,
+//   6: $spacer * 4,
+//   7: $spacer * 5,
+//   8: $spacer * 6,
+//   9: $spacer * 8,
+//   10: $spacer * 10,
+// ) !default;

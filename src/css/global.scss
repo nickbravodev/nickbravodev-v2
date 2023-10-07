@@ -3,22 +3,22 @@
 
 // Variables
 @import "fonts.scss";
+@import "variables/colors.scss";
 @import "utilities/spacing.scss";
 @import "utilities/screen-readers.scss";
 @import "utilities.scss";
-@import "variables/colors.scss";
 // @import "nav-variables.scss";
 
 // Styles
 @import "utilities/root.scss";
 @import "utilities/flex.scss";
+@import "utilities/grid.scss";
 @import "utilities/breakpoints.scss";
-@import "margins.scss";
-@import "padding.scss";
+@import "utilities/margins.scss";
+@import "utilities/padding.scss";
 @import "type.scss";
 @import "layout.scss";
-@import "flex.scss";
-@import "utilities/grid.scss";
+// @import "flex.scss";
 @import "components/nav.scss";
 @import "components/footer.scss";
 @import "components.scss";

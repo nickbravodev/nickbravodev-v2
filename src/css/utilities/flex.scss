@@ -1,17 +1,17 @@
 // FLEX BOX
 .flex {
   display: flex;
-  gap: $spacer;
+  // gap: $spacer;
 }
 
 .flex-row {
   flex-direction: row;
-  gap: $spacer;
+  // gap: $spacer;
 }
 
 .flex-column {
   flex-direction: column;
-  gap: $spacer;
+  // gap: $spacer;
 }
 
 .flex-center {
