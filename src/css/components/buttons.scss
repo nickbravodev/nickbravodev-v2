@@ -19,7 +19,6 @@ input[type="submit"],
   border: 2px solid var(--clr-btn-primary);
   padding: 0.75rem 2rem;
   border-radius: 0.5rem;
-  // font-family: $font-family-base;
   font-weight: bold;
   line-height: 1;
   display: inline-flex;
@@ -34,11 +33,11 @@ input[type="submit"],
     color: var(--clr-btn-primary-text);
     background-color: var(--clr-btn-primary-hover);
     border-color: var(--clr-btn-primary-hover);
+    outline: none;
   }
 
   span {
     text-align: center;
-    // margin-block-end: -0.2em;
   }
 
   &.lg {
@@ -93,56 +92,5 @@ input[type="submit"],
       // Outline Hover
       // color: var(--clr-btn-primary-hover);
     }
-  }
-}
-
-// CTA buttons
-.cta {
-  display: flex;
-  font: 500 1rem/120% $font-family-base, sans-serif;
-  color: $bravo-light-100;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  vertical-align: middle;
-  cursor: pointer;
-  user-select: none;
-  background-color: transparent;
-  border: 2px solid $bravo-light-100;
-  border-radius: $border-radius;
-  padding: 0.5rem 2rem;
-  transition: all 150ms ease-in-out;
-
-  &:hover,
-  &:focus {
-    color: $bravo-dark-900;
-    background-color: $bravo-light-100;
-    text-decoration: none;
-  }
-
-  .cta-check:focus + &,
-  &:focus {
-    outline: 0;
-    box-shadow: none;
-  }
-
-  .cta-check:checked + &,
-  .cta-check:active + &,
-  &:active,
-  &.active {
-    box-shadow: none;
-
-    &:focus {
-      box-shadow: none;
-    }
-  }
-
-  &:disabled,
-  &.disabled,
-  fieldset:disabled & {
-    pointer-events: none;
-    opacity: 0.5;
-    box-shadow: none;
   }
 }
