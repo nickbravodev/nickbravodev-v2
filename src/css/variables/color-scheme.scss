@@ -1,0 +1,175 @@
+// NickBravo.dev color scheme
+:root {
+  --bravo-dark-900-rgb: 39, 43, 42;
+  --bravo-dark-900: rgb(var(--bravo-dark-900-rgb));
+  // --bravo-dark-900: #272b2a;
+  --bravo-dark-700-rgb: 96, 116, 102;
+  --bravo-dark-700: rgb(var(--bravo-dark-700-rgb));
+  // --bravo-dark-700: #607466;
+  --bravo-light-100-rgb: 237, 239, 206;
+  --bravo-light-100: rgb(var(--bravo-light-100-rgb));
+  // --bravo-light-100: #edefce;
+  --bravo-light-200-rgb: 221, 224, 189;
+  --bravo-light-200: rgb(var(--bravo-light-200-rgb));
+  // --bravo-light-200: #dde0bd;
+  --danger-rgb: 186, 63, 29;
+  --danger: rgb(var(--danger-rgb));
+  // --danger: #ba3f1d;
+
+  // Nav variables
+  // --color-nav-link-color: var(--bravo-light-200);
+  // --color-nav-link-hover-color: var(--bravo-light-100);
+  // --color-nav-link-button-hover-color: var(--bravo-dark-900);
+
+  // // LIGHT MODE
+  // // Text variables
+  // --color-txt-body: var(--bravo-light-200);
+  // --color-txt-heading: var(--bravo-light-100);
+  // --color-txt-body-variant: var(--bravo-dark-700);
+  // --color-txt-heading-variant: var(--bravo-dark-900);
+
+  // // Background variables
+  // --color-bg-body: var(--bravo-dark-900);
+  // --color-bg-body-variant: var(--bravo-light-200);
+
+  // Maverik Color Scheme
+  --mav-red: #c8102e;
+  --mav-white: #fafafa;
+  --mav-light-gray: #eee;
+  --mav-dark-gray: #363636;
+  --mav-black: #181818;
+  --bonfire-orange: #e8683b;
+  --bonfire-yellow: #edc937;
+  --white: #fff;
+  --black: #000;
+
+  // Box-Shadow Color
+  --shadow: 0rem 0.2rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: all 450ms ease-in-out;
+}
+
+// -----------
+// LIGHT MODE
+// -----------
+
+@mixin light-mode {
+  color-scheme: light;
+
+  // -----------
+  // GLOBAL COLORS
+  // -----------
+
+  // Global Background Colors
+  --color-bg: var(--bravo-light-100);
+  --color-bg-variant: var(--bravo-light-200);
+  // Global Text Colors
+  --color-txt: var(--bravo-dark-700);
+  --color-txt-heading: var(--bravo-dark-900);
+  // Global Border Color
+  --color-border: var(--bravo-light-200);
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Component Colors
+
+  --color-bg-card: var(--white); // Card Background Color
+
+  // -----------
+  // IMAGE ADJUSTMENTS
+  // -----------
+
+  // Global Image Brightness & Contrast
+  --image-brightness: brightness(100%); // Image Brightness
+  --image-contrast: contrast(1); // Image Brightness
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include light-mode;
+}
+
+// -----------
+// DARK MODE
+// -----------
+
+@mixin dark-mode {
+  color-scheme: dark;
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Global Background Colors
+  --color-bg: var(--bravo-dark-900);
+  --color-bg-variant: var(--bravo-light-100);
+  // Global Text Colors
+  --color-txt: var(--bravo-light-200);
+  --color-txt-heading: var(--bravo-light-100);
+  --color-txt-variant: var(--bravo-dark-700);
+  --color-txt-heading-variant: var(--bravo-dark-900);
+  // Global Border Color
+  --color-border: var(--bravo-dark-700);
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Component Colors
+
+  --color-bg-card: var(--bravo-dark-700); // Card Background Color
+  --color-divider: var(--bravo-light-200);
+  --color-divider-variant: var(--bravo-dark-700);
+
+  // -----------
+  // IMAGE ADJUSTMENTS
+  // -----------
+
+  // Global Image Brightness & Contrast
+  --image-brightness: brightness(80%); // Image Brightness
+  --image-contrast: contrast(1.2); // Image Brightness
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include dark-mode;
+}
+
+// NickBravo.dev color scheme
+$bravo-dark-900: #272b2a !default;
+$bravo-dark-700: #607466 !default;
+$bravo-light-100: #edefce !default;
+$bravo-light-200: #dde0bd !default;
+$danger: #ba3f1d !default;
+
+// NickBravo.dev alternate color scheme
+// $bravo-dark-900: #111 !default;
+// $bravo-dark-700: #555 !default;
+// $bravo-light-100: #fafafa !default;
+// $bravo-light-200: #e8e8e8 !default;
+// $danger: #ae1515 !default;
+
+.color-dark-900 {
+  color: $bravo-dark-900;
+}
+
+.color-dark-700 {
+  color: $bravo-dark-700;
+}
+
+.color-light-100 {
+  color: $bravo-light-100;
+}
+
+.color-light-200 {
+  color: $bravo-light-200;
+}

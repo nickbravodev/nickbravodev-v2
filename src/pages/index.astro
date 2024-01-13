@@ -5,6 +5,10 @@ import { Icon } from 'astro-icon';
 // Layout imports
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+
+// Image imports
+import { Image } from 'astro:assets';
+import profileImage from "../img/nb-new.jpg";
 ---
 
 <MainLayout
@@ -14,41 +18,391 @@ import Button from '../components/Button.astro';
   og_url="https://nickbravo.dev/"
 >
   <main>
+
   <!-- Hero section -->
-      <section id="home" class="">
-        <div class="container">
-          <!-- Hero text -->
-          <div class="grid-2">
-            <div>
-              <p class="superheading">Nick Bravo.</p>
-              <h1>Designer. Developer. Problem solver.</h1>
-              <div class="hr-div"></div>
-              <p class="subheading">
-                I build engaging, privacy-focused websites, graphics, and digital assets to solidify brand authority and trust across platforms.
-              </p>
-              <!-- CTA buttons -->
-              <div class="flex gap flex-row">
-                <Button 
-                  text="Contact Me"
-                  href="#"
-                  type="outline"
-                />
-                <Button 
-                  text="Resume"
-                  href="#"
-                  type="outline"
-                />
-                <!-- <a class="cta" href="#contact" aria-label="Contact Me">Contact me</a> -->
-                <!-- <a class="cta" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-label="Resume" aria-controls="resume"
-                  href="#">Resume</a> -->
+    <section id="home" class="">
+      <div class="container">
+        <!-- Hero text -->
+        <div class="grid-2">
+          <div>
+            <p class="superheading">Nick Bravo.</p>
+            <h1>Designer. Developer. Problem solver.</h1>
+            <div class="hr-div"></div>
+            <p class="subheading">
+              I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms.
+            </p>
+            <!-- CTA buttons -->
+            <div class="flex gap">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            </div>
+          </div>
+          <!-- Hero image SVG -->
+          <div class="hero-image">
+            <Icon name="nickbravodev" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about">
+      <div class="container flex-md-row-reverse">
+        <!-- <div class="row flex flex-row-reverse align-items-start justify-content-center"> -->
+          <!-- About text -->
+          <div class="section__body flex flex-column">
+            <h2>Career change from cop to web developer? Don't mind if I do!</h2>
+            <div class="hr-div"></div>
+            <p>Short version? I recently made a career change from a full-time cop / part-time designer and developer back to a full-time designer and developer.</p>
+            <p>I worked full-time as a graphic and web designer for two years before working in law enforcement. I worked on a lot of freelance web development projects during my decade-and-a-half law enforcement career.</p>
+            <p class="mb-4">
+              Long version? My official biography is set to be released in 2552.
+            </p> <!-- IYKYK -->
+            <!-- CTA buttons -->
+            <div class="flex gap">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+              <!-- <a class="cta me-2" href="#contact">Contact me</a>
+              <a
+                class="cta"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#resume"
+                aria-controls="resume"
+                href="#"
+                >Resume</a
+              > -->
+            </div>
+          </div>
+          <!-- Profile photo. Yes, it's really a photo of me! -->
+          <div class="section__aside">
+            <Image src={profileImage} class="profile-image" alt="A Genuine Photo of Nick Bravo." format="webp" />
+          </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- Scope section -->
+    <section id="scope">
+      <div class="container">
+        <div class="section__body">
+          <!-- Scope main text -->
+          <h2>Languages & frameworks.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading">
+            I've been designing graphics, layouts, and brand assets with Adobe software, and developing websites using HTML, CSS, and JS since 2004 - you know, back when MySpace was popular. I have a solid mastery of Adobe XD, Illustrator, InDesign, and Photoshop.
+          </p>
+          <p>
+            <code>Adobe CC, VS Code, Bootstrap, WordPress, Webflow</code>
+          </p>
+          <div class="flex gap">
+            <Button href="contact" />
+            <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            <!-- <a class="cta me-2" href="#contact">Contact me</a>
+            <a
+              class="cta"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#resume"
+              aria-controls="resume"
+              href="#"
+              >Resume</a
+            > -->
+          </div>
+        </div>
+          <!-- Scope detail text -->
+          <div class="section__aside">
+            <h3 class="mb-1">Design</h3>
+            <p>Adobe XD, Illustrator, InDesign, Photoshop, Figma.</p>
+            <h3 class="mb-1">Frontend</h3>
+            <p>HTML, CSS, JavaScript.</p>
+            <h3 class="mb-1">Backend</h3>
+            <p>Node.js, Express, MongoDB.</p>
+            <h3 class="mb-1">Libraries & Builders</h3>
+            <p>Bootstrap, Webflow, WordPress.</p>
+          </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- Portfolio section -->
+    <section id="work" class="section__variant">
+      <div class="container">
+        <!-- Portfolio header -->
+        <h2 class="text-dark text-center">A few of my projects.</h2>
+        <div class="hr-div"></div>
+        <p class="subheading text-dark text-center pb-5">
+          Here are some projects I've worked on as a designer and developer.
+        </p>
+        <!-- Portfolio carousel cards -->
+        <div
+          id="portfolio-carousel-cards"
+          class="carousel slide p-card shadow overflow-hidden"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item active">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/unredacted-magazine-002.webp" class="img-fluid" alt="Unredacted Magazine pages laid out." />
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <div class="p-card-links">
+                    <a href="https://unredactedmagazine.com/download.html" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                        <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open" d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z" transform="translate(-4.5 -4.5)" fill="#607466" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Unredacted Magazine.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark">
+                      I designed the entire layout of Unredacted Magazine, beginning with Issue 002. I built an adaptable, accessible layout in InDesign. In addition, I created several graphical components and ads in Illustrator. Since the magazine is digital-only, I exported the final version as an interactive PDF.
+                    </p>
+                    <p class="text-dark small">Adobe InDesign, Illustrator</p>
+                    <!-- <a class="cta me-2" href="#contact">More about this project</a> -->
+                  </div>
+                </div>
               </div>
             </div>
-            <!-- Hero image SVG -->
-            <div class="hero-image">
-              <Icon name="nickbravodev" />
+            <!-- End individual portfolio card -->
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/Fortify-24x7-ad.webp" class="img-fluid" alt="Fortify 24x7 half-page magazine ad." />
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <div class="p-card-links">
+                    <a href="https://unredactedmagazine.com/download.html" target="_blank">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                        <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open"
+                          d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z" transform="translate(-4.5 -4.5)" fill="#607466" />
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Fortify 24x7 Magazine Ads.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark">
+                      I designed two half-page magazine ads for Fortify 24x7. After receiving the parameters and copy, I designed the ads in Adobe Illustrator. Since the magazine is an Interactive PDF, I placed the final designs in an InDesign document and embedded multiple targeted hyperlinks. These ads can be seen in Unredacted Magazine.
+                    </p>
+                    <p class="text-dark small">Adobe Illustrator, InDesign</p>
+                    <!-- <a class="cta me-2" href="#contact">More about this project</a> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End individual portfolio card -->
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/explore-eastern-utah-homepage.webp" class="img-fluid" alt="Homepage for Explore Eastern Utah, built using WordPress." />
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <!-- <div class="p-card-links">
+                                  <a href="https://exploreeasternutah.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                                      <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open"
+                                        d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z"
+                                        transform="translate(-4.5 -4.5)" fill="#607466" />
+                                      </svg>
+                                    </a>
+                                </div> -->
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Explore Eastern Utah.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark">
+                      I built Explore Eastern Utah to showcase local restaurants that remained open during pandemic shutdowns. I designed the UI in Adobe XD and built it using WordPress and Bootstrap. There is a lot of dynamic content to allow business owners to update their pages. All logos and graphics were designed in Adobe CC.
+                    </p>
+                    <p class="text-dark small">
+                      WordPress, HTML, CSS, JavaScript, Bootstrap, Adobe CC
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End individual portfolio card -->
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/arcane-ops-homepage.webp" class="img-fluid"alt="Homepage for Arcane Ops, built using WordPress."/>
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <!-- <div class="p-card-links">
+                                  <a href="#" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                                      <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open"
+                                        d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z"
+                                        transform="translate(-4.5 -4.5)" fill="#607466" />
+                                      </svg>
+                                    </a>
+                                </div> -->
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Arcane Ops. Paranormal Podcast.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark"> 
+                      Arcane Ops was a limited-run paranormal podcast that ran for seven episodes at the end of 2020. I designed the layout in Adobe XD and built it using WordPress, WooCommerce, and Bootstrap. All logos and graphics were designed in Adobe CC.
+                    </p>
+                    <p class="text-dark small">
+                      WordPress, HTML, CSS, JavaScript, Bootstrap, Adobe CC
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End individual portfolio card -->
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/corporate-law-homepage.webp" class="img-fluid" alt="Homepage for corporate law website, built using Webflow." />
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <!-- <div class="p-card-links">
+                                  <a href="#" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                                      <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open"
+                                        d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z"
+                                        transform="translate(-4.5 -4.5)" fill="#607466" />
+                                      </svg>
+                                    </a>
+                                </div> -->
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Corporate Law Website.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark">
+                      Simple brochure website I designed and built for a corporate law firm. I created the UI in Adobe XD and developed it using Webflow, Finsweet Client First, and custom JS components. Webflow's interface and ease of use are intuitive, but it's a bit restrictive for complex styling. All logos and graphics were designed in Adobe CC.
+                    </p>
+                    <p class="text-dark small">
+                      Webflow, HTML, CSS, JavaScript, Adobe CC
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End individual portfolio card -->
+            <!-- Start individual portfolio card -->
+            <div class="carousel-item">
+              <div class="row d-flex align-items-center p-card-container">
+                <!-- Card image -->
+                <div class="p-card-img-div">
+                  <img src="img/sheriff-wood-homepage.webp" class="img-fluid" alt="Homepage for sheriff election campaign, built using Bootstrap, HTML, CSS, and JavaScript." />
+                </div>
+                <!-- Card description -->
+                <div class="p-card-caption">
+                  <!-- <div class="p-card-links">
+                                  <a href="https://exploreeasternutah.com/" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27">
+                                      <path id="Icon_ionic-md-open" data-name="Icon ionic-md-open"
+                                        d="M28.5,28.5H7.5V7.5h9.375v-3H7.5a3.008,3.008,0,0,0-3,3v21a3.008,3.008,0,0,0,3,3h21a3.008,3.008,0,0,0,3-3V19.125h-3Zm-8.25-24v3H26.4L11.25,22.65l2.1,2.1L28.5,9.6v6.15h3V4.5Z"
+                                        transform="translate(-4.5 -4.5)" fill="#607466" />
+                                      </svg>
+                                    </a>
+                                </div> -->
+                  <div class="p-card-description">
+                    <h2 class="text-dark">Sheriff Campaign Website.</h2>
+                    <div class="hr-div"></div>
+                    <p class="text-dark">
+                      Campaign website for a sheriff election. This website had many pages, a simple CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC.
+                    </p>
+                    <p class="text-dark small">
+                      HTML, CSS, JavaScript, PHP, Bootstrap, Adobe CC
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End individual portfolio card -->
+          </div>
+          <!-- Previous button -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#portfolio-carousel-cards" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </button>
+          <!-- Next button -->
+          <button class="carousel-control-next" type="button" data-bs-target="#portfolio-carousel-cards" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </button>
+        </div>
+        <!-- End portfolio carousel cards -->
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="px-3 py-8">
+      <div class="container">
+        <div class="flex align-items-start justify-content-center">
+          <div class="col-md-6 col-lg-5 pe-md-5">
+            <!-- Contact text -->
+            <h2>Get in touch.</h2>
+            <div class="hr-div"></div>
+            <p class="subheading">
+              I'm ready to join your team! Send me a message if you think we'd be a great fit!
+            </p>
+          </div>
+          <!-- Contact form -->
+          <div class="col-md-6 col-lg-4 mt-5 mt-md-0">
+            <form name="contact-form" id="contact-form" action="index.html#success" method="post" data-netlify="true" onsubmit="submit" data-netilfy-honeypot="bot-field" class="needs-validation" novalidate >
+              <!-- Robot honeypot. That rhymes! -->
+              <div class="d-none">
+                <label>
+                  Robot honeypot: Leave this field empty if you're human
+                  <input name="bot-field" />
+                </label>
+              </div>
+              <!-- Name input -->
+              <div class="mb-4">
+                <label class="form-label sr-only" for="name">Name</label>
+                <input class="form-control" type="text" id="name" name="name" placeholder="Name" required />
+              </div>
+              <!-- Email input -->
+              <div class="mb-4">
+                <label class="form-label sr-only" for="email">Email</label>
+                <input class="form-control" type="email" id="email" name="email" placeholder="Email" required />
+              </div>
+              <!-- Message input -->
+              <div class="mb-4">
+                <label class="form-label sr-only" for="description">Message</label>
+                <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
+              </div>
+              <!-- Submit button -->
+              <div class="mb-4">
+                <button class="button outline">Send message</button>
+              </div>
+            </form>
+            <!-- Form success modal -->
+            <div class="modal fade" id="success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-dark">
+                    <h5 class="modal-title form-success-title">Success!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body bg-light form-success-text">
+                    Thanks! Your message is on it's way!
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+
+
   </main>
 </MainLayout>

@@ -1,0 +1,68 @@
+// Section and Container Layouts
+section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 9rem 0rem;
+}
+
+.section__variant {
+  --color-divider: var(--color-divider-variant);
+
+  background-color: var(--color-bg-variant);
+  color: var(--color-txt-variant);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-txt-heading-variant);
+  }
+}
+
+.section__body {
+  width: var(--col-12);
+
+  @media (--md) {
+    width: var(--col-7);
+  }
+
+  // @media (--lg) {
+  //   width: var(--col-6);
+  // }
+}
+
+.section__aside {
+  width: var(--col-12);
+
+  @media (--md) {
+    width: var(--col-5);
+  }
+
+  // @media (--lg) {
+  //   width: var(--col-6);
+  // }
+}
+
+.container {
+  max-width: 70rem;
+  padding: 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-5);
+
+  @media (--md) {
+    flex-direction: row;
+  }
+}
+
+.container-fluid {
+  @extend .container;
+  max-width: 100%;
+}

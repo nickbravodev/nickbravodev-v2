@@ -1,5 +1,5 @@
 footer {
-  background-color: rgba($bravo-dark-900, 1);
+  background-color: var(--color-bg);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -7,36 +7,37 @@ footer {
   align-items: center;
   justify-content: center; // space out brand from logo
   padding: 3rem 2rem;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+  margin-block-end: var(--gap-4);
 
   a {
     text-decoration: none;
 
-    &:focus {
-      outline: 2px solid $bravo-light-200;
+    &:focus-visible {
+      outline: 2px solid var(--color-nav-link-hover-color);
       outline-offset: 0.25rem;
       border-radius: 0.25rem;
 
       & > svg {
-        color: $nav-link-hover-color;
+        color: var(--color-nav-link-hover-color);
       }
     }
   }
 
   svg {
-    color: $nav-link-color;
+    color: var(--color-nav-link-color);
     width: 1.5rem;
 
     &:hover,
     &:focus {
-      color: $nav-link-hover-color;
+      color: var(--color-nav-link-hover-color);
     }
-  }
-
-  .footer-social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: $spacer;
   }
 
   .copyright {

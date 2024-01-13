@@ -1,26 +1,30 @@
 // Adobe fonts import
-@import url("https://use.typekit.net/ybn6dil.css");
+@import url("https://use.typekit.net/kvr7mlz.css");
 
 // Variables
-@import "fonts.scss";
-@import "variables/colors.scss";
-@import "utilities/spacing.scss";
-@import "utilities/screen-readers.scss";
-@import "utilities.scss";
-// @import "nav-variables.scss";
+@import "variables/fonts.scss";
+@import "variables/color-scheme.scss";
+@import "variables/layout.scss";
+@import "variables/borders.scss";
 
-// Styles
+// Utilities
 @import "utilities/root.scss";
-@import "utilities/flex.scss";
-@import "utilities/grid.scss";
 @import "utilities/breakpoints.scss";
+@import "utilities/screen-readers.scss";
+@import "utilities/layout.scss";
+@import "utilities/display.scss";
+@import "utilities/flex.scss";
+@import "utilities/spacing.scss";
+@import "utilities/grid.scss";
+@import "utilities/columns.scss";
 @import "utilities/margins.scss";
 @import "utilities/padding.scss";
-@import "type.scss";
-@import "layout.scss";
-// @import "flex.scss";
+@import "utilities/type.scss";
+
+// Components
 @import "components/nav.scss";
 @import "components/footer.scss";
-@import "components.scss";
+@import "components/dividers.scss";
 @import "components/buttons.scss";
-@import "images.scss";
+@import "components/forms.scss";
+@import "components/images.scss";

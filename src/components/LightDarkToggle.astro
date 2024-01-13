@@ -1,0 +1,129 @@
+---
+// Library imports
+import { Icon } from 'astro-icon';
+---
+
+    <aside class="theme-wrapper">
+      <div class="theme-container" role="group">
+        <button id="toggle-light" class="theme" aria-label="Apply Light Mode" data-theme="light">
+          <Icon name="light-mode-toggle" height="24" width="24" />
+        </button>
+        <button id="toggle-dark" class="theme" aria-label="Apply Dark Mode" data-theme="dark">
+          <Icon name="dark-mode-toggle" height="24" width="24" />
+        </button>
+      </div>
+    </aside>
+
+
+
+<script type="module">  
+
+// TOGGLE BUTTON DISPLAY FUNCTION - Displays appropriate toggle button
+  const toggleButtonDisplay = () => {
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      // Dark
+      document.getElementById('toggle-dark').classList.add('d-none');
+      document.getElementById('toggle-light').classList.remove('d-none');
+    } else if (document.documentElement.getAttribute('data-theme') === 'light') {
+      // Light
+      document.getElementById('toggle-light').classList.add('d-none');
+      document.getElementById('toggle-dark').classList.remove('d-none');
+    }
+  }
+// END TOGGLE BUTTON DISPLAY FUNCTION
+
+
+// USER PREFERENCE TOGGLE DISPLAY - Initial toggle button (based on user preference)
+  const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
+
+  // Assigns correct toggle button based on user preference
+  const setColorScheme = e => {
+    if (e.matches) {
+      // Dark
+      document.getElementById('toggle-dark').classList.add('d-none');
+      document.getElementById('toggle-light').classList.remove('d-none');
+    } else {
+      // Light
+      document.getElementById('toggle-light').classList.add('d-none');
+      document.getElementById('toggle-dark').classList.remove('d-none');
+    }
+  }
+  
+  setColorScheme(colorSchemeQueryList);
+  colorSchemeQueryList.addEventListener('change', setColorScheme);
+// END USER PREFERENCE TOGGLE DISPLAY
+
+  
+// TOGGLE BUTTON ACTION
+  // Button controls
+  const themeToggle = document.querySelectorAll('.theme');
+
+  const handleThemeChange = (e) => {
+    const theme = e.currentTarget.dataset.theme;
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('maverikColorTheme', theme);
+    toggleButtonDisplay();
+    
+  }
+  
+  themeToggle.forEach(t => t.addEventListener('click', handleThemeChange))
+// END TOGGLE BUTTON ACTION
+
+
+// USER PREFERENCE STORAGE
+  // Store user preference
+  window.addEventListener('DOMContentLoaded', () => {
+    const theme = localStorage.getItem('maverikColorTheme');
+    theme && document.documentElement.setAttribute('data-theme', theme);
+    toggleButtonDisplay();
+  })
+// END USER PREFERENCE STORAGE
+
+</script>
+
+
+
+<style lang="scss">
+  .theme-wrapper {
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    z-index: 10000;
+  }
+  .theme-container {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .theme {
+    border-radius: 100vmax;
+    padding: 0.6em;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    position: relative;
+
+    &::after {
+      content: attr(aria-label);
+      position: absolute;
+      right: calc(100% + 0.5rem);
+      z-index: 10000;
+      font-size: 0.8em;
+      min-width: max-content;
+      padding: 0.5em 0.5em;
+      border-radius: var(--border-radius);
+      color: var(--mav-white);
+      background-color: var(--mav-black);
+      opacity: 0;
+      transition: opacity var(--_transition_fast) ease-in-out;
+      transform: translateY(500%);
+    }
+        
+    &:is(:hover, :focus-visible)::after {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+</style>

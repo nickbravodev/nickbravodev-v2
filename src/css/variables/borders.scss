@@ -1,0 +1,8 @@
+:root {
+  --border-radius: 0.5rem;
+  --border-width: 2px;
+}
+
+.round-courners {
+  border-radius: var(--border-radius);
+}

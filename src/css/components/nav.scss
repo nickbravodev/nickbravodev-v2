@@ -1,18 +1,67 @@
+// -----------
+// LIGHT MODE VARIABLES
+// -----------
+@mixin nav-light-mode {
+  // Nav variables
+  --color-nav-bg: var(--mav-red); // Nav Background
+  --color-nav-btn-bg-hover: var(
+    --bravo-dark-900
+  ); // Nav Button Hover Background
+  --color-nav-link-color: var(--bravo-light-200);
+  --color-nav-link-hover-color: var(--bravo-light-100);
+  --color-nav-link-button-hover-color: var(--bravo-dark-900);
+  --brand-icon: var(--bravo-light-100); // Brand Icon Color
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include nav-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include nav-light-mode;
+}
+
+// -----------
+// DARK MODE VARIABLES
+// -----------
+@mixin nav-dark-mode {
+  // Nav variables
+  --color-nav-bg: rgba(var(--bravo-dark-900-rgb), 0.85); // Nav Background
+  --color-nav-btn-bg-hover: var(
+    --bravo-light-100
+  ); // Nav Button Hover Background
+  --color-nav-link-color: var(--bravo-light-200);
+  --color-nav-link-hover-color: var(--bravo-light-100);
+  --color-nav-link-button-hover-color: var(--bravo-dark-900);
+  --brand-icon: var(--mav-red); // Brand Icon Color
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include nav-dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include nav-dark-mode;
+}
+
 // NAV Variables
-$nav-min-height: 5.5rem;
-$nav-background-color: rgba($bravo-dark-900, 0.85) !default;
-$nav-link-color: rgba($bravo-light-200, 1) !default;
-$nav-link-hover-color: rgba($bravo-light-100, 1) !default;
-$nav-link-button-hover-color: rgba($bravo-dark-900, 1) !default;
+:root {
+  --nav-min-height: 5.5rem;
+}
 
 header {
   position: fixed;
+  display: flex;
+  align-items: center;
   top: 0;
   width: 100%;
-  min-height: $nav-min-height;
+  min-height: var(--nav-min-height);
   justify-content: space-between;
   z-index: 1000;
   padding: 1rem 2rem;
+  flex-direction: row;
 
   @media (--lg) {
     padding-inline: 3.5rem;
@@ -29,7 +78,7 @@ header {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: $nav-background-color;
+    background-color: var(--color-nav-bg);
     backdrop-filter: blur(0.7rem);
     -webkit-backdrop-filter: blur(0.7rem);
     z-index: -1;
@@ -37,7 +86,7 @@ header {
 
   ul {
     display: flex;
-    gap: $spacer;
+    gap: var(--gap);
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -45,7 +94,7 @@ header {
     margin: 0;
 
     @media (--md-max) {
-      gap: ($spacer * 2);
+      gap: var(--gap-4);
       height: 100vh;
       position: fixed;
       top: 0;
@@ -54,12 +103,11 @@ header {
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
-      // margin-block-start: 5.5rem;
       padding: 7rem 3rem;
       z-index: -1;
       transform: translateX(100%);
       transition: transform 200ms ease-out;
-      background-color: $nav-background-color;
+      background-color: var(--color-nav-bg);
 
       &::before {
         content: "";
@@ -97,13 +145,14 @@ header {
       flex-direction: row;
       flex-wrap: nowrap;
       gap: 0.25rem;
-      color: $nav-link-color;
+      color: var(--color-nav-link-color);
       text-decoration: inherit;
+      transition: all 150ms ease-in-out;
 
       &::after {
         content: "";
         opacity: 1;
-        background: $nav-link-hover-color;
+        background: var(--color-nav-link-hover-color);
         position: absolute;
         display: inline-block;
         width: 0%;
@@ -116,7 +165,7 @@ header {
 
       &:hover,
       &:focus {
-        color: $nav-link-hover-color;
+        color: var(--color-nav-link-hover-color);
         text-decoration: none;
         outline: none;
       }
@@ -132,19 +181,19 @@ header {
     }
 
     &:last-of-type > a {
-      color: $nav-link-color;
+      color: var(--color-nav-link-color);
       cursor: pointer;
-      border: 2px solid $nav-link-color;
-      border-radius: $border-radius;
+      border: var(--border-width) solid var(--color-nav-link-color);
+      border-radius: var(--border-radius);
       padding: 0.5rem 2rem;
       transition: 150ms ease-in-out;
       display: flex;
 
       &:hover,
       &:focus {
-        background: $nav-link-hover-color;
-        border-color: $nav-link-hover-color;
-        color: $nav-link-button-hover-color;
+        background: var(--color-nav-btn-bg-hover);
+        border-color: var(--color-nav-btn-bg-hover);
+        color: var(--color-nav-link-button-hover-color);
         outline: none;
 
         &:after {
@@ -161,9 +210,9 @@ header {
   @media (--md-max) {
     display: block;
     position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    color: $nav-link-color;
+    top: 1rem;
+    right: 1rem;
+    color: var(--color-nav-link-color);
     background: none;
     border: 0;
     z-index: 9999;
@@ -175,8 +224,19 @@ header {
 
     &:hover,
     &:focus {
-      color: $nav-link-hover-color;
+      color: var(--color-nav-link-hover-color);
       cursor: pointer;
+      background-color: transparent;
+    }
+
+    &:focus-visible {
+      color: var(--color-nav-link-hover-color);
+      background-color: transparent;
+      text-decoration: none;
+      outline: var(--border-width) solid
+        var(--color-nav-link-button-hover-color);
+      outline-offset: 0.25rem;
+      border-radius: 0.1rem;
     }
   }
 }
@@ -193,17 +253,17 @@ header {
   }
 
   // &:hover,
-  &:focus {
+  &:focus-visible {
     text-decoration: none;
-    outline: 2px solid rgba($bravo-light-200, 1);
+    outline: var(--border-width) solid var(--color-nav-link-hover-color);
     outline-offset: 0.25rem;
     border-radius: 0.1rem;
   }
 }
 
 .brand-text {
-  font: 700 1.2rem/120% $font-family-base, sans-serif;
-  color: $bravo-light-100;
+  font: 700 1.2rem/120% var(--font-family-base);
+  color: var(--color-nav-link-hover-color);
   margin-left: 0.8rem;
   text-decoration: none;
 }

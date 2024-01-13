@@ -6,14 +6,6 @@
 
 * {
   margin: 0;
-
-  // // &:hover,
-  // &:focus {
-  //   // text-decoration: none;
-  //   outline: solid 1px red;
-  //   outline-offset: 0.5rem;
-  //   border-radius: 0.1rem;
-  // }
 }
 
 html {
@@ -24,17 +16,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // overflow-x: hidden !important;
-  // display: grid;
-  // max-width: 100svw;
-  min-height: 100vh;
-  // grid-template-rows: auto 1fr auto;
+  min-height: 100svh;
   margin: 0;
-  color: $bravo-light-200;
+  color: var(--color-txt);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: $bravo-dark-900;
-  font-family: $font-family-base, sans-serif;
+  background-color: var(--color-bg);
+  font-family: var(--font-family-base), sans-serif;
+}
+body.modal-open {
+  overflow: hidden;
+  position: fixed;
 }
 
 main {

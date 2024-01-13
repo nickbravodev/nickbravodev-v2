@@ -1,23 +1,29 @@
 img {
   width: 100%;
+  height: auto;
 }
 
 .hero-image {
   display: none;
 
   // sm breakpoint
-  @media (min-width: 576px) {
-    display: block;
+  @media (--sm) {
     padding: 1rem;
   }
 
   // md breakpoint
-  @media (min-width: 768px) {
+  @media (--md) {
+    display: block;
     padding: 3rem;
   }
 
   // lg breakpoint
-  @media (min-width: 992px) {
+  @media (--lg) {
     padding: 5rem;
   }
+}
+
+.profile-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
 }

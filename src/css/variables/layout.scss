@@ -1,0 +1,41 @@
+:root {
+  // FLEX Columns
+  --col-1: calc((100% / 12) * 1);
+  --col-2: calc((100% / 12) * 2);
+  --col-3: calc((100% / 12) * 3);
+  --col-4: calc((100% / 12) * 4);
+  --col-5: calc((100% / 12) * 5);
+  --col-6: calc((100% / 12) * 6);
+  --col-7: calc((100% / 12) * 7);
+  --col-8: calc((100% / 12) * 8);
+  --col-9: calc((100% / 12) * 9);
+  --col-10: calc((100% / 12) * 10);
+  --col-11: calc((100% / 12) * 11);
+  --col-12: calc((100% / 12) * 12);
+
+  // Gap Spacing
+  --gap: 1rem;
+  --gap-1: calc(var(--gap) * 0.25);
+  --gap-2: calc(var(--gap) * 0.5);
+  --gap-3: var(--gap);
+  --gap-4: calc(var(--gap) * 1.5);
+  --gap-5: calc(var(--gap) * 3);
+  --gap-6: calc(var(--gap) * 4);
+  --gap-7: calc(var(--gap) * 5);
+  --gap-8: calc(var(--gap) * 6);
+  --gap-9: calc(var(--gap) * 8);
+  --gap-10: calc(var(--gap) * 10);
+
+  // Gap Negative Spacing
+  --gap-neg: calc(var(--gap) * -1);
+  --gap-neg-1: calc(var(--gap-neg) * 0.25);
+  --gap-neg-2: calc(var(--gap-neg) * 0.5);
+  --gap-neg-3: var(--gap-neg);
+  --gap-neg-4: calc(var(--gap-neg) * 1.5);
+  --gap-neg-5: calc(var(--gap-neg) * 3);
+  --gap-neg-6: calc(var(--gap-neg) * 4);
+  --gap-neg-7: calc(var(--gap-neg) * 5);
+  --gap-neg-8: calc(var(--gap-neg) * 6);
+  --gap-neg-9: calc(var(--gap-neg) * 8);
+  --gap-neg-10: calc(var(--gap-neg) * 10);
+}

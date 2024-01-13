@@ -2,52 +2,108 @@
 // Library imports
 import { Icon } from 'astro-icon';
 
+// Reusable Common Buttons ( based on href Prop - ie: <Button href="loyalty" /> )
+const commonButtonData = [
+  {
+    slug: "contact",
+    text: "Contact Me",
+    href: "#contact",
+    type: "outline"
+  },
+  {
+    slug: "resume",
+    text: "Resume",
+    href: "#resume",
+    type: "outline"
+  },
+  {
+    slug: "_template", // shortcut - compares against href when placing Button component
+    href: "/path-to-page",
+    // Everything below can be overridded when placing Button component
+    text: "Button Text",
+    target: "_blank", // "_blank" for new window - "_parent" dufault
+    size: "lg", // "sm" or "lg" - md default
+    type: "outline", // "outline" - solid default
+    color: "secondary", // "secondary" - primary default
+    icon: {
+      name: "icon-name", 
+      side: "left" // "left" or "right"
+    },
+    classes: "d-none", // any additional classes you want to apply to this button
+  },
+]
+
+// Pass-Through Data
 interface Props {
-    text: string;
-    href: string;
-    target?: string;
-    size?: "sm" | "lg";
-    type?: "outline";
-    color?: "secondary";
-    icon?: {
-        name: string;
-        side: "left" | "right";
-    }
-    classes?: string;
+  href: string;
+  text?: string;
+  target?: string;
+  size?: "sm" | "lg";
+  type?: "outline";
+  color?: "secondary";
+  icon?: {
+    name: string;
+    side: "left" | "right";
+  }
+  classes?: string;
 }
 
 const {
-    text,
-    href,
-    target,
-    size,
-    type,
-    color,
-    icon,
-    classes,
-    ...rest
+  href,
+  text,
+  target,
+  size,
+  type,
+  color,
+  icon,
+  classes,
+  ...rest
 } = Astro.props as Props;
+// END Pass-Through Data
+
+
+// ------
+// Reuseable Common Button control center (Icons controlled inline due to astro-icon component)
+// ------
+
+// Find button data
+const buttonCompare = commonButtonData.find(item => item.slug === href) // Compares href against slug in array objects within commonButtonData
+// Set button attributes and classes
+const buttonHref = ( buttonCompare ? buttonCompare.href : href ) // Sets href
+const buttonText = ( !text && buttonCompare ? buttonCompare.text : text ) // Sets button text
+const buttonTarget = ( !target && buttonCompare ? buttonCompare.target : target ) // Sets target window
+const buttonSize = ( !size && buttonCompare ? buttonCompare.size : size ) // Sets button size - sm or lg
+const buttonType = ( !type && buttonCompare ? buttonCompare.type : type ) // Sets type - solid or outline
+const buttonColor = ( !color && buttonCompare ? buttonCompare.color : color ) // Sets button color - primary or secondary
+const buttonClasses = ( !classes && buttonCompare ? buttonCompare.classes : classes ) // Sets classes
+
 ---
 
-<a href={href}
-target={target}
+<a href={buttonHref}
+target={buttonTarget}
 tabindex="0"
-aria-label={text}
-aria-roledescription={text}
+aria-label={buttonText}
+aria-roledescription={buttonText}
 role="button"
 class:list={[
-    "button",
-    classes,
-    size,
-    type,
-    color,
+  "button",
+  buttonClasses,
+  buttonSize,
+  buttonType,
+  buttonColor,
 ]}
 {...rest}>{
-  icon && icon.side === "left" && (
+  // Sets left icon if applicable
+  (!icon && buttonCompare) && (buttonCompare.icon && buttonCompare.icon.side === "left") ? (
+    <Icon name={buttonCompare.icon.name} height="22" width="22" class="me-2" />
+  ) : icon && icon.side === "left" && (
     <Icon name={icon.name} height="22" width="22" class="me-2" />
   )
-} <span>{text}</span> {
-  icon && icon.side === "right" && (
-    <Icon name={icon.name} height="22" width="22" class="ms-2" />
+} <span>{buttonText}</span> {
+  // Sets right icon if applicable
+  (!icon && buttonCompare) && (buttonCompare.icon && buttonCompare.icon.side === "right") ? (
+    <Icon name={buttonCompare.icon.name} height="22" width="22" class="me-2" />
+  ) : icon && icon.side === "right" && (
+    <Icon name={icon.name} height="22" width="22" class="me-2" />
   )
 }</a>

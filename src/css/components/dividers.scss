@@ -1,0 +1,12 @@
+.hr-div {
+  height: 0.15rem;
+  width: 9rem;
+  background-color: var(--color-divider);
+  margin: 1.5rem 0;
+}
+
+.hr-div-dark {
+  @extend .hr-div;
+  background-color: $bravo-dark-700;
+  margin: 1.5rem auto;
+}

@@ -1,0 +1,38 @@
+// Forms
+
+.form-input,
+.form-textarea {
+  color: var(--clr-txt-heading-variant);
+  background-color: var(--clr-txt-body);
+  width: 100%;
+  box-sizing: border-box;
+  border: 0.15rem solid var(--clr-txt-heading-variant);
+  border-radius: var(--border-radius);
+  padding: 0.7rem;
+  outline: none;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  background-color: var(--clr-txt-heading);
+  border: 0.15rem solid var(--clr-txt-body-variant);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--clr-txt-body-variant);
+}
+
+.form-success {
+  background-color: var(--clr-txt-heading);
+}
+
+.form-success-title {
+  color: var(--clr-txt-heading);
+  font: 700 1.5rem/130% $font-family-base, sans-serif;
+}
+
+.form-success-text {
+  color: var(--clr-txt-body-variant);
+  font: 500 1.2rem/130% $font-family-base, sans-serif;
+}
