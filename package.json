@@ -13,13 +13,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^3.2.0",
-    "astro-icon": "^0.8.1"
+    "astro": "^4.1.2",
+    "astro-icon": "^0.8.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.31",
-    "postcss-custom-media": "^10.0.1",
+    "postcss": "^8.4.33",
+    "postcss-custom-media": "^10.0.2",
     "postcss-import": "^15.1.0",
     "postcss-media-minmax": "^5.0.0",
     "postcss-mixins": "^9.0.4",
