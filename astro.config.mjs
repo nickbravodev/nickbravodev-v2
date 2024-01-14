@@ -13,10 +13,12 @@ export default defineConfig({
     mdx(),
     htmlBeautifier({
       indent_size: 2,
-      preserve_newlines: true,
+      end_with_newline: true,
+      preserve_newlines: false,
       max_preserve_newlines: 2,
       space_in_paren: true,
-      space_in_empty_paren: true,
+      space_in_empty_paren: false,
+      wrap_line_length: 0,
     }),
   ],
 });
