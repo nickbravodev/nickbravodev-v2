@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^2.0.4",
+    "@astrojs/netlify": "^4.1.1",
     "@astrojs/sitemap": "^3.0.4",
     "astro": "^4.1.2",
     "astro-html-beautifier": "^1.0.4",
