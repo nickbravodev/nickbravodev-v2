@@ -54,9 +54,9 @@ import navData from '../data/navData';
       navToggle.setAttribute('aria-expanded', 'true'); 
       document.body.classList.add('modal-open'); // Disables scrolling behavior on body
     } else if (visibility === 'true') {
-      primaryNav.setAttribute('data-visible', 'true'); // Opens NAV popout
-      navToggle.setAttribute('aria-expanded', 'true'); 
-      document.body.classList.add('modal-open'); // Disables scrolling behavior on body
+      primaryNav.setAttribute('data-visible', 'false'); // Opens NAV popout
+      navToggle.setAttribute('aria-expanded', 'false'); 
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
     }
 
   });
