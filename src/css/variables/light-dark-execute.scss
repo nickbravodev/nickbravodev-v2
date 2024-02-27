@@ -1,0 +1,21 @@
+@use "./light-dark-variables.scss";
+
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include light-dark-variables.dark-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include light-dark-variables.dark-mode;
+}
+
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include light-dark-variables.dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include light-dark-variables.dark-mode;
+}

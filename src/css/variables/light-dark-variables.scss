@@ -1,0 +1,84 @@
+@use "../components/nav.scss";
+@use "../components/buttons.scss";
+
+// -----------
+// LIGHT MODE
+// -----------
+
+@mixin light-mode {
+  @include nav.nav-light-mode;
+  @include buttons.buttons-light-mode;
+  color-scheme: light;
+
+  // -----------
+  // GLOBAL COLORS
+  // -----------
+
+  // Global Background Colors
+  --color-bg: var(--bravo-light-100);
+  --color-bg-alt: var(--bravo-light-200);
+  // Global Text Colors
+  --color-txt: var(--bravo-dark-700);
+  --color-txt-heading: var(--bravo-dark-900);
+  // Global Border Color
+  --color-border: var(--bravo-light-200);
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Component Colors
+
+  --color-bg-card: var(--white); // Card Background Color
+
+  // -----------
+  // IMAGE ADJUSTMENTS
+  // -----------
+
+  // Global Image Brightness & Contrast
+  --image-brightness: brightness(100%); // Image Brightness
+  --image-contrast: contrast(1); // Image Brightness
+}
+
+// -----------
+// DARK MODE
+// -----------
+
+@mixin dark-mode {
+  @include nav.nav-dark-mode;
+  @include buttons.buttons-dark-mode;
+  color-scheme: dark;
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Global Background Colors
+  --color-bg: var(--bravo-dark-900);
+  --color-bg-alt: var(--bravo-light-100);
+  // Global Text Colors
+  --color-txt: var(--bravo-light-200);
+  --color-txt-heading: var(--bravo-light-100);
+  --color-txt-alt: var(--bravo-dark-700);
+  --color-txt-heading-alt: var(--bravo-dark-900);
+  // Global Border Color
+  --color-border: var(--bravo-dark-700);
+
+  // -----------
+  // COMPONENT COLORS
+  // -----------
+
+  // Component Colors
+
+  --color-bg-card: var(--bravo-dark-700); // Card Background Color
+  --color-divider: var(--bravo-light-200);
+  --color-divider-alt: var(--bravo-dark-700);
+
+  // -----------
+  // IMAGE ADJUSTMENTS
+  // -----------
+
+  // Global Image Brightness & Contrast
+  --image-brightness: brightness(80%); // Image Brightness
+  --image-contrast: contrast(1.2); // Image Brightness
+}

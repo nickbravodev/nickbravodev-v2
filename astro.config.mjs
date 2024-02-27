@@ -1,16 +1,18 @@
 import { defineConfig } from "astro/config";
+import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
-// import netlify from "@astrojs/netlify";
+import netlify from "@astrojs/netlify";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  // adapter: netlify(),
+  output: "server",
+  adapter: netlify(),
   site: "https://nickbravo.dev",
   integrations: [
+    icon(),
     sitemap(),
     robotsTxt(),
     mdx(),

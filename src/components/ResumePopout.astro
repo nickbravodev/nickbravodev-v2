@@ -1,0 +1,487 @@
+---
+import {Icon} from "astro-icon/components";
+
+
+---
+
+  <!-- Off-canvas resume popout -->
+      <section
+        class="resume-popout"
+        tabindex="-1"
+        id="resume"
+        data-visible="false"
+      >
+
+        <div class="popout-wrapper">
+          <!-- Resume header -->
+          <div class="popout-header">
+            <!-- Brand logo -->
+            <a href="/" class="popoutbar-brand">
+              <Icon name="nickbravodev" class="brand-icon" />
+            </a>
+            <!-- Resume header text -->
+            <div class="ms-3 me-auto">
+              <h2 class="resume-heading">Nick Bravo</h2>
+              <p class="resume-subheading">
+                Designer. Developer. Problem solver.
+              </p>
+            </div>
+            <!-- Close button --><!-- Close button -->
+            <button
+              type="button"
+              class="btn-close text-reset"
+              aria-label="Close"
+            >
+              <Icon name="close-button" />
+            </button>
+          </div>
+
+          <!-- Resume body -->
+          <div id="resume-body" class="popout-body">
+
+            <!-- Performance profile -->
+            <div class="profile">
+              <h3>PERFORMANCE PROFILE</h3>
+              <p>
+                Designer and developer with proven teamwork and leadership
+                experience. Successfully implemented projects by structuring
+                project requirements efficiently. Produced effective print and
+                digital assets and built converting websites, digital products,
+                and frontends with HTML, CSS, and JavaScript. Strong Proficiency
+                in Figma and Visual Studio Code, master of Adobe XD, Illustrator,
+                InDesign, Photoshop.
+              </p>
+            </div>
+
+            <!-- Work experience -->
+            <div class="experience">
+              <h3>EXPERIENCE</h3>
+              <h4>PRINCIPAL WEB DEVELOPER</h4>
+              <h5>MAVERIK / 2023 - PRESENT</h5>
+              <ul>
+                <li>
+                  As the principal (and only) web developer, I'm responsible for
+                  the entirely new codebase and architecture of all Maverik and
+                  Kum & Go web properties.
+                </li>
+              </ul>
+              <h4>WEB DEVELOPMENT CONSULTANT</h4>
+              <h5>ASTROPOST / 2022 - PRESENT</h5>
+              <ul>
+                <li>
+                  I consult clients and build high performing web architectures
+                  with headless CMS integration.
+                </li>
+              </ul>
+              <h4>FREELANCE DESIGNER / DEVELOPER</h4>
+              <h5>FREELANCE / 2007 - 2022</h5>
+              <ul>
+                <li>
+                  I designed and built engaging websites, user interfaces, visual
+                  identities, digital products, and online assets.
+                </li>
+              </ul>
+              <h4>GRAPHIC DESIGNER / WEB DEVELOPER</h4>
+              <h5>8FISH / 2008 - 2009</h5>
+              <ul>
+                <li>
+                  Elevated brands by designing brand identities, web and print
+                  graphics, websites, social media content, and other digital
+                  media assets.
+                </li>
+              </ul>
+              <h4>POLICE OFFICER</h4>
+              <h5>
+                <span>-----------------------------------</span> POLICE DEPARTMENT
+                / 2021 - 2023
+              </h5>
+              <ul>
+                <li>
+                  Contributed to educational and community outreach campaigns as
+                  the liaison between the police department and the marketing
+                  department.
+                </li>
+                <li>
+                  Generated meaningful content for a safety app currently in
+                  development.
+                </li>
+              </ul>
+              <h4>POLICE DETECTIVE</h4>
+              <h5>
+                <span>------------------</span> POLICE DEPARTMENT / 2015 - 2021
+              </h5>
+              <ul>
+                <li>
+                  Developed and supervised a comprehensive firearm deployment and
+                  training program.
+                </li>
+                <li>
+                  Positively impacted the lives of crime victims and people in
+                  crisis through empathetic communication and solid, complete
+                  criminal investigations.
+                </li>
+              </ul>
+              <h4>POLICE LIEUTENANT</h4>
+              <h5>
+                <span>-------------------------</span> POLICE DEPARTMENT / 2010 -
+                2015
+              </h5>
+              <ul>
+                <li>
+                  Improved transparency and access to resources by building the
+                  department's first website and social media channels - and
+                </li>
+                <li>providing timely press releases.</li>
+                <li>
+                  Fostered strong, meaningful community relationships through
+                  events and outreach programs.
+                </li>
+                <li>
+                  Cultivated strong relationships with other public safety
+                  agencies to improve service quality.
+                </li>
+                <li>
+                  Quarterbacked operations, training, and budget to provide the
+                  most effective service to the community.
+                </li>
+                <li>
+                  Developed Reserve Officer program that slashed personnel budget
+                  by 30%.
+                </li>
+              </ul>
+              <!-- Education history -->
+              <h3>EDUCATION</h3>
+              <h4>BACHELOR OF SCIENCE / DIGITAL CINEMATOGRAPHY</h4>
+              <h5><span>------------------</span> UNIVERSITY</h5>
+              <p>GPA 3.99 / VALEDICTORIAN</p>
+              <h4>ASSOCIATE OF APPLIED SCIENCE / GRAPHIC DESIGN</h4>
+              <h5>COLLEGE OF <span>------------------</span></h5>
+            </div>
+
+            <!-- Resume skills breakdown -->
+            <div class="skills">
+              <h3>HARD SKILLS</h3>
+              <ul>
+                <li>Graphic / Layout Design</li>
+                <li>Product Design</li>
+                <li>UI/UX Design</li>
+                <li>Adobe XD</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe InDesign</li>
+                <li>Adobe Photoshop</li>
+                <li>Figma</li>
+                <li>HTML / CSS / JavaScript</li>
+              </ul>
+              <h3>SOFT SKILLS</h3>
+              <ul>
+                <li>Problem Solving</li>
+                <li>Visual Content Creation</li>
+                <li>Decision Making</li>
+                <li>Team Leadership</li>
+                <li>Strategic Planning</li>
+                <li>Interpersonal Communication</li>
+                <li>Critical Thinking</li>
+                <li>Presentations</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="resume-download">
+            <a
+              href="https://github.com/nickbravodev/nickbravodev/raw/main/resume/nick-bravo-developer-resume.pdf"
+              target="_blank"
+            >
+              <Icon name="download" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+<script>
+  const resumePopout = document.querySelector('#resume');
+  const popoutTrigger = document.querySelectorAll('.resume-trigger');
+  // const popoutTriggerID = document.querySelector('#resume-trigger');
+  const buttonClose = document.querySelector('.btn-close');
+
+  const modalDeploy = () => {
+    const visibility = resumePopout.getAttribute('data-visible');
+
+    if (visibility === 'false') {
+      document.body.classList.add('modal-open'); // Disables scrolling behavior on body
+      resumePopout.setAttribute('data-visible', 'true'); // Opens NAV popout
+      popoutTrigger.setAttribute('aria-expanded', 'true'); 
+      buttonClose.setAttribute('aria-expanded', 'true'); 
+    } else if (visibility === 'true') {
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
+      resumePopout.setAttribute('data-visible', 'false'); // Opens NAV popout
+      popoutTrigger.setAttribute('aria-expanded', 'false'); 
+      buttonClose.setAttribute('aria-expanded', 'false'); 
+    }
+  };
+
+  popoutTrigger.forEach(trigger => trigger.addEventListener('click', modalDeploy));
+
+  // for (let i = 0; i < popoutTrigger.length; i++) {
+  //   popoutTrigger[i].addEventListener('click', modalDeploy);
+  // }
+
+  // popoutTriggerID.addEventListener('click', modalDeploy);
+
+
+
+
+
+
+  buttonClose.addEventListener('click', modalDeploy);
+  
+  // ESC key to close nav on mobile
+  document.addEventListener('keydown', function (e) {
+    const visibility = resumePopout.getAttribute('data-visible');
+    
+    if (e.key === 'Escape' && (visibility === 'true')) {
+      document.body.classList.remove('modal-open'); // Disables scrolling behavior on body
+      resumePopout.setAttribute('data-visible', 'false');
+      popoutTrigger.setAttribute('aria-expanded', 'false');
+      buttonClose.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
+<style lang="scss">
+// -----------
+// LIGHT MODE VARIABLES
+// -----------
+@mixin resume-popout-light-mode {
+  // popout variables
+  --color-popout-bg-overlay: rgba(var(--color-astro-white-rgb), 0.85); // popout Background
+  --color-popout-bg: rgba(var(--color-astro-white-rgb), 1); // popout Background
+}
+
+// -----------
+// DARK MODE VARIABLES
+// -----------
+@mixin resume-popout-dark-mode {
+  // popout variables
+  --color-popout-bg-overlay: rgba(var(--color-astro-black-rgb), 0.85); // popout Background
+  --color-popout-bg: rgba(var(--color-astro-black-rgb), 1); // popout Background
+}
+// Execute Light Mode
+@media (prefers-color-scheme: light) {
+  :root {
+    @include resume-popout-light-mode;
+  }
+}
+:root[data-theme="light"] {
+  @include resume-popout-light-mode;
+}
+// Execute Dark Mode
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include resume-popout-dark-mode;
+  }
+}
+:root[data-theme="dark"] {
+  @include resume-popout-dark-mode;
+}
+
+  .resume-popout {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;
+    // width: 100svw;
+    inset: 0;
+    background-color: var(--color-popout-bg-overlay);
+    // backdrop-filter: blur(0.7rem);
+    // -webkit-backdrop-filter: blur(0.7rem);
+    // overflow: scroll;
+    z-index: 10000;
+    padding: 0;
+    margin: 0;
+    transition: all 250ms ease-out;
+        transform: translateX(100%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: calc(100% + 7rem);
+        top: 0;
+        left: 0;
+        margin-block-start: -7rem;
+        background-color: rgba(var(--bravo-dark-900-rgb), 0.8);
+        backdrop-filter: blur(0.7rem);
+        -webkit-backdrop-filter: blur(0.7rem);
+        z-index: -1;
+      }
+
+      &[data-visible="true"] {
+        display: flex;
+        transform: translateX(0%);
+    transition: all 250ms ease-out;
+      }
+  }
+  
+  .popout-wrapper {
+    position: relative;
+    width: min(60rem, 100%);
+    // padding-block-start: 16rem;
+    min-height: 100svh;
+    overflow: scroll;
+    
+    form {
+      width: 100%;
+    }
+  }
+  
+  .popout-header {
+    padding-inline: 2rem;
+    top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    gap: 0.75rem;
+    background-color: var(--color-bg);
+    // padding-inline: 2rem;
+    
+    @media screen and (min-width: 768px) {
+      position: sticky;
+    }
+
+    h2, p {
+      margin: 0;
+    }
+
+    .popoutbar-brand {
+      display: none;
+
+      @media screen and (min-width: 576px) {
+        display: block;
+      }
+    }
+
+    
+    .brand-icon {
+      --_icon-size: 4rem;
+
+      color: var(--color-astro-white);
+      background-color: var(--color-astro-red);
+      padding: 0em;
+      border-radius: var(--border-radius);
+      width: var(--_icon-size);
+      height: var(--_icon-size);
+      aspect-ratio: 1 / 1;
+    }
+
+    .btn-close {
+      margin-inline-start: auto;
+      padding: 0.5rem;
+    }
+  }
+
+  .resume-download {
+    --_icon-size: 1.5rem;
+    background-color: var(--color-bg);
+    z-index: 1;
+    // min-height: 5rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+
+    svg {
+      height: var(--_icon-size);
+      width: var(--_icon-size);
+    }
+
+    @media screen and (min-width: 768px) {
+      position: fixed;
+      bottom: 0;
+    }
+  }
+
+  .popout-body {
+    display: grid;
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--color-bg-alt);
+    gap: 1rem;
+    // padding-block-start: 24rem;
+    // padding-block-end: 4rem;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    span {
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-txt-heading-alt);
+    }
+
+    h3 {
+      margin-block: 1rem;
+
+    }
+
+    h3, h5 {
+      padding: 0;
+      color: var(--color-txt-heading-alt);
+      line-height: 1;
+    }
+
+    h4, p, li {
+      padding: 0;
+      margin-block: 0.25rem;
+      color: var(--color-txt-alt);
+      line-height: 1.2;
+    }
+
+    ul {
+      // padding: 0;
+      margin-block-end: 1rem;
+    }
+
+    .profile {
+      order: 1;
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        order: 1;
+        grid-column: 1/-1;
+      }
+    }
+    
+    .experience {
+      order: 2;
+      width: 100%;
+      
+      @media screen and (min-width: 768px) {
+        grid-column: span 2;
+        order: 3;
+      }
+    }
+    
+    .skills {
+      order: 3;
+      width: 100%;
+      
+      @media screen and (min-width: 768px) {
+        order: 2;
+      }
+    }
+
+  }
+
+  .input-split {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    & > * {
+      width: 100%;
+    }
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+  }
+</style>

@@ -31,8 +31,11 @@ footer {
   }
 
   svg {
+    --_icon-size: 1.5rem;
+
     color: var(--color-nav-link-color);
-    width: 1.5rem;
+    width: var(--_icon-size);
+    height: var(--_icon-size);
 
     &:hover,
     &:focus {

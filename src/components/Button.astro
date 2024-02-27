@@ -1,6 +1,6 @@
 ---
 // Library imports
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 
 // Reusable Common Buttons ( based on href Prop - ie: <Button href="loyalty" /> )
 const commonButtonData = [
@@ -11,9 +11,17 @@ const commonButtonData = [
     type: "outline"
   },
   {
+    slug: "start",
+    text: "Start your project",
+    classes: "get-started-trigger",
+    id: "get-started-trigger",
+    // type: "outline"
+  },
+  {
     slug: "resume",
     text: "Resume",
-    href: "#resume",
+    classes: "resume-trigger",
+    id: "resume-trigger",
     type: "outline"
   },
   {
@@ -95,15 +103,15 @@ class:list={[
 {...rest}>{
   // Sets left icon if applicable
   (!icon && buttonCompare) && (buttonCompare.icon && buttonCompare.icon.side === "left") ? (
-    <Icon name={buttonCompare.icon.name} height="22" width="22" class="me-2" />
+    <Icon name={buttonCompare.icon.name} size="22" class="me-2" />
   ) : icon && icon.side === "left" && (
-    <Icon name={icon.name} height="22" width="22" class="me-2" />
+    <Icon name={icon.name} size="22" class="me-2" />
   )
 } <span>{buttonText}</span> {
   // Sets right icon if applicable
   (!icon && buttonCompare) && (buttonCompare.icon && buttonCompare.icon.side === "right") ? (
-    <Icon name={buttonCompare.icon.name} height="22" width="22" class="me-2" />
+    <Icon name={buttonCompare.icon.name} size="22" class="me-2" />
   ) : icon && icon.side === "right" && (
-    <Icon name={icon.name} height="22" width="22" class="me-2" />
+    <Icon name={icon.name} size="22" class="me-2" />
   )
 }</a>

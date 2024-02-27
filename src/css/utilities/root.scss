@@ -24,6 +24,7 @@ body {
   background-color: var(--color-bg);
   font-family: var(--font-family-base), sans-serif;
 }
+
 body.modal-open {
   overflow: hidden;
   // position: fixed;

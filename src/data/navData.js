@@ -1,11 +1,11 @@
 const navData = [
   {
     name: "About",
-    path: "#about",
+    path: "/#about",
   },
   {
     name: "Scope",
-    path: "#scope",
+    path: "/#scope",
     // icon: {
     //   name: "twitter",
     //   side: "right",
@@ -13,7 +13,7 @@ const navData = [
   },
   {
     name: "Work",
-    path: "#work",
+    path: "/#work",
     // icon: {
     //   name: "twitter",
     //   side: "left",
@@ -21,11 +21,12 @@ const navData = [
   },
   {
     name: "Contact",
-    path: "#contact",
+    path: "/#contact",
   },
   {
     name: "Resume",
-    path: "#resume",
+    classes: "resume-trigger",
+    id: "resume-trigger",
   },
 ];
 

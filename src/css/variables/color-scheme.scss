@@ -25,12 +25,12 @@
   // // Text variables
   // --color-txt-body: var(--bravo-light-200);
   // --color-txt-heading: var(--bravo-light-100);
-  // --color-txt-body-variant: var(--bravo-dark-700);
-  // --color-txt-heading-variant: var(--bravo-dark-900);
+  // --color-txt-body-alt: var(--bravo-dark-700);
+  // --color-txt-heading-alt: var(--bravo-dark-900);
 
   // // Background variables
   // --color-bg-body: var(--bravo-dark-900);
-  // --color-bg-body-variant: var(--bravo-light-200);
+  // --color-bg-body-alt: var(--bravo-light-200);
 
   // Maverik Color Scheme
   --mav-red: #c8102e;
@@ -52,97 +52,97 @@
 // LIGHT MODE
 // -----------
 
-@mixin light-mode {
-  color-scheme: light;
+// @mixin light-mode {
+//   color-scheme: light;
 
-  // -----------
-  // GLOBAL COLORS
-  // -----------
+//   // -----------
+//   // GLOBAL COLORS
+//   // -----------
 
-  // Global Background Colors
-  --color-bg: var(--bravo-light-100);
-  --color-bg-variant: var(--bravo-light-200);
-  // Global Text Colors
-  --color-txt: var(--bravo-dark-700);
-  --color-txt-heading: var(--bravo-dark-900);
-  // Global Border Color
-  --color-border: var(--bravo-light-200);
+//   // Global Background Colors
+//   --color-bg: var(--bravo-light-100);
+//   --color-bg-alt: var(--bravo-light-200);
+//   // Global Text Colors
+//   --color-txt: var(--bravo-dark-700);
+//   --color-txt-heading: var(--bravo-dark-900);
+//   // Global Border Color
+//   --color-border: var(--bravo-light-200);
 
-  // -----------
-  // COMPONENT COLORS
-  // -----------
+//   // -----------
+//   // COMPONENT COLORS
+//   // -----------
 
-  // Component Colors
+//   // Component Colors
 
-  --color-bg-card: var(--white); // Card Background Color
+//   --color-bg-card: var(--white); // Card Background Color
 
-  // -----------
-  // IMAGE ADJUSTMENTS
-  // -----------
+//   // -----------
+//   // IMAGE ADJUSTMENTS
+//   // -----------
 
-  // Global Image Brightness & Contrast
-  --image-brightness: brightness(100%); // Image Brightness
-  --image-contrast: contrast(1); // Image Brightness
-}
-// Execute Light Mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @include light-mode;
-  }
-}
-:root[data-theme="light"] {
-  @include light-mode;
-}
+//   // Global Image Brightness & Contrast
+//   --image-brightness: brightness(100%); // Image Brightness
+//   --image-contrast: contrast(1); // Image Brightness
+// }
+// // Execute Light Mode
+// @media (prefers-color-scheme: light) {
+//   :root {
+//     @include dark-mode;
+//   }
+// }
+// :root[data-theme="light"] {
+//   @include dark-mode;
+// }
 
-// -----------
-// DARK MODE
-// -----------
+// // -----------
+// // DARK MODE
+// // -----------
 
-@mixin dark-mode {
-  color-scheme: dark;
+// @mixin dark-mode {
+//   color-scheme: dark;
 
-  // -----------
-  // COMPONENT COLORS
-  // -----------
+//   // -----------
+//   // COMPONENT COLORS
+//   // -----------
 
-  // Global Background Colors
-  --color-bg: var(--bravo-dark-900);
-  --color-bg-variant: var(--bravo-light-100);
-  // Global Text Colors
-  --color-txt: var(--bravo-light-200);
-  --color-txt-heading: var(--bravo-light-100);
-  --color-txt-variant: var(--bravo-dark-700);
-  --color-txt-heading-variant: var(--bravo-dark-900);
-  // Global Border Color
-  --color-border: var(--bravo-dark-700);
+//   // Global Background Colors
+//   --color-bg: var(--bravo-dark-900);
+//   --color-bg-alt: var(--bravo-light-100);
+//   // Global Text Colors
+//   --color-txt: var(--bravo-light-200);
+//   --color-txt-heading: var(--bravo-light-100);
+//   --color-txt-alt: var(--bravo-dark-700);
+//   --color-txt-heading-alt: var(--bravo-dark-900);
+//   // Global Border Color
+//   --color-border: var(--bravo-dark-700);
 
-  // -----------
-  // COMPONENT COLORS
-  // -----------
+//   // -----------
+//   // COMPONENT COLORS
+//   // -----------
 
-  // Component Colors
+//   // Component Colors
 
-  --color-bg-card: var(--bravo-dark-700); // Card Background Color
-  --color-divider: var(--bravo-light-200);
-  --color-divider-variant: var(--bravo-dark-700);
+//   --color-bg-card: var(--bravo-dark-700); // Card Background Color
+//   --color-divider: var(--bravo-light-200);
+//   --color-divider-alt: var(--bravo-dark-700);
 
-  // -----------
-  // IMAGE ADJUSTMENTS
-  // -----------
+//   // -----------
+//   // IMAGE ADJUSTMENTS
+//   // -----------
 
-  // Global Image Brightness & Contrast
-  --image-brightness: brightness(80%); // Image Brightness
-  --image-contrast: contrast(1.2); // Image Brightness
-}
-// Execute Dark Mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include dark-mode;
-  }
-}
-:root[data-theme="dark"] {
-  @include dark-mode;
-}
+//   // Global Image Brightness & Contrast
+//   --image-brightness: brightness(80%); // Image Brightness
+//   --image-contrast: contrast(1.2); // Image Brightness
+// }
+// // Execute Dark Mode
+// @media (prefers-color-scheme: dark) {
+//   :root {
+//     @include dark-mode;
+//   }
+// }
+// :root[data-theme="dark"] {
+//   @include dark-mode;
+// }
 
 // NickBravo.dev color scheme
 $bravo-dark-900: #272b2a !default;

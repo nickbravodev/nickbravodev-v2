@@ -1,0 +1,70 @@
+---
+
+---
+
+  <!-- Contact section -->
+    <section id="contact">
+      <div class="contact-wrapper">
+        <div>
+          <!-- Contact text -->
+          <h2>Get in touch.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading">
+            I'm ready to join your team! Send me a message if you think we'd be a great fit! 
+          </p>
+        </div>
+
+        <!-- Contact form -->
+        <div>
+          <form name="contact-form" id="contact-form" action="/success/" method="POST" data-netlify="true" data-netilfy-honeypot="bot-field" >
+            <!-- Robot honeypot. That rhymes! -->
+            <div class="sr-only">
+              <label>
+                Robot honeypot: Leave this field empty if you're human
+                <input name="bot-field" />
+              </label>
+            </div>
+            <!-- Name input -->
+            <div>
+              <label class="form-label sr-only" for="name">Name</label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Name" required />
+            </div>
+            <!-- Email input -->
+            <div>
+              <label class="form-label sr-only" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="Email" required />
+            </div>
+            <!-- Message input -->
+            <div>
+              <label class="form-label sr-only" for="description">Message</label>
+              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
+            </div>
+            <!-- Submit button -->
+            <div>
+              <button class="outline">Send message</button>
+            </div>
+          </form>
+        </div>
+        
+      </div>
+    </section>
+
+    <style lang="scss">
+      .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 3rem;
+        margin-block-start: 8rem;
+        
+        @media screen and (min-width: 768px) {
+          grid-template-columns: 1fr 1fr;
+        }
+        
+        @media screen and (min-width: 992px) {
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+        }
+      }
+    </style>

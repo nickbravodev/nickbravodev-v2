@@ -8,11 +8,11 @@ section {
   padding: 9rem 0rem;
 }
 
-.section__variant {
-  --color-divider: var(--color-divider-variant);
+.section__alt {
+  --color-divider: var(--color-divider-alt);
 
-  background-color: var(--color-bg-variant);
-  color: var(--color-txt-variant);
+  background-color: var(--color-bg-alt);
+  color: var(--color-txt-alt);
 
   h1,
   h2,
@@ -20,7 +20,7 @@ section {
   h4,
   h5,
   h6 {
-    color: var(--color-txt-heading-variant);
+    color: var(--color-txt-heading-alt);
   }
 }
 

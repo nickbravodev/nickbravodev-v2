@@ -1,6 +1,4 @@
-// -----------
 // LIGHT MODE VARIABLES
-// -----------
 @mixin buttons-light-mode {
   // Primary Button Colors
   --color-btn-primary: var(--bravo-light-100);
@@ -14,19 +12,8 @@
   --color-btn-secondary-text: var(--bravo-dark-900);
   --color-btn-secondary-hover: var(--bravo-dark-900);
 }
-// Execute Light Mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @include buttons-light-mode;
-  }
-}
-:root[data-theme="light"] {
-  @include buttons-light-mode;
-}
 
-// -----------
 // DARK MODE VARIABLES
-// -----------
 @mixin buttons-dark-mode {
   // Primary Button Colors
   --color-btn-primary: var(--bravo-light-100);
@@ -41,20 +28,12 @@
   --color-btn-secondary-text-hover: var(--bravo-light-100);
   --color-btn-secondary-hover: var(--bravo-dark-900);
 }
-// Execute Dark Mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include buttons-dark-mode;
-  }
-}
-:root[data-theme="dark"] {
-  @include buttons-dark-mode;
-}
 
 // Button Component Styles
 button,
 input[type="submit"],
 .button {
+  cursor: pointer;
   color: var(--color-btn-primary-text);
   background-color: var(--color-btn-primary);
   border: 2px solid var(--color-btn-primary);
@@ -129,8 +108,8 @@ input[type="submit"],
     &:hover,
     &:focus {
       // Solid Hover
-      color: var(--color-btn-primary-text-hover);
-      background-color: var(--color-btn-primary-hover);
+      color: var(--color-btn-primary-hover);
+      background-color: var(--color-btn-primary-text-hover);
       border-color: var(--color-btn-primary-hover);
 
       // Outline Hover

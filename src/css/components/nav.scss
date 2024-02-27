@@ -4,22 +4,11 @@
 @mixin nav-light-mode {
   // Nav variables
   --color-nav-bg: var(--mav-red); // Nav Background
-  --color-nav-btn-bg-hover: var(
-    --bravo-dark-900
-  ); // Nav Button Hover Background
+  --color-nav-btn-bg-hover: var(--bravo-dark-900); // Nav Button Hover Background
   --color-nav-link-color: var(--bravo-light-200);
   --color-nav-link-hover-color: var(--bravo-light-100);
   --color-nav-link-button-hover-color: var(--bravo-dark-900);
   --brand-icon: var(--bravo-light-100); // Brand Icon Color
-}
-// Execute Light Mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @include nav-light-mode;
-  }
-}
-:root[data-theme="light"] {
-  @include nav-light-mode;
 }
 
 // -----------
@@ -28,22 +17,11 @@
 @mixin nav-dark-mode {
   // Nav variables
   --color-nav-bg: rgba(var(--bravo-dark-900-rgb), 0.85); // Nav Background
-  --color-nav-btn-bg-hover: var(
-    --bravo-light-100
-  ); // Nav Button Hover Background
+  --color-nav-btn-bg-hover: var(--bravo-light-100); // Nav Button Hover Background
   --color-nav-link-color: var(--bravo-light-200);
   --color-nav-link-hover-color: var(--bravo-light-100);
   --color-nav-link-button-hover-color: var(--bravo-dark-900);
   --brand-icon: var(--mav-red); // Brand Icon Color
-}
-// Execute Dark Mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include nav-dark-mode;
-  }
-}
-:root[data-theme="dark"] {
-  @include nav-dark-mode;
 }
 
 // NAV Variables
@@ -233,8 +211,7 @@ header {
       color: var(--color-nav-link-hover-color);
       background-color: transparent;
       text-decoration: none;
-      outline: var(--border-width) solid
-        var(--color-nav-link-button-hover-color);
+      outline: var(--border-width) solid var(--color-nav-link-button-hover-color);
       outline-offset: 0.25rem;
       border-radius: 0.1rem;
     }
