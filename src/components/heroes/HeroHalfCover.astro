@@ -1,0 +1,104 @@
+---
+// Component imports
+import Button from '../../components/Button.astro';
+
+// Image imports
+import { Image } from 'astro:assets';
+import homeHero from "../../img/home-hero.png";
+---
+
+  <!-- Hero section -->
+    <section id="home" class="p-0">
+      <!-- <div class="container"> -->
+        <div class="half-cover-wrapper">
+          
+          <!-- Hero text -->
+          <div class="hero-half-text">
+            <!-- <p class="superheading">Nick Bravo.</p> -->
+            <h1>Websites and content. For businesses that respect privacy.</h1>
+            <div class="hr-div"></div>
+            <p class="subheading">
+              We build privacy-focused websites, visual identities, graphics, video content, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy.
+            </p>
+            <!-- CTA buttons -->
+            <div class="flex gap">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            </div>
+          </div>
+
+          <!-- Hero image -->
+          <div class="hero-half-image">
+            <Image src={homeHero} alt="Collection of projects." format="webp" />
+          </div>
+
+        </div>
+      <!-- </div> -->
+    </section>
+
+    <style lang="scss">
+      .half-cover-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        
+        @media screen and (min-width: 992px)  {
+          flex-direction: row;
+        }
+
+        .hero-half-text {
+          width: 100%;
+          padding-inline: 2.5rem;
+          padding-block: 10rem;
+          
+          @media screen and (min-width: 768px)  {
+            padding-inline: 4rem;
+          }
+          
+          @media screen and (min-width: 992px)  {
+            width: 50%;
+            padding-inline: 3rem;
+            padding-block: 0;
+          }
+
+          @media screen and (min-width: 1200px)  {
+            padding-inline: 5rem;
+          }
+        }
+
+        .hero-half-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          
+          @media screen and (min-width: 992px)  {
+            width: 50%;
+          }
+          
+          & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 2/1;
+            margin: 0;
+            padding: 0;
+            
+            @media screen and (min-width: 992px)  {
+              width: auto;
+              height: 100svh;
+              aspect-ratio: auto;
+              flex-direction: row;
+            }
+          } 
+        }
+
+      }
+
+    </style>

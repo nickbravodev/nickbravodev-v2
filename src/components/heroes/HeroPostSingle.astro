@@ -1,0 +1,217 @@
+---
+// Component imports
+import Button from '../../components/Button.astro';
+
+// Image imports
+import { Image } from 'astro:assets';
+
+const {
+  h1 = "",
+  h2 = "",
+  p1 = "",
+  p2 = "",
+  sm1 = "",
+  sm2 = "",
+  id = "",
+  text_side = "left",
+  image = "",
+  image_alt = "",
+  button_primary_link = "",
+  button_primary_text = "",
+  button_primary_target = "",
+  button_secondary_link = "",
+  button_secondary_text = "",
+  button_secondary_target = "",
+} = Astro.props;
+---
+
+  <!-- Hero section -->
+    <section id={id} class="py-0 my-0 padding-nav-height">
+      <!-- <div class="container"> -->
+        <div class=`hero-full ${ text_side === "right" && ( 'text-right' ) }`>
+          
+          <!-- Hero text -->
+          <div class="text-block">
+            <!-- <p class="superheading">Nick Bravo.</p> -->
+            <h1 set:html={h1}></h1>
+            { h2 && <h2 set:html={h2}></h2> }
+            <div class="hr-div"></div>
+            <p set:html={p1} class="subheading"></p>
+            { p2 && <p set:html={p2}></p> }
+            { sm1 && <p class="small">{sm1}</p> }
+            { sm2 && <p class="small">{sm2}</p>}
+            
+            <!-- CTA buttons -->
+            { 
+              ( button_primary_link || button_secondary_link ) &&
+              <div class="button-row">
+                { button_secondary_link && <Button
+                  href={button_secondary_link}
+                  text={button_secondary_text}
+                  target={button_secondary_target}
+                  type="outline"
+                />
+                }
+                { button_primary_link && <Button
+                  href={button_primary_link}
+                  text={button_primary_text}
+                  target={button_primary_target}
+                />
+                }
+              </div>
+            }
+
+
+
+            <!-- <div class="flex gap-3">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            </div> -->
+          </div>
+
+          <!-- Hero image -->
+            <Image 
+              src={image}
+              alt={image_alt}
+              format="avif" 
+            />
+
+        </div>
+      <!-- </div> -->
+    </section>
+
+    <style lang="scss">
+      @mixin hero-full-light-mode {
+        --color-hero-grad-heavy: rgba(var(--color-astro-white-rgb), 0.9);
+        --color-hero-grad-light: rgba(var(--color-astro-white-rgb), 0);
+      }
+
+      // -----------
+      // DARK MODE VARIABLES
+      // -----------
+      @mixin hero-full-dark-mode {
+        --color-hero-grad-heavy: rgba(var(--color-astro-black-rgb), 0.9);
+        --color-hero-grad-light: rgba(var(--color-astro-black-rgb), 0);
+      }
+      // Execute Light Mode
+      @media (prefers-color-scheme: light) {
+        :root {
+          @include hero-full-dark-mode;
+        }
+      }
+      :root[data-theme="light"] {
+        @include hero-full-dark-mode;
+      }
+      // Execute Dark Mode
+      @media (prefers-color-scheme: dark) {
+        :root {
+          @include hero-full-dark-mode;
+        }
+      }
+      :root[data-theme="dark"] {
+        @include hero-full-dark-mode;
+      }
+
+
+      
+      .hero-full {
+        position: relative;
+        overflow: hidden;
+        border-width: 0;
+        border-color: var(--color-bg);
+        border-style: solid;
+        border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+        min-height: clamp(30rem, 50vw, 50rem);
+        display: flex;
+        align-items: flex-end;
+        padding-inline: clamp(1rem, 3.5vw, 3rem);
+        padding-block: 1rem;
+        justify-content: flex-start;
+        background: linear-gradient(10deg, var(--color-hero-grad-heavy) 3%, var(--color-hero-grad-light));
+        min-width: 100%;
+        margin-block-end: var(--spacer-16);
+        
+        img {
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          object-fit: cover;
+          height: 100%;
+        }
+        
+        &.text-right {
+          justify-content: flex-end;
+          background: linear-gradient(-70deg, var(--color-hero-grad-heavy) 50%, var(--color-hero-grad-light));
+        }
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacer-3);
+      }
+      .half-cover-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        
+        @media screen and (min-width: 992px)  {
+          flex-direction: row;
+        }
+
+        .hero-half-text {
+          width: 100%;
+          padding-inline: 2.5rem;
+          padding-block: 10rem;
+          
+          @media screen and (min-width: 768px)  {
+            padding-inline: 4rem;
+          }
+          
+          @media screen and (min-width: 992px)  {
+            width: 50%;
+            padding-inline: 3rem;
+            padding-block: 0;
+          }
+
+          @media screen and (min-width: 1200px)  {
+            padding-inline: 5rem;
+          }
+        }
+
+        .hero-half-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          
+          @media screen and (min-width: 992px)  {
+            width: 50%;
+          }
+          
+          & img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            aspect-ratio: 2/1;
+            margin: 0;
+            padding: 0;
+            
+            @media screen and (min-width: 992px)  {
+              width: auto;
+              height: 100svh;
+              aspect-ratio: auto;
+              flex-direction: row;
+            }
+          } 
+        }
+
+      }
+
+    </style>

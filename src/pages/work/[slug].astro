@@ -1,0 +1,70 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import Image from "astro/components/Image.astro";
+import { getEntryBySlug } from "astro:content";
+import HeroPostSingle from "../../components/heroes/HeroPostSingle.astro";
+
+const { slug } = Astro.params;
+const work = await getEntryBySlug("works", slug as string);
+
+if ( !work ) {
+  return Astro.redirect('/404');
+}
+
+const {Content} = await work.render();
+---
+
+<MainLayout
+  title={work.data.title}
+  description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
+  og_image="https://astrowork.io/images/opengraph.png"
+  og_url="https://astrowork.io/blog/"
+>
+
+  <HeroPostSingle 
+    h1={work.data.title}
+    image={work.data.image}
+    image_alt={work.data.title}
+    p1={work.data.client}
+  />
+
+      
+      <section class="description">
+        <div class="content-grid">
+          <div class="text-block">
+            <Content />
+          </div>
+          <div class="sidebar">
+            <h3>Technologies</h3>
+            <div class="hr-div"></div>
+            <p>{work.data.tech}</p>
+          </div>
+        </div>
+      </section>
+
+</MainLayout>
+
+<style lang="scss">
+  .description {
+    padding-block: 0 8rem;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @media screen and (min-width: 992px) {
+      gap: 4rem;
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+</style>

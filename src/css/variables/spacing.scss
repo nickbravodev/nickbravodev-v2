@@ -1,0 +1,63 @@
+:root {
+  // spacer Spacing
+  --spacer: 1rem;
+  --spacer-1: calc(var(--spacer) * 0.25);
+  --spacer-2: calc(var(--spacer) * 0.5);
+  --spacer-3: calc(var(--spacer) * 0.75);
+  --spacer-4: var(--spacer);
+  --spacer-5: calc(var(--spacer) * 1.25);
+  --spacer-6: calc(var(--spacer) * 1.5);
+  --spacer-7: calc(var(--spacer) * 1.75);
+  --spacer-8: calc(var(--spacer) * 2);
+  --spacer-9: calc(var(--spacer) * 2.25);
+  --spacer-10: calc(var(--spacer) * 2.5);
+  --spacer-12: calc(var(--spacer) * 3);
+  --spacer-14: calc(var(--spacer) * 3.5);
+  --spacer-16: calc(var(--spacer) * 4);
+  --spacer-20: calc(var(--spacer) * 5);
+  --spacer-24: calc(var(--spacer) * 6);
+  --spacer-28: calc(var(--spacer) * 7);
+  --spacer-32: calc(var(--spacer) * 8);
+  --spacer-36: calc(var(--spacer) * 9);
+  --spacer-40: calc(var(--spacer) * 10);
+  --spacer-44: calc(var(--spacer) * 11);
+  --spacer-48: calc(var(--spacer) * 12);
+  --spacer-52: calc(var(--spacer) * 13);
+  --spacer-56: calc(var(--spacer) * 14);
+  --spacer-60: calc(var(--spacer) * 15);
+  --spacer-64: calc(var(--spacer) * 16);
+  --spacer-72: calc(var(--spacer) * 18);
+  --spacer-80: calc(var(--spacer) * 20);
+  --spacer-96: calc(var(--spacer) * 24);
+
+  // spacer Negative Spacing
+  --spacer-neg: calc(var(--spacer) * -1);
+  --spacer-neg-1: calc(var(--spacer-neg) * 0.25);
+  --spacer-neg-2: calc(var(--spacer-neg) * 0.5);
+  --spacer-neg-3: calc(var(--spacer-neg) * 0.75);
+  --spacer-neg-4: var(--spacer-neg);
+  --spacer-neg-5: calc(var(--spacer-neg) * 1.25);
+  --spacer-neg-6: calc(var(--spacer-neg) * 1.5);
+  --spacer-neg-7: calc(var(--spacer-neg) * 1.75);
+  --spacer-neg-8: calc(var(--spacer-neg) * 2);
+  --spacer-neg-9: calc(var(--spacer-neg) * 2.25);
+  --spacer-neg-10: calc(var(--spacer-neg) * 2.5);
+  --spacer-neg-12: calc(var(--spacer-neg) * 3);
+  --spacer-neg-14: calc(var(--spacer-neg) * 3.5);
+  --spacer-neg-16: calc(var(--spacer-neg) * 4);
+  --spacer-neg-20: calc(var(--spacer-neg) * 5);
+  --spacer-neg-24: calc(var(--spacer-neg) * 6);
+  --spacer-neg-28: calc(var(--spacer-neg) * 7);
+  --spacer-neg-32: calc(var(--spacer-neg) * 8);
+  --spacer-neg-36: calc(var(--spacer-neg) * 9);
+  --spacer-neg-40: calc(var(--spacer-neg) * 10);
+  --spacer-neg-44: calc(var(--spacer-neg) * 11);
+  --spacer-neg-48: calc(var(--spacer-neg) * 12);
+  --spacer-neg-52: calc(var(--spacer-neg) * 13);
+  --spacer-neg-56: calc(var(--spacer-neg) * 14);
+  --spacer-neg-60: calc(var(--spacer-neg) * 15);
+  --spacer-neg-64: calc(var(--spacer-neg) * 16);
+  --spacer-neg-72: calc(var(--spacer-neg) * 18);
+  --spacer-neg-80: calc(var(--spacer-neg) * 20);
+  --spacer-neg-96: calc(var(--spacer-neg) * 24);
+}

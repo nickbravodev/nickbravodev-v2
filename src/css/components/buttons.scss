@@ -108,8 +108,8 @@ input[type="submit"],
     &:hover,
     &:focus {
       // Solid Hover
-      color: var(--color-btn-primary-hover);
-      background-color: var(--color-btn-primary-text-hover);
+      color: var(--color-btn-primary-text-hover);
+      background-color: var(--color-btn-primary-hover);
       border-color: var(--color-btn-primary-hover);
 
       // Outline Hover

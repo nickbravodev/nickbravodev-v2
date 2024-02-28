@@ -1,11 +1,17 @@
 // Section and Container Layouts
 section {
-  min-height: 100svh;
+  // min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 9rem 0rem;
+  padding-inline: 5%;
+  padding-block: 5%;
+  // padding: 9rem;
+}
+
+.section__100vh {
+  height: 100vh;
 }
 
 .section__alt {

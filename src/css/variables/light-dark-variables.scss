@@ -1,5 +1,7 @@
 @use "../components/nav.scss";
 @use "../components/buttons.scss";
+@use "../components/collection-cards.scss";
+@use "../components/forms.scss";
 
 // -----------
 // LIGHT MODE
@@ -8,6 +10,9 @@
 @mixin light-mode {
   @include nav.nav-light-mode;
   @include buttons.buttons-light-mode;
+  @include collection-cards.collection-card-light-mode;
+  @include forms.form-light-mode;
+
   color-scheme: light;
 
   // -----------
@@ -47,6 +52,9 @@
 @mixin dark-mode {
   @include nav.nav-dark-mode;
   @include buttons.buttons-dark-mode;
+  @include collection-cards.collection-card-dark-mode;
+  @include forms.form-dark-mode;
+
   color-scheme: dark;
 
   // -----------

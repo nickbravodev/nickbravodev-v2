@@ -29,6 +29,10 @@
   --nav-min-height: 5.5rem;
 }
 
+.padding-nav-height {
+  padding-block-start: var(--nav-min-height);
+}
+
 header {
   position: fixed;
   display: flex;

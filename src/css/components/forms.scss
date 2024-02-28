@@ -13,24 +13,6 @@
   // form variables
   --color-form-bg: var(--color-astro-dark-gray); // form Background
 }
-// Execute Light Mode
-@media (prefers-color-scheme: light) {
-  :root {
-    @include form-light-mode;
-  }
-}
-:root[data-theme="light"] {
-  @include form-light-mode;
-}
-// Execute Dark Mode
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include form-dark-mode;
-  }
-}
-:root[data-theme="dark"] {
-  @include form-dark-mode;
-}
 
 form {
   display: flex;

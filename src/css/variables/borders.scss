@@ -1,8 +1,24 @@
 :root {
+  --border-radius-pill: 50em;
   --border-radius: 0.5rem;
-  --border-width: 2px;
+  --border-radius-sm: 0.25rem;
+  --border-radius-lg: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-width: 1.5px;
 }
 
-.round-courners {
+.round-corners {
   border-radius: var(--border-radius);
+}
+
+.round-corners-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.round-corners-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.round-corners-xl {
+  border-radius: var(--border-radius-xl);
 }

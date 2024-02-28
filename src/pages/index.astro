@@ -23,7 +23,7 @@ import profileImage from "../img/nb-goofy.jpg";
 >
 
   <!-- Hero section -->
-    <section id="home" class="">
+    <section id="home" class="section__100vh">
       <div class="container">
         <!-- Hero text -->
         <div class="grid-2">
@@ -42,14 +42,15 @@ import profileImage from "../img/nb-goofy.jpg";
           </div>
           <!-- Hero image SVG -->
           <div class="hero-image">
-            <Icon name="nickbravodev" />
+            <Image src={profileImage} class="profile-image" alt="This is me. Nick Bravo." format="avif" />
+            <!-- <Icon name="nickbravodev" /> -->
           </div>
         </div>
       </div>
     </section>
 
     <!-- About section -->
-    <section id="about">
+    <section id="about" class="section__100vh">
       <div class="container flex-md-row-reverse">
           <!-- About text -->
           <div class="section__body flex flex-column">
@@ -67,14 +68,15 @@ import profileImage from "../img/nb-goofy.jpg";
             </div>
           </div>
           <!-- Profile photo. Yes, it's really a photo of me! -->
-          <div class="section__aside">
-            <Image src={profileImage} class="profile-image" alt="This is me. Nick Bravo." format="avif" />
+          <div class="section__aside hero-image">
+            <!-- <Image src={profileImage} class="profile-image" alt="This is me. Nick Bravo." format="avif" /> -->
+            <Icon name="nickbravodev" />
           </div>
       </div>
     </section>
 
     <!-- Scope section -->
-    <section id="scope">
+    <section id="scope" class="section__100vh">
       <div class="container">
         <div class="section__body">
           <!-- Scope main text -->
@@ -96,7 +98,7 @@ import profileImage from "../img/nb-goofy.jpg";
             <h3 class="mb-1">Design</h3>
             <p>Figma, Adobe Illustrator, InDesign, Photoshop, XD.</p>
             <h3 class="mb-1">Frontend</h3>
-            <p>HTML, CSS, JavaScript, React.</p>
+            <p>HTML, CSS, JavaScript, TypeScript.</p>
             <h3 class="mb-1">Backend</h3>
             <p>Netlify, Node.js, NGINX, Contentful, GraphQL, Rest.</p>
             <h3 class="mb-1">Libraries & Builders</h3>
