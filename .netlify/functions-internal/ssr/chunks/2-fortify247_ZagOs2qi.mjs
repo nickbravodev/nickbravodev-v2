@@ -1,17 +1,17 @@
 import { _ as __astro_tag_component__, k as Fragment, w as createVNode } from './astro_oCEbWNjX.mjs';
-import { a as $$Image } from './pages/404_KgtBD98q.mjs';
+import { a as $$Image } from './pages/404_jDnNbzbL.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Sherrif Wood",
-  "title": "Sheriff campaign website.",
+  "client": "Fortify 24x7",
+  "title": "Digital magazine ads.",
   "categories": ["studio tips"],
-  "featured": false,
-  "image": "./img/sheriff-wood-homepage-cover.png",
+  "featured": true,
+  "image": "./img/Fortify-24x7-ad-cover.png",
   "date": "08/10/2021",
-  "tech": "HTML, CSS, JavaScript, PHP, Bootstrap, Adobe CC",
-  "blurb": "Campaign website for a sheriff election. This website had many pages, a simple CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC.",
-  "slug": "sheriff-wood"
+  "tech": "Adobe Illustrator, InDesign",
+  "blurb": "Fortify 24x7 asked us to design a series of half-page magazine ads to be included in several issues of Unredacted Magazine. After receiving the parameters and copy, we designed the ads in Adobe Illustrator. Since the magazine is an Interactive PDF, the final designs were embedded directly into the InDesign document with multiple targeted hyperlinks. These ads can be seen in various issues of Unredacted Magazine.",
+  "slug": "fortify-24x7"
 };
 function getHeadings() {
   return [{
@@ -34,7 +34,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "Campaign website for a sheriff election. This website had many pages, a simple internal CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC."
+      children: "Fortify 24x7 asked us to design a series of half-page magazine ads to be included in several issues of Unredacted Magazine. After receiving the parameters and copy, we designed the ads in Adobe Illustrator. Since the magazine is an Interactive PDF, the final designs were embedded directly into the InDesign document with multiple targeted hyperlinks. These ads can be seen in various issues of Unredacted Magazine."
     })]
   });
 }
@@ -51,14 +51,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/6-sheriff-wood.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+const url = "src/content/works/2-fortify247.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/2-fortify247.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/2-fortify247.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };

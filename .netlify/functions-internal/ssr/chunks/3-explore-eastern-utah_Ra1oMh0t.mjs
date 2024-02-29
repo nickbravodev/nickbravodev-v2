@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./1-unredacted-magazine_IUaQ4y92.mjs');
+						return import('./3-explore-eastern-utah_cY2oEqju.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

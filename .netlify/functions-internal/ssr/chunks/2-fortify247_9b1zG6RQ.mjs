@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./5-bates-corporate-law_DbHReHbS.mjs');
+						return import('./2-fortify247_ZagOs2qi.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

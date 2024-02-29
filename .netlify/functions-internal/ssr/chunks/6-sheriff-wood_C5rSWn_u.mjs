@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./2-fortify247_n0oTd-17.mjs');
+						return import('./6-sheriff-wood_ldXQdNvs.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

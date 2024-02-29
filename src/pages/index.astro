@@ -12,7 +12,8 @@ const works = await getCollection("works");
 
 // Image imports
 import { Image } from 'astro:assets';
-import profileImage from "../img/nb-goofy.jpg";
+import profileImageGoofy from "../img/nb-goofy.jpg";
+import profileImage from "../img/nb-new.jpg";
 ---
 
 <MainLayout
@@ -42,7 +43,7 @@ import profileImage from "../img/nb-goofy.jpg";
           </div>
           <!-- Hero image SVG -->
           <div class="hero-image">
-            <Image src={profileImage} class="profile-image" alt="This is me. Nick Bravo." format="avif" loading="eager" />
+            <Image src={profileImageGoofy} class="profile-image" alt="This is me. Nick Bravo." format="avif" loading="eager" />
             <!-- <Icon name="nickbravodev" /> -->
           </div>
         </div>

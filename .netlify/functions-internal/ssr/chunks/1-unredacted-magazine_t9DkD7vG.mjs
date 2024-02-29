@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./6-sheriff-wood__Bxn2Hor.mjs');
+						return import('./1-unredacted-magazine_jyze23xa.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];
