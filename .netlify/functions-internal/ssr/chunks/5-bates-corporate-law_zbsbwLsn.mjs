@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./4-arcane-ops_6WbZ1ECC.mjs');
+						return import('./5-bates-corporate-law_lLTLNB3U.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

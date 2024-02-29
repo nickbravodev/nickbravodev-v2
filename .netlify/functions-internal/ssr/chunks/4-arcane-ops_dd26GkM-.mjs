@@ -1,17 +1,17 @@
 import { _ as __astro_tag_component__, p as Fragment, w as createVNode } from './astro_mQgevgBf.mjs';
-import { $ as $$Image } from './pages/_slug__VuuPuI32.mjs';
+import { $ as $$Image } from './pages/_slug__x9DOgVuy.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Fortify 24x7",
-  "title": "Digital magazine ads.",
+  "client": "Arcane Ops",
+  "title": "Arcane Ops. A paranormal podcast.",
   "categories": ["studio tips"],
   "featured": true,
-  "image": "./img/Fortify-24x7-ad-cover.png",
+  "image": "./img/arcane-ops-homepage-cover.png",
   "date": "08/10/2021",
-  "tech": "Adobe Illustrator, InDesign",
-  "blurb": "Fortify 24x7 asked us to design a series of half-page magazine ads to be included in several issues of Unredacted Magazine. After receiving the parameters and copy, we designed the ads in Adobe Illustrator. Since the magazine is an Interactive PDF, the final designs were embedded directly into the InDesign document with multiple targeted hyperlinks. These ads can be seen in various issues of Unredacted Magazine.",
-  "slug": "fortify-24x7"
+  "tech": "WordPress, HTML, CSS, JavaScript, Bootstrap, Adobe CC",
+  "blurb": "Arcane Ops was a limited-run paranormal podcast that ran for seven episodes at the end of 2020. We designed the website layout in Adobe XD and built it using WordPress, WooCommerce, and Bootstrap. We designed the entire brand identity, including logos, social media images, video animations, and video thumbnails in Adobe Illustrator, InDesign, Photoshop, AfterEffects, and Premiere.",
+  "slug": "arcane-ops"
 };
 function getHeadings() {
   return [{
@@ -34,7 +34,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "Fortify 24x7 asked us to design a series of half-page magazine ads to be included in several issues of Unredacted Magazine. After receiving the parameters and copy, we designed the ads in Adobe Illustrator. Since the magazine is an Interactive PDF, the final designs were embedded directly into the InDesign document with multiple targeted hyperlinks. These ads can be seen in various issues of Unredacted Magazine."
+      children: "Arcane Ops was a limited-run paranormal podcast that ran for seven episodes at the end of 2020. We designed the website layout in Adobe XD and built it using WordPress, WooCommerce, and Bootstrap. We designed the entire brand identity, including logos, social media images, video animations, and video thumbnails in Adobe Illustrator, InDesign, Photoshop, AfterEffects, and Premiere."
     })]
   });
 }
@@ -51,14 +51,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/2-fortify247.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/2-fortify247.mdx";
+const url = "src/content/works/4-arcane-ops.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/4-arcane-ops.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/2-fortify247.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/4-arcane-ops.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };

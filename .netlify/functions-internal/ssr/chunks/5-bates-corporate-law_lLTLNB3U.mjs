@@ -1,17 +1,17 @@
 import { _ as __astro_tag_component__, p as Fragment, w as createVNode } from './astro_mQgevgBf.mjs';
-import { $ as $$Image } from './pages/_slug__VuuPuI32.mjs';
+import { $ as $$Image } from './pages/_slug__x9DOgVuy.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Sherrif Wood",
-  "title": "Sheriff campaign website.",
+  "client": "Bates Corporate Law",
+  "title": "Corporate lawfirm website.",
   "categories": ["studio tips"],
-  "featured": false,
-  "image": "./img/sheriff-wood-homepage-cover.png",
+  "featured": true,
+  "image": "./img/corporate-law-homepage-cover.png",
   "date": "08/10/2021",
-  "tech": "HTML, CSS, JavaScript, PHP, Bootstrap, Adobe CC",
-  "blurb": "Campaign website for a sheriff election. This website had many pages, a simple CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC.",
-  "slug": "sheriff-wood"
+  "tech": "Webflow, HTML, CSS, JavaScript, Adobe CC",
+  "blurb": "In an effort to explore the Webflow platform we designed and built this was a pro bono micro website for a fledgling corporate law firm. We created the UI in Adobe XD and developed it using Webflow, Finsweet Client First, and custom JavaScript components. Webflow's interface and ease of use are intuitive, but it's a bit restrictive for complex styling. All logos and graphics were designed in Adobe CC.",
+  "slug": "bates-corporate-law"
 };
 function getHeadings() {
   return [{
@@ -34,7 +34,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "Campaign website for a sheriff election. This website had many pages, a simple internal CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC."
+      children: "In an effort to explore the Webflow platform we designed and built this was a pro bono micro website for a fledgling corporate law firm. We created the UI in Adobe XD and developed it using Webflow, Finsweet Client First, and custom JavaScript components. Webflow\u2019s interface and ease of use are intuitive, but it\u2019s a bit restrictive for complex styling. All logos and graphics were designed in Adobe CC."
     })]
   });
 }
@@ -51,14 +51,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/6-sheriff-wood.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+const url = "src/content/works/5-bates-corporate-law.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/5-bates-corporate-law.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/5-bates-corporate-law.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };

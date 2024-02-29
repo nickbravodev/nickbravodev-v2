@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./6-sheriff-wood_DWsqPjAd.mjs');
+						return import('./6-sheriff-wood_q7lLpVKi.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

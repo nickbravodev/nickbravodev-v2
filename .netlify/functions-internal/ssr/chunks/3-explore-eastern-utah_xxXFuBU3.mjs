@@ -1,17 +1,17 @@
 import { _ as __astro_tag_component__, p as Fragment, w as createVNode } from './astro_mQgevgBf.mjs';
-import { $ as $$Image } from './pages/_slug__VuuPuI32.mjs';
+import { $ as $$Image } from './pages/_slug__x9DOgVuy.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Arcane Ops",
-  "title": "Arcane Ops. A paranormal podcast.",
+  "client": "Explore Eastern Utah",
+  "title": "Restaurant listing website.",
   "categories": ["studio tips"],
   "featured": true,
-  "image": "./img/arcane-ops-homepage-cover.png",
+  "image": "./img/explore-eastern-utah-homepage-cover.png",
   "date": "08/10/2021",
   "tech": "WordPress, HTML, CSS, JavaScript, Bootstrap, Adobe CC",
-  "blurb": "Arcane Ops was a limited-run paranormal podcast that ran for seven episodes at the end of 2020. We designed the website layout in Adobe XD and built it using WordPress, WooCommerce, and Bootstrap. We designed the entire brand identity, including logos, social media images, video animations, and video thumbnails in Adobe Illustrator, InDesign, Photoshop, AfterEffects, and Premiere.",
-  "slug": "arcane-ops"
+  "blurb": "We built Explore Eastern Utah to showcase local restaurants that remained open during pandemic shutdowns. We designed the UI in Adobe XD and built it using WordPress and Bootstrap. Through extensive use of dynamic content and APIs, Business owners were able to create user accounts and update their listings. All logos and graphics were designed in Adobe CC.",
+  "slug": "explore-eastern-utah"
 };
 function getHeadings() {
   return [{
@@ -34,7 +34,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "Arcane Ops was a limited-run paranormal podcast that ran for seven episodes at the end of 2020. We designed the website layout in Adobe XD and built it using WordPress, WooCommerce, and Bootstrap. We designed the entire brand identity, including logos, social media images, video animations, and video thumbnails in Adobe Illustrator, InDesign, Photoshop, AfterEffects, and Premiere."
+      children: "We built Explore Eastern Utah to showcase local restaurants that remained open during pandemic shutdowns. We designed the UI in Adobe XD and built it using WordPress and Bootstrap. Through extensive use of dynamic content and APIs, Business owners were able to create user accounts and update their listings. All logos and graphics were designed in Adobe CC."
     })]
   });
 }
@@ -51,14 +51,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/4-arcane-ops.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/4-arcane-ops.mdx";
+const url = "src/content/works/3-explore-eastern-utah.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/3-explore-eastern-utah.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/4-arcane-ops.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/3-explore-eastern-utah.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };

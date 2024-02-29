@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./1-unredacted-magazine_oRH6VXnw.mjs');
+						return import('./1-unredacted-magazine_Pgeessrf.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];
