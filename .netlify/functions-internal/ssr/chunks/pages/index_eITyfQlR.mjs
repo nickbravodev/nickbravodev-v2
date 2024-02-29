@@ -1,7 +1,7 @@
 import { e as createAstro, f as createComponent, r as renderTemplate, m as maybeRenderHead, h as addAttribute, j as renderComponent } from '../astro_oCEbWNjX.mjs';
 import 'kleur/colors';
-import { g as getCollection } from './_slug__Zzg0uPI0.mjs';
-import { a as $$Image, c as $$Icon, b as $$MainLayout, $ as $$Button } from './404_ggS6vBLN.mjs';
+import { g as getCollection } from './_slug__gZpJDigo.mjs';
+import { a as $$Image, c as $$Icon, b as $$MainLayout, $ as $$Button } from './404_KgtBD98q.mjs';
 
 const $$Astro$5 = createAstro("https://nickbravo.dev");
 const $$Work = createComponent(async ($$result, $$props, $$slots) => {

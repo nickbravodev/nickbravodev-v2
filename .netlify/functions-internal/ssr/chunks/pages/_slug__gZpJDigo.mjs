@@ -1,6 +1,6 @@
 import { A as AstroError, n as UnknownContentCollectionError, f as createComponent, o as renderUniqueStylesheet, p as renderScriptElement, q as createHeadAndContent, r as renderTemplate, j as renderComponent, u as unescapeHTML, e as createAstro, m as maybeRenderHead, h as addAttribute } from '../astro_oCEbWNjX.mjs';
 import 'kleur/colors';
-import { $ as $$Button, a as $$Image, b as $$MainLayout } from './404_ggS6vBLN.mjs';
+import { $ as $$Button, a as $$Image, b as $$MainLayout } from './404_KgtBD98q.mjs';
 import { prependForwardSlash } from '@astrojs/internal-helpers/path';
 /* empty css                           */
 
@@ -208,7 +208,7 @@ createCollectionToGlobResultMap({
 });
 
 let lookupMap = {};
-lookupMap = {"works":{"type":"content","entries":{"fortify-24x7":"/src/content/works/2-fortify247.mdx","unredacted-magazine":"/src/content/works/1-unredacted-magazine.mdx","explore-eastern-utah":"/src/content/works/3-explore-eastern-utah.mdx","bates-corporate-law":"/src/content/works/5-bates-corporate-law.mdx","sheriff-wood":"/src/content/works/6-sheriff-wood.mdx","arcane-ops":"/src/content/works/4-arcane-ops.mdx"}}};
+lookupMap = {"works":{"type":"content","entries":{"fortify-24x7":"/src/content/works/2-fortify247.mdx","unredacted-magazine":"/src/content/works/1-unredacted-magazine.mdx","sheriff-wood":"/src/content/works/6-sheriff-wood.mdx","arcane-ops":"/src/content/works/4-arcane-ops.mdx","bates-corporate-law":"/src/content/works/5-bates-corporate-law.mdx","explore-eastern-utah":"/src/content/works/3-explore-eastern-utah.mdx"}}};
 
 function createGlobLookup(glob) {
 	return async (collection, lookupId) => {
@@ -219,7 +219,7 @@ function createGlobLookup(glob) {
 	};
 }
 
-const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/works/1-unredacted-magazine.mdx": () => import('../1-unredacted-magazine_W_a4TAiG.mjs'),"/src/content/works/2-fortify247.mdx": () => import('../2-fortify247_OUCtGMrB.mjs'),"/src/content/works/3-explore-eastern-utah.mdx": () => import('../3-explore-eastern-utah_PRzhze9U.mjs'),"/src/content/works/4-arcane-ops.mdx": () => import('../4-arcane-ops_HIjrI1lG.mjs'),"/src/content/works/5-bates-corporate-law.mdx": () => import('../5-bates-corporate-law_fAk-S5zF.mjs'),"/src/content/works/6-sheriff-wood.mdx": () => import('../6-sheriff-wood_NMYUDTfc.mjs')});
+const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/works/1-unredacted-magazine.mdx": () => import('../1-unredacted-magazine_vSbyhYxn.mjs'),"/src/content/works/2-fortify247.mdx": () => import('../2-fortify247_zpK2Nnfw.mjs'),"/src/content/works/3-explore-eastern-utah.mdx": () => import('../3-explore-eastern-utah_L2x0VdP8.mjs'),"/src/content/works/4-arcane-ops.mdx": () => import('../4-arcane-ops_ccm5CrD4.mjs'),"/src/content/works/5-bates-corporate-law.mdx": () => import('../5-bates-corporate-law_CAsJCQW_.mjs'),"/src/content/works/6-sheriff-wood.mdx": () => import('../6-sheriff-wood_F3RMr9Ds.mjs')});
 const collectionToRenderEntryMap = createCollectionToGlobResultMap({
 	globResult: renderEntryGlob,
 	contentDir,

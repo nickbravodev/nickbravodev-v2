@@ -1,17 +1,18 @@
 import { _ as __astro_tag_component__, k as Fragment, w as createVNode } from './astro_oCEbWNjX.mjs';
-import { a as $$Image } from './pages/404_ggS6vBLN.mjs';
+import { a as $$Image } from './pages/404_KgtBD98q.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Sherrif Wood",
-  "title": "Sheriff campaign website.",
+  "client": "Unredacted Magazine",
+  "title": "Digital magazine layout.",
   "categories": ["studio tips"],
-  "featured": false,
-  "image": "./img/sheriff-wood-homepage-cover.png",
-  "date": "08/10/2021",
-  "tech": "HTML, CSS, JavaScript, PHP, Bootstrap, Adobe CC",
-  "blurb": "Campaign website for a sheriff election. This website had many pages, a simple CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC.",
-  "slug": "sheriff-wood"
+  "featured": true,
+  "image": "./img/unredacted-magazine-002-cover.png",
+  "url": "https://unredactedmagazine.com/",
+  "date": "08/10/2020",
+  "tech": "Adobe InDesign, Illustrator",
+  "blurb": "We've designed the entire layout of Unredacted Magazine, an interactive magazine, beginning with Issue 002 in June 2022. We built an adaptable, accessible layout in InDesign and created several graphical components and ads in Illustrator. The magazine is digital-only and is delivered as an interactive PDF.",
+  "slug": "unredacted-magazine"
 };
 function getHeadings() {
   return [{
@@ -34,7 +35,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "Campaign website for a sheriff election. This website had many pages, a simple internal CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC."
+      children: "We\u2019ve designed the entire layout of Unredacted Magazine, an interactive magazine, beginning with Issue 002 in June 2022. We built an adaptable, accessible layout in InDesign and created several graphical components and ads in Illustrator. The magazine is digital-only and is delivered as an interactive PDF."
     })]
   });
 }
@@ -51,14 +52,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/6-sheriff-wood.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+const url = "src/content/works/1-unredacted-magazine.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/1-unredacted-magazine.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/1-unredacted-magazine.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };
