@@ -1,17 +1,17 @@
 import { _ as __astro_tag_component__, p as Fragment, w as createVNode } from './astro_mQgevgBf.mjs';
-import { $ as $$Image } from './pages/_slug__zCCXhnTs.mjs';
+import { $ as $$Image } from './pages/_slug__RUXDXY85.mjs';
 import 'clsx';
 
 const frontmatter = {
-  "client": "Explore Eastern Utah",
-  "title": "Restaurant listing website.",
+  "client": "Sherrif Wood",
+  "title": "Sheriff campaign website.",
   "categories": ["studio tips"],
-  "featured": true,
-  "image": "./img/explore-eastern-utah-homepage-cover.png",
+  "featured": false,
+  "image": "./img/sheriff-wood-homepage-cover.png",
   "date": "08/10/2021",
-  "tech": "WordPress, HTML, CSS, JavaScript, Bootstrap, Adobe CC",
-  "blurb": "We built Explore Eastern Utah to showcase local restaurants that remained open during pandemic shutdowns. We designed the UI in Adobe XD and built it using WordPress and Bootstrap. Through extensive use of dynamic content and APIs, Business owners were able to create user accounts and update their listings. All logos and graphics were designed in Adobe CC.",
-  "slug": "explore-eastern-utah"
+  "tech": "HTML, CSS, JavaScript, PHP, Bootstrap, Adobe CC",
+  "blurb": "Campaign website for a sheriff election. This website had many pages, a simple CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC.",
+  "slug": "sheriff-wood"
 };
 function getHeadings() {
   return [{
@@ -34,7 +34,7 @@ function _createMdxContent(props) {
     }), "\n", createVNode("div", {
       class: "hr-div"
     }), "\n", createVNode(_components.p, {
-      children: "We built Explore Eastern Utah to showcase local restaurants that remained open during pandemic shutdowns. We designed the UI in Adobe XD and built it using WordPress and Bootstrap. Through extensive use of dynamic content and APIs, Business owners were able to create user accounts and update their listings. All logos and graphics were designed in Adobe CC."
+      children: "Campaign website for a sheriff election. This website had many pages, a simple internal CMS for news updates, and simple PayPal API setup to accept donations. I created the UI in Adobe XD and built it using Bootstrap, HTML, CSS, JavaScript, and some basic PHP to run the CMS. All logos and graphics were designed in Adobe CC."
     })]
   });
 }
@@ -51,14 +51,14 @@ function MDXContent(props = {}) {
 }
 __astro_tag_component__(getHeadings, "astro:jsx");
 __astro_tag_component__(MDXContent, "astro:jsx");
-const url = "src/content/works/3-explore-eastern-utah.mdx";
-const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/3-explore-eastern-utah.mdx";
+const url = "src/content/works/6-sheriff-wood.mdx";
+const file = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
 const Content = (props = {}) => MDXContent({
 											...props,
 											components: { Fragment, ...props.components, "astro-image":  props.components?.img ?? $$Image },
 										});
 Content[Symbol.for('mdx-component')] = true;
 Content[Symbol.for('astro.needsHeadRendering')] = !Boolean(frontmatter.layout);
-Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/3-explore-eastern-utah.mdx";
+Content.moduleId = "/Users/nb258622/dev/Github/nickbravodev-v2/src/content/works/6-sheriff-wood.mdx";
 
 export { Content, __usesAstroImage, Content as default, file, frontmatter, getHeadings, url };

@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./4-arcane-ops_TVcS95CJ.mjs');
+						return import('./1-unredacted-magazine_4TX8JLab.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

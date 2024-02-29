@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./2-fortify247_OdfH_Bhc.mjs');
+						return import('./3-explore-eastern-utah_ABeoTzoN.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

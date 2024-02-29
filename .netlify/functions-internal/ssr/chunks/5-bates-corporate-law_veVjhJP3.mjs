@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./6-sheriff-wood_w46uRk_r.mjs');
+						return import('./5-bates-corporate-law_zEI_IbxY.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

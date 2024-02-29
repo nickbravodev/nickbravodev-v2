@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./3-explore-eastern-utah_cCO3pCrZ.mjs');
+						return import('./6-sheriff-wood_6UyAAxsn.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];
