@@ -11,7 +11,8 @@ section {
 }
 
 .section__100vh {
-  height: 100vh;
+  min-height: 100vh;
+  padding-block: calc(var(--nav-min-height) + 1rem);
 }
 
 .section__alt {

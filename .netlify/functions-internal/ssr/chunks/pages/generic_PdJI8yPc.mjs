@@ -1,6 +1,6 @@
 import { isRemotePath } from '@astrojs/internal-helpers/path';
 import mime from 'mime/lite.js';
-import { g as getConfiguredImageService, i as imageConfig } from './_slug__e8uenzzS.mjs';
+import { g as getConfiguredImageService, i as imageConfig } from './_slug__VuuPuI32.mjs';
 import { c as isRemoteAllowed } from '../astro/assets-service_eE5BTeLt.mjs';
 
 const fnv1a52 = (str) => {
