@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./5-bates-corporate-law_q3irKaKS.mjs');
+						return import('./1-unredacted-magazine_BApAehHZ.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

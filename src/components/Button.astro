@@ -13,6 +13,7 @@ const commonButtonData = [
   {
     slug: "resume",
     text: "Resume",
+    href: "#resume",
     classes: "resume-trigger",
     id: "resume-trigger",
     type: "outline"
@@ -82,10 +83,8 @@ const buttonClasses = ( !classes && buttonCompare ? buttonCompare.classes : clas
 
 <a href={buttonHref}
 target={buttonTarget}
-tabindex="0"
 aria-label={buttonText}
 aria-roledescription={buttonText}
-role="button"
 class:list={[
   "button",
   buttonClasses,

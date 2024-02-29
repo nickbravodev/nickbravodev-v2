@@ -25,6 +25,7 @@ const navData = [
   },
   {
     name: "Resume",
+    path: "#resume",
     classes: "resume-trigger",
     id: "resume-trigger",
   },

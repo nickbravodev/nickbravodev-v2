@@ -16,7 +16,7 @@ import {Icon} from "astro-icon/components";
           <!-- Resume header -->
           <div class="popout-header">
             <!-- Brand logo -->
-            <a href="/" class="popoutbar-brand">
+            <a href="/" class="popoutbar-brand" aria-label="NickBravo.dev Logo">
               <Icon name="nickbravodev" class="brand-icon" />
             </a>
             <!-- Resume header text -->
@@ -191,6 +191,7 @@ import {Icon} from "astro-icon/components";
             <a
               href="https://github.com/nickbravodev/nickbravodev/raw/main/resume/nick-bravo-developer-resume.pdf"
               target="_blank"
+              aria-label="Download Resume"
             >
               <Icon name="download" />
             </a>
@@ -204,8 +205,10 @@ import {Icon} from "astro-icon/components";
   // const popoutTriggerID = document.querySelector('#resume-trigger');
   const buttonClose = document.querySelector('.btn-close');
 
-  const modalDeploy = () => {
+  const modalDeploy = (e) => {
     const visibility = resumePopout.getAttribute('data-visible');
+    
+  e.preventDefault();
 
     if (visibility === 'false') {
       document.body.classList.add('modal-open'); // Disables scrolling behavior on body
@@ -365,8 +368,8 @@ import {Icon} from "astro-icon/components";
     .brand-icon {
       --_icon-size: 4rem;
 
-      color: var(--color-astro-white);
-      background-color: var(--color-astro-red);
+      // color: var(--color-astro-white);
+      // background-color: var(--color-astro-red);
       padding: 0em;
       border-radius: var(--border-radius);
       width: var(--_icon-size);
