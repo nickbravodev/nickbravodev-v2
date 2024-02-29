@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./3-explore-eastern-utah_ABeoTzoN.mjs');
+						return import('./5-bates-corporate-law_wOY_-hwo.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

@@ -1,5 +1,5 @@
 async function getMod() {
-						return import('./4-arcane-ops_bQp31Ct7.mjs');
+						return import('./2-fortify247_9Kmul4G8.mjs');
 					}
 					const collectedLinks = [];
 					const collectedStyles = [];

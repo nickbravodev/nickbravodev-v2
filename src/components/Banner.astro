@@ -1,0 +1,189 @@
+---
+// Component imports
+import Button from './Button.astro';
+import "../css/components/banners.scss";
+
+// Asset imports
+import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
+
+const {
+  type = "",
+  eyebrow = "",
+  h1 = "",
+  h2 = "",
+  h3 = "",
+  p1 = "",
+  p2 = "",
+  p3 = "",
+  sm1 = "",
+  sm2 = "",
+  sm3 = "",
+  id = "",
+  position = "",
+  text_align = "",
+  heading_size = "",
+  heading_style = "",
+  body_size = "",
+  theme = "",
+  size = "",
+  icon = "",
+  image = "",
+  image_alt = "",
+  image_loading = "",
+  aspect_ratio = "",
+  rounded_corners = "",
+  button1_link = "",
+  button1_text = "",
+  button1_target = "",
+  button1_type = "",
+  button1_icon = "",
+  button2_link = "",
+  button2_text = "",
+  button2_target = "",
+  button2_type = "",
+  button2_icon = "",
+  button_size = "",
+  pub_date = "",
+  start_date = "",
+  exp_date = "",
+  brand = "",
+  banner_color = "",
+  banner_border = "",
+  classes = "",
+  banner_classes = "",
+  image_round_corners = "",
+  image_classes = "",
+  grid_span = "",
+  isActive = "",
+  overlay = "",
+  shadow = "",
+} = Astro.props;
+---
+
+    <div class=`wrapper
+        ${ heading_size.includes('xxl') && ( 'heading-xxl' ) }
+        ${ heading_size.includes('xl') && ( 'heading-xl' ) }
+        ${ heading_size.includes('lg') && ( 'heading-lg' ) }
+        ${ heading_size.includes('md') && ( 'heading-md' ) }
+        ${ heading_size.includes('sm') && ( 'heading-sm' ) }
+        ${ heading_size.includes('xs') && ( 'heading-xs' ) }
+        ${ heading_style.includes('hero') && ( 'heading-style-hero' ) }
+        ${ heading_style.includes('banner') && ( 'heading-style-banner' ) }
+        ${ body_size.includes('xl') && ( 'body-xl' ) }
+        ${ body_size.includes('lg') && ( 'body-lg' ) }
+        ${ body_size.includes('md') && ( 'body-md' ) }
+        ${ body_size.includes('sm') && ( 'body-sm' ) }
+        ${ body_size.includes('xs') && ( 'body-xs' ) }
+        ${ banner_color.includes('alt') && ( 'banner__bg-alt' ) }
+        ${ banner_color.includes('border') && ( 'banner__border' ) }
+        ${ grid_span.includes('all') && ( 'grid-span-all' ) }
+        ${ isActive === true && 'active' }
+        ${ classes }
+    `>
+    <div class=`
+    ${ type.includes('hero') ? ('hero') : type.includes('banner') ? ('banner') : ('card') }
+    ${ (size.includes('medium') || size.includes('md')) && ( 'size-medium' ) }
+    ${ (size.includes('small') || size.includes('sm')) && ( 'size-small' ) }
+        ${ theme.includes('full') && ( 'full-width' ) }
+        ${ theme.includes('card') && ( 'text-card' ) }
+        ${ theme.includes('light') && ( 'theme-light' ) }
+        ${ theme.includes('tape') && ( 'tape' ) }
+        ${ overlay.includes('none') && ( 'no-overlay' ) }
+        ${ shadow.includes('none') && ( 'no-shadow' ) }
+        ${ (position.includes('right') || (position.includes('reverse'))) && ( 'position-right' ) }
+        ${ position.includes('center') && ( 'position-center' ) }
+        ${ position.includes('top') && ( 'position-top' ) }
+        ${ position.includes('bottom') && ( 'position-bottom' ) }
+        ${ !image && ( 'text-only' ) }
+        ${ rounded_corners.includes('true') && ( 'rounded-corners' ) }
+        ${ banner_border.includes('true') && ( 'border' ) }
+        ${ text_align.includes('center') && ( 'text-center' ) }
+        ${ text_align.includes('right') && ( 'text-right' ) }
+
+        ${ banner_classes }
+      `>
+      
+      <div class="banner__inner">
+        <!-- Banner text -->
+        { icon && <Icon name={icon} class="" /> }
+        <div class="banner__text-block">
+          { eyebrow && <p class="eyebrow">{eyebrow}</p> }
+          { h1 && <h1 set:html={h1} class="banner__heading"></h1> }
+          { h2 && <h2 set:html={h2} class="banner__heading"></h2> }
+          { h3 && <h2 set:html={h3} class="banner__heading"></h2> }
+          { pub_date && <p set:html={pub_date} class="banner__body"></p> }
+          { p1 && <p set:html={p1} class="banner__body"></p> }
+          { p2 && <p set:html={p2} class="banner__body"></p> }
+          { p3 && <p set:html={p3} class="banner__body"></p> }
+          { sm1 && <p class="banner__small">{sm1}</p> }
+          { sm2 && <p class="banner__small">{sm2}</p>}
+          { sm3 && <p class="banner__small">{sm3}</p>}
+          
+          <!-- CTA buttons -->
+          {
+            ( button1_link || button2_link ) &&
+            <div class="button-row">
+              { (brand || exp_date) && 
+                <div class="deal-footer">
+                { brand && <p class="card__brand">{brand}</p>}
+              { exp_date && <p class="card__exp-date">Expires {exp_date}</p>}
+              </div> }
+              { button1_link && <Button
+                href={button1_link}
+                text={button1_text}
+                target={button1_target}
+                icon={button1_icon}
+                size={button_size}
+                type=`
+                  ${button1_type.includes('outline') && ('outline')}
+                  ${button1_type.includes('text') && ('text')}
+                `
+                color={button1_type.includes('secondary') && ('secondary')}
+                />
+              }
+              { button2_link && <Button
+                href={button2_link}
+                text={button2_text}
+                target={button2_target}
+                icon={button2_icon}
+                size={button_size}
+                type=`
+                  ${button2_type.includes('outline') && ('outline')}
+                  ${button2_type.includes('text') && ('text')}
+                `
+                color={button2_type.includes('secondary') && ('secondary')}
+              />
+              }
+              </div>
+            }
+        </div>
+      </div>
+      
+        <!-- Hero image -->
+      { image && <div 
+        class=`banner-image
+        ${ ( aspect_ratio.includes('square') || aspect_ratio.includes('1') ) && ( 'square' ) }
+        ${ aspect_ratio.includes('3/2') && ( 'ar-32' ) }
+        ${ aspect_ratio.includes('5/4') && ( 'ar-54' ) }
+        ${ aspect_ratio.includes('auto') && ( 'ar-auto' ) }
+        ${ image_round_corners.includes('true') && ( 'round-corners' ) }
+        ${ image_classes }
+      `>
+        <Image
+          src={image}
+          alt={image_alt}
+          format="avif"
+          class="cover-image"
+          width={image.width / 2}
+          densities={[1.5, 2]}
+          loading={ image_loading ? image_loading : 'eager' }
+        />
+      </div> }
+              
+      
+        
+        </div>
+    </div>
+  <!-- </div> -->
+  <!-- </section> -->

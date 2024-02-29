@@ -1,0 +1,36 @@
+---
+// Component imports
+import Button from './Button.astro';
+import "../css/components/banners.scss";
+
+// Image imports
+import { Image } from 'astro:assets';
+
+const {
+  id = "",
+  background = "",
+  columns = "",
+  classes = "",
+} = Astro.props;
+---
+
+  <!-- Banner section -->
+    <section id={id} class=`banner-section
+    ${ background && ( 'bg' ) } 
+    ${ background.includes('alt') && ( 'alt' ) } 
+    ${ background.includes('map') && ( 'map' ) } 
+    ${ background.includes('swoop') && ( 'swoop' ) } 
+    ${ background.includes('full') && ( 'full' ) } 
+    ${ columns === '2' && ( 'container__2-col' ) } 
+    ${ columns === '3' && ( 'container__3-col' ) } 
+    ${ columns === '4' && ( 'container__4-col' ) } 
+    ${ classes }
+    `>
+    
+      
+    <slot />
+            
+
+  
+  </div>
+  </section>
