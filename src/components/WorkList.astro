@@ -1,11 +1,15 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import Work from './Work.astro';
-type Props = {
-  works: CollectionEntry<'works'>[];
-};
+// type Props = {
+//   works: CollectionEntry<'works'>[];
+// };
 
-const { works } = Astro.props;
+// const { works } = Astro.props;
+
+const works = (await getCollection('works', ({ data }) => {
+  return data.draft !== true;
+})).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <div class="collection-grid padding-nav-height">

@@ -1,18 +1,17 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import WorkFeatured from './WorkFeatured.astro';
-type Props = {
-  works: CollectionEntry<'works'>[];
-};
+// type Props = {
+//   works: CollectionEntry<'works'>[];
+// };
 
 // const { works } = Astro.props;
 
-const works = await getCollection('works', ({ data }) => {
-  return data.featured !== false;
-});
+const works = (await getCollection('works', ({ data }) => {
+  return (data.featured !== false) && (data.draft !== true);
+})).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <div class="collection-grid__featured">
-  {works.map((work) => <WorkFeatured work={work} />)}
+  {works.slice(0,5).map((work) => <WorkFeatured work={work} />)}
 </div>

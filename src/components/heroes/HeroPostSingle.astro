@@ -4,6 +4,7 @@ import Button from '../../components/Button.astro';
 
 // Image imports
 import { Image } from 'astro:assets';
+import {Icon} from "astro-icon/components";
 
 const {
   h1 = "",
@@ -22,6 +23,7 @@ const {
   button_secondary_link = "",
   button_secondary_text = "",
   button_secondary_target = "",
+  liveUrl = "",
 } = Astro.props;
 ---
 
@@ -33,7 +35,17 @@ const {
           <!-- Hero text -->
           <div class="text-block">
             <!-- <p class="superheading">Nick Bravo.</p> -->
-            <h1 set:html={h1}></h1>
+            <div class="flex align-items-start gap-3">
+              <h1 set:html={h1}></h1>
+              <div class="launch-icon">
+                      { liveUrl ? <a
+                        href={liveUrl}
+                        target="_blank"
+                        aria-label={`Read more about ${h1}`}
+                    ><Icon name="new-window" /></a> : <span>&nbsp;</span> }
+                    </div>
+            </div>
+
             { h2 && <h2 set:html={h2}></h2> }
             <div class="hr-div"></div>
             <p set:html={p1} class="subheading"></p>
@@ -131,6 +143,12 @@ const {
         background: linear-gradient(10deg, var(--color-hero-grad-heavy) 3%, var(--color-hero-grad-light));
         min-width: 100%;
         margin-block-end: var(--spacer-16);
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          font-weight: bold;
+        }
         
         img {
           position: absolute;
@@ -143,6 +161,12 @@ const {
         &.text-right {
           justify-content: flex-end;
           background: linear-gradient(-70deg, var(--color-hero-grad-heavy) 50%, var(--color-hero-grad-light));
+        }
+
+        .launch-icon {
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
         }
       }
 
