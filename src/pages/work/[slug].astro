@@ -17,9 +17,8 @@ const {Content} = await work.render();
 
 <MainLayout
   title={work.data.title}
-  description="We build privacy-focused websites, visual identities, and digital assets to solidify brand authority and trust across platforms. All while protecting your users' privacy."
-  og_image="https://astrowork.io/images/opengraph.png"
-  og_url="https://astrowork.io/blog/"
+  description={work.data.blurb}
+  og_image={work.data.image.src}
 >
 
   <HeroPostSingle 

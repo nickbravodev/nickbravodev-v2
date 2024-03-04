@@ -12,13 +12,12 @@ import "../css/global.scss";
 const {
   title = "NickBravo.dev - Designer. Developer. Problem solver.",
   description = "I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms.",
-  og_image = "https://nickbravo.dev/images/opengraph.png",
-  og_url = "https://nickbravo.dev/",
+  og_image = "/img/opengraph.png",
 } = Astro.props;
 ---
 
 <html lang="en" prefix="og: https://ogp.me/ns#">
-  <MainHead {title} {description} {og_image} {og_url} />
+  <MainHead {title} {description} {og_image} />
   <body>
     <Nav />
     <main>

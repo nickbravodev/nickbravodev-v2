@@ -1,5 +1,6 @@
 ---
-const { title, description, og_image, og_url } = Astro.props;
+const { title, description, og_image } = Astro.props;
+const siteUrl = "https://nickbravo.dev"
 ---
 
   <head>
@@ -8,12 +9,12 @@ const { title, description, og_image, og_url } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="canonical" href={og_url} />
+    <link rel="canonical" href={`${siteUrl}${Astro.url.pathname}`} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="description" content={description} />
     <meta property="og:title" content={title} />
     <meta name="color-scheme" content="dark light" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={og_image} />
-    <meta property="og:url" content={og_url} />
+    <meta property="og:image" content={`${siteUrl}${og_image}`} />
+    <meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
   </head>
