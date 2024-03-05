@@ -27,10 +27,10 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
   ],
-  redirects: {
-    "niktheuntamed.com": {
-      status: 301,
-      destination: "https://nickbravo.dev/work/$1",
-    },
-  },
+  // redirects: {
+  //   "niktheuntamed.com": {
+  //     status: 301,
+  //     destination: "https://nickbravo.dev/work/$1",
+  //   },
+  // },
 });
