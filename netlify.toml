@@ -1,4 +1,4 @@
 [[redirects]]
-  from = "/*"
+  from = "niktheuntamed.com/*"
   to = "https://nickbravo.dev/work/:splat"
   status = 301
