@@ -10,6 +10,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   output: "server",
   adapter: netlify(),
+  server: "./server.js",
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
@@ -26,10 +27,10 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
   ],
-  redirects: {
-    "niktheuntamed.com": {
-      status: 301,
-      destination: "https://nickbravo.dev/work",
-    },
-  },
+  // redirects: {
+  //   "niktheuntamed.com": {
+  //     status: 301,
+  //     destination: "https://nickbravo.dev/work",
+  //   },
+  // },
 });
