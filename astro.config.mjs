@@ -27,9 +27,9 @@ export default defineConfig({
     }),
   ],
   redirects: {
-    "niktheuntamed.com": {
-      status: 301,
-      destination: "/work",
-    },
+    // "niktheuntamed.com": {
+    //   status: 301,
+    //   destination: "/work",
+    // },
   },
 });
