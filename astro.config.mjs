@@ -10,7 +10,7 @@ import netlify from "@astrojs/netlify";
 export default defineConfig({
   output: "server",
   adapter: netlify(),
-  // server: "./server.js",
+  server: "./server.js",
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
