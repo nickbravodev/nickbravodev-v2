@@ -1,0 +1,51 @@
+---
+// Data imports
+import resumeExperience from '../data/resumeExperience';
+---
+
+{
+  resumeExperience.map((exp) => (
+    <h4>{exp.position}</h4>
+    <h5>{exp.employer}, <i>{exp.city}, {exp.state}</i> | {exp.startDate} - {exp.endDate}</h5>
+    <p><i>{exp.synopsis}</i></p>
+    <ul>
+      { exp.duties.map((d) => 
+        <li>{d.task}</li>
+      )
+      }
+    </ul>
+
+  ))
+}
+
+<style lang="scss">
+    span {
+      font-size: 0.75em;
+      margin: 0;
+      padding: 0;
+      max-height: 0.5rem;
+      background-color: var(--color-txt-heading-alt);
+    }
+
+    h3 {
+      margin-block: 1rem;
+    }
+
+    h3, h5 {
+      padding: 0;
+      color: var(--color-txt-heading-alt);
+      line-height: 1.2;
+    }
+
+    h4, p, li {
+      padding: 0;
+      margin-block: 0.25rem;
+      color: var(--color-txt-alt);
+      line-height: 1.2;
+    }
+
+    ul {
+      // padding: 0;
+      margin-block-end: 1rem;
+    }
+</style>
