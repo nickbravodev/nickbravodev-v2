@@ -31,6 +31,7 @@ const works = defineCollection({
       title: z.string(),
       categories: z.array(z.string()),
       featured: z.boolean().default(false),
+      isDraft: z.boolean().default(false),
       image: image(),
       url: z.string().url().optional(),
       date: z.date(),

@@ -2,8 +2,19 @@
 import MainLayout from "../../layouts/MainLayout.astro";
 
 import Image from "astro/components/Image.astro";
+import { getCollection, getEntry } from "astro:content";
 import { getEntryBySlug } from "astro:content";
 import HeroPostSingle from "../../components/heroes/HeroPostSingle.astro";
+
+
+export async function getStaticPaths() {
+  const landing = await getCollection('works');
+  return landing.map((a) => {
+    return {
+      params: { slug: a.slug }
+    }
+  })
+} 
 
 const { slug } = Astro.params;
 const work = await getEntryBySlug("works", slug as string);
