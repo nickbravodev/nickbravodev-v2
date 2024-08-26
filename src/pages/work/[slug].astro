@@ -27,9 +27,9 @@ const {Content} = await work.render();
 ---
 
 <MainLayout
-  title={`${work.data.title} - NickBravo.dev`}
+  title={work.data.title}
   description={work.data.blurb}
-  og_image={work.data.image.src}
+  og_image={work.data.image}
 >
 
   <HeroPostSingle 

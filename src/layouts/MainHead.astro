@@ -16,14 +16,14 @@ const { title, title_tag, description, og_image } = Astro.props;
     <meta property="og:title" content={`${title} - ${title_tag}`} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content={`${Astro.url.origin}${og_image}`} />
+    <meta property="og:image" content={`${Astro.url.origin}/${og_image}`} />
     <meta property="og:url" content={Astro.url} />
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@maverik"/>
     <meta name="twitter:title" content={`${title} - ${title_tag}`}/>
     <meta name="twitter:description" content={description}/>
-    <meta name="twitter:image" content={`${Astro.url.origin}${og_image}`}/>
+    <meta name="twitter:image" content={`${Astro.url.origin}/${og_image}`}/>
 
     <!-- <ViewTransitions fallback="swap" /> -->
   </head>
