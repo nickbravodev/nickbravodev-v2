@@ -1,7 +1,7 @@
 ---
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
-const { title, title_tag, description, og_image } = Astro.props;
+const { title, title_tag, description, og_image, ogImage } = Astro.props;
 ---
 
 <head>
@@ -19,14 +19,14 @@ const { title, title_tag, description, og_image } = Astro.props;
   <meta property="og:title" content={`${title} - ${title_tag}`} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content={`${Astro.site}/${og_image}`} />
+  <meta property="og:image" content={ogImage} />
   <meta property="og:url" content={canonicalURL} />
 
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:site" content="@maverik"/>
   <meta name="twitter:title" content={`${title} - ${title_tag}`}/>
   <meta name="twitter:description" content={description}/>
-  <meta name="twitter:image" content={`${Astro.site}/${og_image}`}/> 
+  <meta name="twitter:image" content={ogImage}/> 
   <meta property="twitter:url" content={canonicalURL} />
 
   <!-- <ViewTransitions fallback="swap" /> -->
