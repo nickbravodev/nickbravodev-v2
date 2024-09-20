@@ -6,6 +6,8 @@ import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
 
+import opengraphImages, { presets } from "astro-opengraph-images";
+
 // https://astro.build/config
 export default defineConfig({
   // output: "server",
@@ -25,6 +27,19 @@ export default defineConfig({
       space_in_paren: true,
       space_in_empty_paren: false,
       wrap_line_length: 0,
+    }),
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: "Roboto",
+            weight: 400,
+            style: "normal",
+            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
+          },
+        ],
+      },
+      render: presets.blackAndWhite,
     }),
   ],
   // redirects: {

@@ -16,11 +16,14 @@
     "@astrojs/mdx": "^3.1.4",
     "@astrojs/netlify": "^5.5.1",
     "@astrojs/sitemap": "^3.1.6",
+    "@fontsource/roboto": "^5.1.0",
     "astro": "^4.14.5",
     "astro-html-beautifier": "^1.0.4",
     "astro-icon": "^1.1.1",
-    "astro-og-canvas": "^0.5.3",
-    "astro-robots-txt": "^1.0.0"
+    "astro-opengraph-images": "^1.11.3",
+    "astro-robots-txt": "^1.0.0",
+    "astro-seo": "^0.8.4",
+    "tw-to-css": "^0.0.12"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
@@ -30,6 +33,7 @@
     "postcss-media-minmax": "^5.0.0",
     "postcss-mixins": "^10.0.1",
     "postcss-preset-env": "^10.0.2",
-    "postcss-scss": "^4.0.9"
+    "postcss-scss": "^4.0.9",
+    "react": "^18.3.1"
   }
 }

@@ -1,4 +1,6 @@
 ---
+import { SITE_TITLE, SITE_TITLE_TAG, SITE_DESCRIPTION } from "../consts";
+
 // Component import
 import MainHead from "./MainHead.astro";
 import Nav from "../components/Nav.astro";
@@ -10,10 +12,10 @@ import ResumePopout from "../components/ResumePopout.astro";
 import "../css/global.scss";
 
 const {
-  title = "Designer. Developer. Problem solver.",
-  title_tag = "NickBravo.dev",
-  description = "I build engaging, high-performing websites, graphics, and digital assets to solidify brand authority and trust across platforms.",
-  og_image = "img/open-graph.png",
+  title = SITE_TITLE,
+  title_tag = SITE_TITLE_TAG,
+  description = SITE_DESCRIPTION,
+  og_image = "/img/open-graph.png",
 } = Astro.props;
 ---
 
