@@ -3,15 +3,17 @@ import MainLayout from "../../layouts/MainLayout.astro";
 
 import Image from "astro/components/Image.astro";
 import { getCollection, getEntry } from "astro:content";
+import getWorksCollection from "../../lib/getWorksCollection.ts";
 import { getEntryBySlug } from "astro:content";
 import HeroPostSingle from "../../components/heroes/HeroPostSingle.astro";
 
 
 export async function getStaticPaths() {
-  const landing = await getCollection('works');
-  return landing.map((a) => {
+  const posts = await getWorksCollection();
+  return posts.map((post) => {
     return {
-      params: { slug: a.slug }
+      params: { slug: post.slug },
+      props: post,
     }
   })
 } 
@@ -24,6 +26,14 @@ if ( !work ) {
 }
 
 const {Content} = await work.render();
+
+// export async function getStaticPaths() {
+//   const posts = await getBlogCollection();
+//   return posts.map((post) => ({
+//     params: { slug: post.slug },
+//     props: post,
+//   }));
+// }
 ---
 
 <MainLayout
