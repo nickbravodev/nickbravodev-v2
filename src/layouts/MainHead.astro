@@ -1,7 +1,7 @@
 ---
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
-const { title, title_tag, description, og_image, ogImage } = Astro.props;
+const { title, title_tag, description, og_image, ogImage = og_image } = Astro.props;
 ---
 
 <head>
