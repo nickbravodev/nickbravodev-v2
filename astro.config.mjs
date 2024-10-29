@@ -39,7 +39,7 @@ export default defineConfig({
           },
         ],
       },
-      render: presets.blackAndWhite,
+      render: presets.backgroundImage,
     }),
   ],
   // redirects: {
