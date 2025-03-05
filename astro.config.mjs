@@ -10,9 +10,9 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  // adapter: vercel(),
-  adapter: netlify(),
+  output: "server",
+  adapter: vercel(),
+  // adapter: netlify(),
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
