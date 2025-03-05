@@ -13,11 +13,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.4",
-    "@astrojs/netlify": "^5.5.1",
-    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/mdx": "^4.1.0",
+    "@astrojs/netlify": "^6.2.2",
+    "@astrojs/sitemap": "^3.2.1",
     "@fontsource/roboto": "^5.1.0",
-    "astro": "^4.16.18",
+    "astro": "^5.4.2",
     "astro-html-beautifier": "^1.0.4",
     "astro-icon": "^1.1.1",
     "astro-opengraph-images": "^1.11.3",
