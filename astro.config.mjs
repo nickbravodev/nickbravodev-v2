@@ -5,6 +5,7 @@ import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
+import react from "@astrojs/react";
 
 import opengraphImages, { presets } from "astro-opengraph-images";
 
@@ -19,6 +20,7 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     mdx(),
+    react(),
     htmlBeautifier({
       indent_size: 2,
       end_with_newline: true,
