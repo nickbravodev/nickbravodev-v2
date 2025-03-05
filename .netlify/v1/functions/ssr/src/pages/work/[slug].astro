@@ -1,0 +1,90 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+
+import Image from "astro/components/Image.astro";
+import { getCollection, getEntry } from "astro:content";
+import { getEntryBySlug } from "astro:content";
+import HeroPostSingle from "../../components/heroes/HeroPostSingle.astro";
+
+
+export async function getStaticPaths() {
+  const landing = await getCollection('works');
+  return landing.map((a) => {
+    return {
+      params: { slug: a.slug },
+      props: a,
+    }
+  })
+} 
+
+const { slug } = Astro.params;
+const work = await getEntryBySlug("works", slug as string);
+
+if ( !work ) {
+  return Astro.redirect('/404');
+}
+
+const {Content} = await work.render();
+---
+
+<MainLayout
+  title={work.data.title}
+  description={work.data.blurb}
+  og_image={work.data.image}
+>
+
+  <HeroPostSingle 
+    h1={work.data.title}
+    image={work.data.image}
+    image_alt={work.data.title}
+    p1={work.data.client}
+    liveUrl={work.data.url}
+  />
+
+      
+      <section class="py-16">
+        <div class="description">
+          <div class="content-grid">
+            <div class="text-block">
+              <h2>Project Overview</h2>
+              <div class="hr-div"></div>
+              <p>{work.data.blurb}</p>
+              { Content &&
+                <Content />
+              }
+            </div>
+            <div class="sidebar">
+              <h3>Technologies</h3>
+              <div class="hr-div"></div>
+              <p>{work.data.tech}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+</MainLayout>
+
+<style lang="scss">
+  .description {
+    padding-block: 0rem;
+    max-width: 80rem;
+  }
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    @media screen and (min-width: 992px) {
+      gap: 4rem;
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
