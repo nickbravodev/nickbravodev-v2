@@ -5,15 +5,24 @@ import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
+  output: "server",
   // adapter: netlify(),
+  adapter: vercel(),
   // server: "./server.js",
   site: "https://nickbravo.dev",
+
+  // redirects: {
+  //   "niktheuntamed.com": {
+  //     status: 301,
+  //     destination: "https://nickbravo.dev/work/$1",
+  //   },
+  // },
   integrations: [
     icon(),
     sitemap(),
@@ -42,10 +51,6 @@ export default defineConfig({
       render: presets.backgroundImage,
     }),
   ],
-  // redirects: {
-  //   "niktheuntamed.com": {
-  //     status: 301,
-  //     destination: "https://nickbravo.dev/work/$1",
-  //   },
-  // },
+
+  adapter: vercel(),
 });
