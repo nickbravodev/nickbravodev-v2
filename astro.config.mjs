@@ -10,8 +10,8 @@ import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  // adapter: netlify(),
+  output: "server",
+  adapter: netlify(),
   // server: "./server.js",
   site: "https://nickbravo.dev",
   integrations: [
