@@ -1,38 +1,16 @@
 ---
-import { SITE_TITLE, SITE_TITLE_TAG, SITE_DESCRIPTION } from "../consts";
+import { isInputError } from "astro:actions";
+import { actions } from "astro:actions";
 
-// Component import
-import MainHead from "./MainHead.astro";
-import Nav from "../components/Nav.astro";
-import Footer from "../components/Footer.astro";
-import ContactFormResend from "../components/forms/ContactFormResend.astro";
-import ResumePopout from "../components/ResumePopout.astro";
+const result = Astro.getActionResult(actions.send);
+if (result?.data) {
+  return Astro.redirect("/success");
+}
 
-// Style import
-import "../css/global.scss";
-
-const {
-  title = SITE_TITLE,
-  title_tag = SITE_TITLE_TAG,
-  description = SITE_DESCRIPTION,
-  og_image = "/img/open-graph.png",
-} = Astro.props;
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
 
-<html lang="en" prefix="og: https://ogp.me/ns#">
-  <MainHead {title} {title_tag} {description} {og_image} />
-  <body>
-    <Nav />
-    <main>
-      <slot />
-    </main>
-
-    <section id="contact" class="p-0">
-      <div class="container">
-        <div class="flex align-items-start justify-content-center">
-          <!-- <ContactFormResend /> -->
-
-          <!-- Contact section -->
+  <!-- Contact section -->
     <section id="contact">
       <div class="contact-wrapper">
         <div>
@@ -150,12 +128,3 @@ const {
         }
       }
     </style>
-
-        </div>
-      </div>
-    </section>
-
-    <Footer />
-    <ResumePopout />
-  </body>
-</html>

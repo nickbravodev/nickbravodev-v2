@@ -5,20 +5,20 @@ import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
-
-import opengraphImages, { presets } from "astro-opengraph-images";
+import vercel from "@astrojs/vercel";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
-  // adapter: netlify(),
-  // server: "./server.js",
+  output: "server",
+  adapter: vercel(),
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
     sitemap(),
     robotsTxt(),
     mdx(),
+    react(),
     htmlBeautifier({
       indent_size: 2,
       end_with_newline: true,
@@ -28,24 +28,5 @@ export default defineConfig({
       space_in_empty_paren: false,
       wrap_line_length: 0,
     }),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: "Roboto",
-            weight: 400,
-            style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
-          },
-        ],
-      },
-      render: presets.backgroundImage,
-    }),
   ],
-  // redirects: {
-  //   "niktheuntamed.com": {
-  //     status: 301,
-  //     destination: "https://nickbravo.dev/work/$1",
-  //   },
-  // },
 });
