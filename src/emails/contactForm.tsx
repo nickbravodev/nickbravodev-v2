@@ -1,49 +1,59 @@
 import { Body, Button, Container, Head, Html, Img, Link, Preview, Section, Text } from "@react-email/components";
 
-interface SampleEmailProps {
-  name?: string;
+interface ContactFormProps {
+  firstName?: string;
+  lastName?: string;
   email?: string;
   message?: string;
 }
 
 const baseUrl = "https://nickbravo.dev/";
 
-export const SampleEmail = ({ name, email, message }: SampleEmailProps) => (
+export const ContactForm = ({ firstName, lastName, email, message }: ContactFormProps) => (
   <Html>
     <Head />
-    <Preview>A fine-grained personal access token has been added to your account</Preview>
+    <Preview>NickBravo.dev Contact Form Submission</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Img src={`${baseUrl}/nickbravodev-logo-32.png`} width="32" height="32" alt="Github" />
+        <Img src={`${baseUrl}/nickbravodev-logo-64.png`} width="32" height="32" alt="NickBravo.dev" />
 
         <Text style={title}>
-          <strong>@{name}</strong>, a personal access was created on your account.
+          <strong>
+            {firstName} {lastName}
+          </strong>{" "}
+          submitted a Contact Form on NickBravo.dev.
         </Text>
 
         <Section style={section}>
           <Text style={text}>
-            Name: <strong>{name}</strong>!
+            Name:{" "}
+            <strong>
+              {firstName} {lastName}
+            </strong>
           </Text>
           <Text style={text}>
-            Email: <strong>{email}</strong>!
+            Email: <strong>{email}</strong>
           </Text>
-          <Text style={text}>
-            Message: <strong>{message}</strong>!
-          </Text>
+          <Text style={text}>Message:</Text>
+          <Text style={text}>{message}</Text>
         </Section>
+
         <Text style={footer}>
-          NickBravo.dev ・(<Link href="https://nickbravo.dev">https://nickbravo.dev</Link>)
+          NickBravo.dev ・{" "}
+          <Link style={link} href="https://nickbravo.dev">
+            https://nickbravo.dev
+          </Link>
         </Text>
       </Container>
     </Body>
   </Html>
 );
 
-SampleEmail.PreviewProps = {
+ContactForm.PreviewProps = {
   name: "alanturing",
-} as SampleEmailProps;
+} as ContactFormProps;
 
-export default SampleEmail;
+export default ContactForm;
 
 const main = {
   backgroundColor: "#ffffff",

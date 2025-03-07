@@ -11,10 +11,6 @@ console.log(result?.data);
 const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
 
-{result && !result.error && (
-  <p class="success">Success: {result.data}</p>
-)}
-
   <!-- Contact section -->
     <section id="contact">
       <div class="contact-wrapper">
@@ -31,9 +27,15 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
         <div>
           <form action={actions.send} method="post">
 
-            <div>
-              <label class="form-label sr-only" for="name">Name</label>
-              <input class="form-control" type="text" id="name" name="name" placeholder="Name" required aria-describedby={inputErrors.name ? "name-error" : undefined} />
+            <div class="flex gap-2">
+              <div>
+                <label class="form-label sr-only" for="firstName">First Name</label>
+                <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" required aria-describedby={inputErrors.name ? "firstName-error" : undefined} />
+              </div>
+              <div>
+                <label class="form-label sr-only" for="lastName">Last Name</label>
+                <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" required aria-describedby={inputErrors.name ? "lastName-error" : undefined} />
+              </div>
             </div>
             {
               inputErrors.name && (
@@ -47,47 +49,11 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
             {inputErrors.email && <p id="email-error">{inputErrors.email[0]}</p>}
             <div>
               <label class="form-label sr-only" for="description">Message</label>
-              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
+              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required aria-describedby={inputErrors.message ? "message-error" : undefined} ></textarea>
             </div>
             {inputErrors.message && <p id="message-error">{inputErrors.message[0]}</p>}
-            <div><button>Send message</button></div>
+            <div><button class="outline">Send message</button></div>
           </form>
-    
-          <!-- <form name="contact-form" id="contact-form" action={actions.send} method="POST">
-            <input type="hidden" name="access_key" value="a11bce5f-44db-4845-b3d7-74506ba572a8">
-            <input type="hidden" name="redirect" value="https://nickbravo.dev/success"> -->
-
-            <!-- Name input -->
-
-            <!-- <div>
-              <label class="form-label sr-only" for="name">Name</label>
-              <input class="form-control" type="text" id="name" name="name" placeholder="Name" required />
-            </div> -->
-
-            <!-- Email input -->
-             
-            <!-- <div>
-              <label class="form-label sr-only" for="email">Email</label>
-              <input class="form-control" type="email" id="email" name="email" placeholder="Email" required />
-            </div> -->
-
-            <!-- Message input -->
-
-            <!-- <div>
-              <label class="form-label sr-only" for="description">Message</label>
-              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
-            </div> -->
-
-            <!-- Submit button -->
-
-            <!-- <div class="h-captcha"
-              data-captcha="true"
-              data-theme="dark">
-            </div>
-            <div>
-              <button class="outline" type="submit">Send message</button>
-            </div>
-          </form> -->
         </div>
         
       </div>

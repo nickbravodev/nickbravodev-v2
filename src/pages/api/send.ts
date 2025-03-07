@@ -1,13 +1,13 @@
 import type { APIRoute } from "astro";
 import { Resend } from "resend";
-import SampleEmail from "../../emails/sampleEmail";
+import SampleEmail from "../../emails/contactForm";
 import { render } from "@react-email/render";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const GET: APIRoute = async () => {
   // create the email
-  const emailContent = SampleEmail({ username: "Chris" });
+  const emailContent = SampleEmail({ name: "Chris" });
   const html = await render(emailContent);
   const text = await render(emailContent, {
     plainText: true,
