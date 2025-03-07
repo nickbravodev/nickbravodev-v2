@@ -30,16 +30,21 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
             <div class="flex gap-2">
               <div>
                 <label class="form-label sr-only" for="firstName">First Name</label>
-                <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" required aria-describedby={inputErrors.name ? "firstName-error" : undefined} />
+                <input class="form-control" type="text" id="firstName" name="firstName" placeholder="First Name" required aria-describedby={inputErrors.firstName ? "firstName-error" : undefined} />
               </div>
+            {
+              inputErrors.firstName && (
+                <p id="name-error">{inputErrors.firstName[0]}</p>
+              )
+            }
               <div>
                 <label class="form-label sr-only" for="lastName">Last Name</label>
-                <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" required aria-describedby={inputErrors.name ? "lastName-error" : undefined} />
+                <input class="form-control" type="text" id="lastName" name="lastName" placeholder="Last Name" required aria-describedby={inputErrors.lastName ? "lastName-error" : undefined} />
               </div>
             </div>
             {
-              inputErrors.name && (
-                <p id="name-error">{inputErrors.name[0]}</p>
+              inputErrors.lastName && (
+                <p id="name-error">{inputErrors.lastName[0]}</p>
               )
             }
             <div>
