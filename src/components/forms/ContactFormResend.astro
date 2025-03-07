@@ -3,9 +3,7 @@ import { actions, isInputError } from "astro:actions";
 
 const result = Astro.getActionResult(actions.send);
 if (result?.data) {
-
-  window.location.href = '/success';
-  // return Astro.redirect("/success");
+  return Astro.redirect("/success");
 }
 
 console.log(result?.data);
@@ -32,31 +30,27 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
         <!-- Contact form -->
         <div>
           <form action={actions.send} method="post">
-            <label
-              >Username<input
-                type="text"
-                name="username"
-                placeholder="Username"
-                required
-                aria-describedby={inputErrors.username ? "username-error" : undefined}
-              />
-            </label>
+
+            <div>
+              <label class="form-label sr-only" for="name">Name</label>
+              <input class="form-control" type="text" id="name" name="name" placeholder="Name" required aria-describedby={inputErrors.name ? "name-error" : undefined} />
+            </div>
             {
-              inputErrors.username && (
-                <p id="username-error">{inputErrors.username[0]}</p>
+              inputErrors.name && (
+                <p id="name-error">{inputErrors.name[0]}</p>
               )
             }
-            <label
-              >Email<input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                aria-describedby={inputErrors.email ? "email-error" : undefined}
-              />
-            </label>
+            <div>
+              <label class="form-label sr-only" for="email">Email</label>
+              <input class="form-control" type="email" id="email" name="email" placeholder="Email" required aria-describedby={inputErrors.email ? "email-error" : undefined} />
+            </div>
             {inputErrors.email && <p id="email-error">{inputErrors.email[0]}</p>}
-            <button>Send</button>
+            <div>
+              <label class="form-label sr-only" for="description">Message</label>
+              <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required></textarea>
+            </div>
+            {inputErrors.message && <p id="message-error">{inputErrors.message[0]}</p>}
+            <div><button>Send message</button></div>
           </form>
     
           <!-- <form name="contact-form" id="contact-form" action={actions.send} method="POST">
@@ -99,39 +93,55 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
       </div>
     </section>
 
-    <!-- <script src="https://web3forms.com/client/script.js" async defer></script> -->
+<script is:inline>
+  "use strict";
 
-    <!-- <script is:inline>
-      const form = document.getElementById('contact-form');
-
-      form.addEventListener('submit', function(e) {
-
-          const hCaptcha = form.querySelector('textarea[name=h-captcha-response]').value;
-
-          if (!hCaptcha) {
-              e.preventDefault();
-              alert("Please fill out captcha field")
-              return
+  // Form validation
+  (function () {
+    const forms = document.querySelectorAll(".needs-validation");
+    Array.from(forms).forEach(function (form) {
+      form.addEventListener(
+        "submit",
+        function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          } else if (form.checkValidity() == true) {
+            event.preventDefault();
+            form.submit();
           }
-      });
-    </script> -->
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
 
-    <style lang="scss">
-      .contact-wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 3rem;
-        margin-block-start: 8rem;
-        
-        @media screen and (min-width: 768px) {
-          grid-template-columns: 1fr 1fr;
-        }
-        
-        @media screen and (min-width: 992px) {
-          grid-template-columns: 1fr 1fr;
-          gap: 4rem;
-        }
-      }
-    </style>
+  const success = () => {
+    if (window.location.href.indexOf("?_action=send") != -1) {
+      window.location.href = "/success";
+    }
+  }
+
+  success();
+</script>
+
+<style lang="scss">
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3rem;
+    margin-block-start: 8rem;
+    
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    @media screen and (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+</style>

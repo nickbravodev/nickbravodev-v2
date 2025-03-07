@@ -1,12 +1,14 @@
 import { Body, Button, Container, Head, Html, Img, Link, Preview, Section, Text } from "@react-email/components";
 
 interface SampleEmailProps {
-  username?: string;
+  name?: string;
+  email?: string;
+  message?: string;
 }
 
 const baseUrl = "https://demo.react.email/";
 
-export const SampleEmail = ({ username }: SampleEmailProps) => (
+export const SampleEmail = ({ name, email, message }: SampleEmailProps) => (
   <Html>
     <Head />
     <Preview>A fine-grained personal access token has been added to your account</Preview>
@@ -15,31 +17,29 @@ export const SampleEmail = ({ username }: SampleEmailProps) => (
         <Img src={`${baseUrl}/static/github.png`} width="32" height="32" alt="Github" />
 
         <Text style={title}>
-          <strong>@{username}</strong>, a personal access was created on your account.
+          <strong>@{name}</strong>, a personal access was created on your account.
         </Text>
 
         <Section style={section}>
           <Text style={text}>
-            Hey <strong>{username}</strong>!
+            Name: <strong>{name}</strong>!
           </Text>
           <Text style={text}>
-            A fine-grained personal access token (<Link>resend</Link>) was recently added to your account.
+            Email: <strong>{email}</strong>!
           </Text>
-
-          <Button style={button}>View your token</Button>
+          <Text style={text}>
+            Message: <strong>{message}</strong>!
+          </Text>
         </Section>
-        <Text style={links}>
-          <Link style={link}>Your security audit log</Link> ・ <Link style={link}>Contact support</Link>
-        </Text>
-
-        <Text style={footer}>GitHub, Inc. ・88 Colin P Kelly Jr Street ・San Francisco, CA 94107</Text>
+<
+        <Text style={footer}>NickBravo.dev ・<Link href="https://nickbravo.dev">https://nickbravo.dev</Link></Text>
       </Container>
     </Body>
   </Html>
 );
 
 SampleEmail.PreviewProps = {
-  username: "alanturing",
+  name: "alanturing",
 } as SampleEmailProps;
 
 export default SampleEmail;

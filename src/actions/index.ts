@@ -10,12 +10,13 @@ export const server = {
   send: defineAction({
     accept: "form",
     input: z.object({
-      username: z.string(),
+      name: z.string(),
       email: z.string().email(),
+      message: z.string().email(),
     }),
-    handler: async ({ username, email }) => {
+    handler: async ({ name, email, message }) => {
       // create the email
-      const emailContent = SampleEmail({ username });
+      const emailContent = SampleEmail({ name });
       const html = await render(emailContent);
       const text = await render(emailContent, {
         plainText: true,
@@ -23,9 +24,10 @@ export const server = {
 
       // send an email
       const { data, error } = await resend.emails.send({
-        from: "NickBravo.dev <noreply@mail.nickbravo.dev>",
+        from: "NickBravo.dev <contact@mail.nickbravo.dev>",
         to: ["nick@nickbravo.dev"],
-        subject: "NickBravo.dev Contact Form",
+        replyTo: email,
+        subject: "NickBravo.dev Request for Information",
         html,
         text,
       });
