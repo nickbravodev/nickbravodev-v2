@@ -15,15 +15,22 @@
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
     "@astrojs/netlify": "^6.2.2",
+    "@astrojs/react": "^4.2.1",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vercel": "^8.1.1",
     "@fontsource/roboto": "^5.1.0",
+    "@react-email/components": "^0.0.33",
+    "@react-email/render": "^1.0.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "astro": "^5.4.2",
     "astro-html-beautifier": "^1.0.4",
     "astro-icon": "^1.1.1",
     "astro-opengraph-images": "^1.11.3",
     "astro-robots-txt": "^1.0.0",
     "astro-seo": "^0.8.4",
+    "react-dom": "^19.0.0",
+    "resend": "^4.1.2",
     "tw-to-css": "^0.0.12"
   },
   "devDependencies": {
@@ -35,7 +42,7 @@
     "postcss-mixins": "^10.0.1",
     "postcss-preset-env": "^10.0.2",
     "postcss-scss": "^4.0.9",
-    "react": "^18.3.1",
+    "react": "^19.0.0",
     "sass-embedded": "^1.85.1"
   }
 }
