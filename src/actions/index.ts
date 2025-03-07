@@ -24,7 +24,7 @@ export const server = {
       // send an email
       const { data, error } = await resend.emails.send({
         from: "NickBravo.dev <noreply@mail.nickbravo.dev>",
-        to: ["nick@nickbravo.dev", email],
+        to: ["nick@nickbravo.dev"],
         subject: "NickBravo.dev Contact Form",
         html,
         text,

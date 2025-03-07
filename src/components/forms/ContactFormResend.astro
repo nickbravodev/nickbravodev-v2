@@ -1,14 +1,21 @@
 ---
-import { isInputError } from "astro:actions";
-import { actions } from "astro:actions";
+import { actions, isInputError } from "astro:actions";
 
 const result = Astro.getActionResult(actions.send);
 if (result?.data) {
-  return Astro.redirect("/success");
+
+  window.location.href = '/success';
+  // return Astro.redirect("/success");
 }
+
+console.log(result?.data);
 
 const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
+
+{result && !result.error && (
+  <p class="success">Success: {result.data}</p>
+)}
 
   <!-- Contact section -->
     <section id="contact">

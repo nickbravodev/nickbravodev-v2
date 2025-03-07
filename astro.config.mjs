@@ -5,7 +5,7 @@ import robotsTxt from "astro-robots-txt";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
-import vercel from "@astrojs/vercel";
+import vercelServerless from "@astrojs/vercel/serverless";
 
 import opengraphImages, { presets } from "astro-opengraph-images";
 
@@ -15,16 +15,13 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "server",
   // adapter: netlify(),
-  adapter: vercel(),
-  // server: "./server.js",
+  adapter: vercelServerless({
+    webAnalytics: {
+      enabled: true,
+    },
+    maxDuration: 8,
+  }),
   site: "https://nickbravo.dev",
-
-  // redirects: {
-  //   "niktheuntamed.com": {
-  //     status: 301,
-  //     destination: "https://nickbravo.dev/work/$1",
-  //   },
-  // },
   integrations: [icon(), sitemap(), robotsTxt(), mdx(), htmlBeautifier({
     indent_size: 2,
     end_with_newline: true,
@@ -33,7 +30,9 @@ export default defineConfig({
     space_in_paren: true,
     space_in_empty_paren: false,
     wrap_line_length: 0,
-  }), opengraphImages({
+  }),
+  react(),
+    opengraphImages({
     options: {
       fonts: [
         {
@@ -45,7 +44,5 @@ export default defineConfig({
       ],
     },
     render: presets.backgroundImage,
-  }), react()],
-
-  adapter: vercel(),
+    })]
 });
