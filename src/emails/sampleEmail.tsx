@@ -6,7 +6,7 @@ interface SampleEmailProps {
   message?: string;
 }
 
-const baseUrl = "https://demo.react.email/";
+const baseUrl = "https://nickbravo.dev/";
 
 export const SampleEmail = ({ name, email, message }: SampleEmailProps) => (
   <Html>
@@ -14,7 +14,7 @@ export const SampleEmail = ({ name, email, message }: SampleEmailProps) => (
     <Preview>A fine-grained personal access token has been added to your account</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Img src={`${baseUrl}/static/github.png`} width="32" height="32" alt="Github" />
+        <Img src={`${baseUrl}/nickbravodev-logo-32.png`} width="32" height="32" alt="Github" />
 
         <Text style={title}>
           <strong>@{name}</strong>, a personal access was created on your account.
@@ -31,8 +31,9 @@ export const SampleEmail = ({ name, email, message }: SampleEmailProps) => (
             Message: <strong>{message}</strong>!
           </Text>
         </Section>
-<
-        <Text style={footer}>NickBravo.dev ・<Link href="https://nickbravo.dev">https://nickbravo.dev</Link></Text>
+        <Text style={footer}>
+          NickBravo.dev ・(<Link href="https://nickbravo.dev">https://nickbravo.dev</Link>)
+        </Text>
       </Container>
     </Body>
   </Html>
