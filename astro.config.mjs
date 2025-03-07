@@ -2,17 +2,25 @@ import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
+import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
+import vercel from "@astrojs/vercel";
 
 import opengraphImages, { presets } from "astro-opengraph-images";
 
 // https://astro.build/config
 export default defineConfig({
-  // output: "server",
+  output: "server",
   // adapter: netlify(),
-  // server: "./server.js",
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+    imageService: true,
+    maxDuration: 8,
+  }),
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
@@ -28,6 +36,7 @@ export default defineConfig({
       space_in_empty_paren: false,
       wrap_line_length: 0,
     }),
+    react(),
     opengraphImages({
       options: {
         fonts: [
@@ -42,10 +51,4 @@ export default defineConfig({
       render: presets.backgroundImage,
     }),
   ],
-  // redirects: {
-  //   "niktheuntamed.com": {
-  //     status: 301,
-  //     destination: "https://nickbravo.dev/work/$1",
-  //   },
-  // },
 });
