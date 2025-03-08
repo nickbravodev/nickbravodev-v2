@@ -1,6 +1,6 @@
 ---
 import { actions, isInputError } from "astro:actions";
-import TurnstileWidget from 'astro-turnstile:components/TurnstileWidget';
+// import TurnstileWidget from 'astro-turnstile:components/TurnstileWidget';
 
 const result = Astro.getActionResult(actions.send);
 if (result?.data) {
@@ -58,8 +58,8 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
               <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required aria-describedby={inputErrors.message ? "message-error" : undefined} ></textarea>
             </div>
             {inputErrors.message && <p id="message-error">{inputErrors.message[0]}</p>}
-            <!-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA_5SWCq1QogACSS" data-size="" data-appearance="always"></div> -->
-             <TurnstileWidget />
+            <div class="cf-turnstile" data-sitekey={import.meta.env.TURNSTILE_SITE_KEY} data-size="" data-appearance="always"></div>
+             <!-- <TurnstileWidget size="flexible" /> -->
             <div><button class="outline">Send message</button></div>
           </form>
         </div>
