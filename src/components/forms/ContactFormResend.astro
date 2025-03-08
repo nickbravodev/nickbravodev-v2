@@ -57,7 +57,7 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
               <textarea class="form-control" rows="3" id="description" name="message" placeholder="Type your message here" required aria-describedby={inputErrors.message ? "message-error" : undefined} ></textarea>
             </div>
             {inputErrors.message && <p id="message-error">{inputErrors.message[0]}</p>}
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAA_5SWCq1QogACSS" data-callback="javascriptCallback" data-size="compact"></div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAA_5SWCq1QogACSS" data-callback="javascriptCallback" data-size="flexible"></div>
             <div><button class="outline">Send message</button></div>
           </form>
         </div>
