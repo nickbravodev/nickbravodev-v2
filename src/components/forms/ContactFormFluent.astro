@@ -1,0 +1,57 @@
+---
+
+---
+
+<!-- Contact section -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div>
+      <!-- Contact text -->
+      <h2>Get in touch.</h2>
+      <div class="hr-div"></div>
+      <p class="subheading">
+        I'm ready to join your team! Send me a message if you think we'd be a
+        great fit!
+      </p>
+    </div>
+
+    <!-- Contact form -->
+    <div>
+      <iframe
+        id="fluentform"
+        width="100%"
+        loading="lazy"
+        height="500px"
+        style="min-height: 500px; width: 100%;"
+        frameborder="0"
+        scrolling="no"
+        src="https://dash.nickbravo.dev/?ff_landing=3&embedded=1"
+        onload="this.style.height=(this.contentWindow.document.body.scrollHeight+40)+'px';"
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 3rem;
+    margin-block-start: 8rem;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (min-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+  }
+
+  iframe {
+    overflow: none;
+  }
+</style>

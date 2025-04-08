@@ -14,7 +14,7 @@ import turnstile from "astro-turnstile";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  // output: "server",
   // adapter: netlify(),
   adapter: vercel({
     isr: true,
