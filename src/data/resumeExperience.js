@@ -1,84 +1,97 @@
 const resumeExperience = [
   {
-    position: "Principal Web Developer",
+    position: "Principal Frontend Engineer",
     employer: "Maverik",
     city: "Salt Lake City",
     state: "UT",
     startDate: "July 2023",
     endDate: "Present",
     synopsis:
-      "Recruited to this role to oversee codebases of all Maverik, Kum & Go, and FJ Management (FJM) web properties, including primary websites for all companies, and the combined Careers website.",
+      "Recruited to provide strategic leadership and full ownership of the web ecosystems for Maverik and Kum & Go, including customer-facing websites and the unified Careers platform.",
     duties: [
       {
-        task: "Completely rebuilt the Kum & Go public website from scratch (including CMS and API integration) within a tight deadline of four weeks, which significantly reduced page load times, increased accessibility and performance, and saved the company over $600,000 in annual costs.",
+        task: "Directed the digital transformation of web properties, architecting scalable platforms that expanded monthly traffic from 22K to 640K page views (29x growth) over two years, advancing enterprise marketing and customer engagement objectives.",
       },
       {
-        task: "Architected scalable codebases for Maverik and Kum & Go web properties using HTML, CSS, JavaScript, JSX, and TypeScript within the Astro framework, effectively utilizing complex web components, content collections, and routing.",
+        task: "Spearheaded the complete rebuild of the Kum & Go public website in under four weeks, integrating CMS and API solutions that improved performance, accessibility, and reliability while delivering $600K+ in annual operational savings.",
       },
       {
-        task: "Constructed converting landing pages for active Maverik and Kum & Go marketing campaigns, sweepstakes, and loyalty programs.",
+        task: "Established enterprise-level coding standards, frameworks, and best practices using Astro, React, TypeScript, and modern DevOps workflows, ensuring long-term scalability and maintainability across brands.",
       },
       {
-        task: "Enhanced workflow efficiency between the Digital Product Team and the rest of the Marketing and Public Relations Teams to streamline web updates across all websites.",
+        task: "Partnered with Marketing, PR, and Digital Product leadership to align web initiatives with business goals, accelerating campaign launches and strengthening Maverik's and Kum & Go's digital presence.",
+      },
+      {
+        task: "Championed cross-functional collaboration and workflow optimization, enabling faster go-to-market execution and improving communication across technical and non-technical teams.",
       },
     ],
   },
   {
-    position: "Web Development Consultant",
+    position: "Web Development Consultant & Architect",
     employer: "Astropost",
     city: "Salt Lake City",
     state: "UT",
     startDate: "March 2022",
     endDate: "Present",
     synopsis:
-      "Transitioned freelance business to a systemized business with streamlined client onboarding and project management workflow.",
+      "Transitioned a freelance practice into a systemized consulting business, introducing structured client onboarding and project management workflows that improved scalability and client satisfaction.",
     duties: [
       {
-        task: "Implemented complex web architecture strategies for fast websites that meet high-performance metrics.",
+        task: "Directed enterprise-level web architecture strategies to deliver high-performance, privacy-focused websites optimized for speed, security, and long-term maintainability.",
       },
       {
-        task: "Built scalable codebases for privacy-focused websites designed for headless CMS and API integration.",
+        task: "Designed and implemented scalable, headless CMS and API-driven codebases, ensuring adaptability and seamless integration with evolving business needs.",
       },
       {
-        task: "Designed and built an accessible digital layout for Unredacted Magazine.",
+        task: "Led the digital transformation of Unredacted Magazine, creating an interactive, accessible, and visually compelling digital publication platform beginning with Issue 002.",
+      },
+      {
+        task: "Advised clients on strategic technology adoption, aligning modern frameworks and performance practices with business objectives to strengthen digital presence and competitive positioning.",
       },
     ],
   },
   {
-    position: "Adjunct Faculty - Web Design & Development",
+    position: "Adjunct Faculty - Visual Art & Design",
     employer: "Salt Lake Community College",
     city: "Salt Lake City",
     state: "UT",
     startDate: "December 2023",
     endDate: "Present",
-    synopsis: "",
+    synopsis:
+      "Delivered instruction across beginner to advanced levels in graphic design, UI/UX design, and web development, fostering both creative and technical skill growth.",
     duties: [
       {
-        task: "Instructed students in novice to advanced UI/UX and web design and development courses.",
+        task: "Guided students in industry-standard tools including Visual Studio Code, Figma, and Adobe Creative Suite (Photoshop, Illustrator, InDesign).",
       },
       {
-        task: "Taught students the fundamentals of web design and development, including Semantic HTML, CSS, JavaScript, responsive layouts, and accessibility practices.",
+        task: "Taught core web technologies and principles—Semantic HTML, CSS, JavaScript, responsive design, and accessibility—emphasizing modern standards and best practices.",
       },
       {
-        task: "Demonstrated real-world project management and DevOps workflows and best practices.",
+        task: "Incorporated real-world project management and DevOps methodologies to prepare students for professional workflows and collaborative environments.",
       },
     ],
   },
   {
-    position: "Freelance Designer / Developer",
+    position: "Freelance Graphic Designer / Web Developer",
     employer: "Freelance",
     city: "Salt Lake City",
     state: "UT",
     startDate: "May 2007",
     endDate: " March 2022",
     synopsis:
-      "Provided freelance web design and development services to local businesses, including several pro bono projects.",
+      "Founded and grew a 15-year freelance practice delivering end-to-end digital solutions—websites, user interfaces, visual identities, and online assets—for small businesses, nonprofits, and public organizations.",
     duties: [
       {
-        task: "Built engaging websites, user interfaces, visual identities, digital products, and online assets.",
+        task: "Directed web strategy and digital branding initiatives for diverse clients, ensuring alignment between technical execution, marketing goals, and long-term business growth.",
       },
       {
-        task: "Constructed many pro bono websites for public safety, political, and nonprofit organizations.",
+        task: "Built scalable, engaging websites and digital products with a focus on usability, accessibility, and performance, strengthening client visibility and customer engagement.",
+      },
+      {
+        task: "Partnered with public safety, political, and nonprofit organizations to deliver mission-driven pro bono projects, expanding community impact and building trusted digital presences.",
+      },
+      {
+        task: "Established a reputation for strategic consulting, helping clients adopt modern technologies, strengthen digital ecosystems, and maximize ROI from their web platforms.",
       },
     ],
   },
@@ -90,13 +103,16 @@ const resumeExperience = [
     startDate: "June 2008",
     endDate: "September 2009",
     synopsis:
-      "Recruited as a graphic designer and illustrator, quickly transitioned to primary web developer due to previous experience.",
+      "Recruited as a graphic designer and illustrator, and rapidly advanced to lead web developer, leveraging prior experience to expand the agency's digital capabilities.",
     duties: [
       {
-        task: "Developed the website for Maverik’s Kick Start, a local adventure TV show produced by Maverik, a leading convenience store chain.",
+        task: "Directed the design and development of the Maverik Kick Start website, supporting a regional adventure TV show and strengthening Maverik's brand presence in the competitive convenience retail market.",
       },
       {
-        task: "Elevated brands by building powerful websites, and designing graphics, social media content, and other digital assets.",
+        task: "Elevated client brands by delivering integrated digital solutions—websites, graphics, social media content, and marketing assets—that aligned with broader business and marketing strategies.",
+      },
+      {
+        task: "Collaborated with cross-functional teams to bridge creative design with technical implementation, setting a precedent for scalable, brand-focused digital experiences.",
       },
     ],
   },
