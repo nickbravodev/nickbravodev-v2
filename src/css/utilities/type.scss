@@ -33,16 +33,22 @@ h2,
   font-weight: 900;
 }
 
-h5,
+h3,
 .heading-sm {
   font-size: var(--font-heading-sm);
   font-weight: 900;
 }
 
-h6,
+h4,
 .heading-xs {
   font-size: var(--font-heading-xs);
-  font-weight: 900;
+  font-weight: 800;
+}
+
+h5,
+.heading-xxs {
+  font-size: var(--font-heading-xxs);
+  font-weight: 800;
 }
 
 p {
