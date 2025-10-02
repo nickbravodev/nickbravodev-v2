@@ -1,5 +1,19 @@
 :root {
   --font-family-base: proxima-nova, sans-serif;
+  --font-size-base: 1rem;
+  --font-heading-xxl: clamp(2.25rem, 8cqi, 4.5rem);
+  --font-heading-xl: clamp(2rem, 7cqi, 3.75rem);
+  --font-heading-lg: clamp(1.5rem, 5cqi, 2.75rem);
+  --font-heading-md: clamp(1.25rem, 3.3cqi, 1.75rem);
+  --font-heading-sm: clamp(1rem, 2.7cqi, 1.5rem);
+  --font-heading-xs: clamp(1rem, 2.5cqi, 1.25rem);
+  --font-body-xl: clamp(1.25rem, 2.75cqi, 1.5rem);
+  --font-body-lg: clamp(1rem, 2.3cqi, 1.25rem);
+  --font-body-md: clamp(0.875rem, 1.95cqi, 1rem);
+  --font-body-sm: clamp(0.75rem, 1.7cqi, 0.875rem);
+  --font-body-xs: clamp(0.625rem, 1.6cqi, 0.75rem);
+  --font-body-reg: var(--font-body-md);
+  --font-eyebrow: clamp(0.75rem, 3cqi, 0.875rem);
 }
 
 $font-family-base: proxima-nova !default;
