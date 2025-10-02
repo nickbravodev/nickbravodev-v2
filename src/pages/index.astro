@@ -52,12 +52,9 @@ import profileImage from "../img/nb-new.jpg";
       <div class="container flex-md-row-reverse">
           <!-- About text -->
           <div class="section__body flex flex-column">
-            <h2>Career change from cop to web developer? Don't mind if I do!</h2>
+            <h2>From Cop to Creative Engineer.</h2>
             <div class="hr-div"></div>
-            <p class="subheading">Short version? I transitioned from a full-time police officer back to full-time web development. With over five years in-house graphic and web design and 15 years freelancing while in law enforcement, I bring a unique perspective to solving digital challenges.</p>
-            <p class="subheading mb-4">
-              Long version? My official biography is set to be released in 2552.
-            </p> <!-- IYKYK -->
+            <p class="subheading">I recently transitioned from a police officer back to full-time design and development. With over five years in-house graphic and web design experience and 15 years freelancing while in law enforcement, I bring a unique perspective to solving digital challenges.</p>
             <!-- CTA buttons -->
             <div class="flex gap">
               <Button href="contact" />
@@ -80,10 +77,10 @@ import profileImage from "../img/nb-new.jpg";
           <h2>Languages & frameworks.</h2>
           <div class="hr-div"></div>
           <p class="subheading">
-            I've been developing websites using HTML, CSS, and JavaScript and designing graphics, layouts, and brand assets with Adobe software since 2004 - you know, back when we could break MySpace. I have a solid mastery of HTML, CSS, JS and Adobe Illustrator, InDesign, and Photoshop.
+            I've been engineering websites using HTML, CSS, and JavaScript and designing graphics, layouts, and brand assets with Adobe software since 2004 - you know, back when we could break MySpace. I have a solid mastery of HTML, CSS, JS and Adobe Illustrator, InDesign, and Photoshop.
           </p>
           <p>
-            <code>Adobe CC, VS Code, Astro, Next.js, Bootstrap, Webflow, WordPress</code>
+            <code>Adobe CC, VS Code, Astro, Next.js, React, Vite, Bootstrap, Webflow, WordPress</code>
           </p>
           <div class="flex gap">
             <Button href="contact" />
@@ -95,11 +92,11 @@ import profileImage from "../img/nb-new.jpg";
             <h3 class="mb-1">Design</h3>
             <p>Figma, Adobe Illustrator, InDesign, Photoshop, XD.</p>
             <h3 class="mb-1">Frontend</h3>
-            <p>HTML, CSS, JavaScript, TypeScript.</p>
+            <p>HTML, CSS, JavaScript, TypeScript, React.</p>
             <h3 class="mb-1">Backend</h3>
             <p>Netlify, Node.js, NGINX, Contentful, Supabase, GraphQL, Rest.</p>
             <h3 class="mb-1">Libraries & Builders</h3>
-            <p>Astro, Next.js, Bootstrap, Webflow, WordPress.</p>
+            <p>Astro, Next.js, Vite, Bootstrap, Webflow, WordPress.</p>
           </div>
         <!-- </div> -->
       </div>
@@ -108,12 +105,14 @@ import profileImage from "../img/nb-new.jpg";
     <!-- Portfolio section -->
     <section id="work" class="section__alt">
       <div class="container flex-column">
-        <!-- Portfolio header -->
-        <h2 class="text-dark text-center">Selected Projects.</h2>
-        <div class="hr-div"></div>
-        <p class="subheading text-dark text-center pb-5">
-          A showcase of work I've created as both a designer and developer.
-        </p>
+        <div class="section__body flex flex-column align-items-center">
+          <!-- Portfolio header -->
+          <h2 class="text-dark text-center">Selected Projects.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading text-dark text-center pb-5">
+            A showcase of work I've created as both a designer and engineer.
+          </p>
+        </div>
         
 
         <WorkListFeatured works={works} />

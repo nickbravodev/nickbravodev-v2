@@ -67,7 +67,7 @@ p {
 
 .subheading {
   font:
-    500 1.5rem/130% var(--font-family-base),
+    500 var(--font-body-lg) / 130% var(--font-family-base),
     sans-serif;
   margin-bottom: $spacer * 1.5;
 }
