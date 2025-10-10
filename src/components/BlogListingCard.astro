@@ -1,0 +1,52 @@
+---
+import {type CollectionEntry, getEntryBySlug} from "astro:content"
+import {Image} from "astro:assets"
+import {Icon} from "astro-icon/components";
+import Button from '../components/Button.astro';
+
+type Props = {
+    post: CollectionEntry<"blogPosts">
+}
+
+const {post} = Astro.props
+---
+
+<article class="collection-card" onclick={`window.location="/blog/${post.slug}";`}>
+    <div class="collection-card__inner">
+      <a
+          href={`/blog/${post.slug}`}
+          aria-label={`Read more about ${post.data.title}`}
+      >
+          <Image
+              src={post.data.image}
+              alt={post.data.title}
+              width={600}
+              height={600 / 1.5}
+              format="avif"
+          />
+      </a>
+      <div class="launch-icon">
+        { post.data.url ? <a
+          href={post.data.url}
+          target="_blank"
+          aria-label={`Read more about ${post.data.title}`}
+      ><Icon name="new-window" /></a> : <span>&nbsp;</span> }
+      </div>
+    </div>
+    
+    <!-- <div>
+      <Button
+      href={`/blog/${post.slug}`}
+      text={`Read more about ${post.data.title}`}
+      icon={{ name: "new-window", side: "left"}}
+      />
+      </div> -->
+      
+      <div class="collection-card__label">
+      <h3 class="one-line"><a href={`/blog/${post.slug}`}>{post.data.title}</a></h3>
+      
+      <p class="text-overflow">{post.data.blurb}</p>
+      <p class="text-overflow tech one-line">{post.data.tags}</p>
+    </div>
+</article>
+

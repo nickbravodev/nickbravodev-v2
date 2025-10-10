@@ -9,6 +9,14 @@ h6 {
   color: var(--color-txt-heading);
 }
 
+h3,
+h4,
+h5,
+h6 {
+  margin-block-start: var(--spacer-8);
+  margin-block-end: var(--spacer);
+}
+
 // h1,
 // .heading-xxl {
 //   font-size: var(--font-heading-xxl);
@@ -59,6 +67,10 @@ p {
   margin-block-end: var(--spacer);
 }
 
+code {
+  font-size: var(--font-body-md);
+}
+
 .text-center {
   text-align: center;
 }
@@ -100,4 +112,10 @@ p {
 
 .text-dark {
   color: var(--bravo-dark-700);
+}
+
+.post-content {
+  p {
+    font-size: var(--font-body-lg);
+  }
 }

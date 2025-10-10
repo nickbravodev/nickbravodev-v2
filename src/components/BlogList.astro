@@ -1,0 +1,17 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogListingCard from './BlogListingCard.astro';
+// type Props = {
+//   blogPosts: CollectionEntry<'blogPosts'>[];
+// };
+
+// const { blogPosts } = Astro.props;
+
+const blogPosts = (await getCollection('blogPosts', ({ data }) => {
+  return data.draft !== true;
+})).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<div class="collection-grid padding-nav-height">
+  {blogPosts.map((post) => <BlogListingCard post={post} />)}
+</div>

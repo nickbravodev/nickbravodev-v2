@@ -46,6 +46,10 @@ section {
 .section__aside {
   width: var(--col-12);
 
+  p {
+    font-size: var(--font-body-md);
+  }
+
   @media (--md) {
     width: var(--col-5);
   }

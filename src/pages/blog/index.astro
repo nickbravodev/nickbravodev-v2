@@ -1,0 +1,28 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import BlogList from "../../components/BlogList.astro";
+
+const blogPosts = await getCollection("blogPosts");
+
+export const getStaticPaths = (async ({paginate}) => {
+  const landing = (await getCollection('blogPosts', ({ data }) => {
+  return data.isDraft !== (true);
+})).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+  // const categoryData = await getEntry('categories', landing.data.categories.id);
+  return paginate(landing, {pageSize: 9});
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<MainLayout
+  title="Blog"
+>
+
+<section>
+    <BlogList blogPosts={blogPosts} />
+</section>
+
+</MainLayout>
