@@ -1,0 +1,50 @@
+---
+// Library imports
+import { Icon } from 'astro-icon/components';
+
+// Layout imports
+import MainLayout from "../layouts/MainLayout.astro";
+
+// Component imports
+import Container from '../components/Container.astro';
+import Banner from '../components/Banner.astro';
+
+// Data imports
+import { getCollection } from "astro:content";
+
+// Image imports
+import { Image } from 'astro:assets';
+import homeHero from "../images/HeroBanner-OnlineOrdering.jpg";
+---
+
+<MainLayout
+  title="Page not Found"
+  description="Sorry but the page you were looking for was not found."
+>
+
+    <Container
+      id=""
+      background=""
+      columns="1"
+      classes="pt-80 pb-40"
+    >
+      <Banner
+        type="banner"
+        h1="Page not found"
+        p1="Sorry but the page you were looking for was lost in Neverland."
+        button1_link="/"
+        button1_text="Run Home Jack"
+        button1_target=""
+        button1_type="outline"
+        button2_link=""
+        button2_text=""
+        position="center"
+        theme=""
+        size="sm"
+        rounded_corners="true"
+        heading_size="lg"
+        body_size="md"
+      />
+    </Container>
+
+</MainLayout>

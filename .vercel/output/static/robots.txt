@@ -1,0 +1,18 @@
+User-agent: Googlebot
+Disallow: /search
+Allow: /
+Crawl-delay: 2
+
+User-agent: OtherBot
+Disallow: /admin
+Disallow: /login
+Allow: /allow-for-all-bots
+Allow: /allow-only-for-other-bot
+Crawl-delay: 2
+
+User-agent: *
+Disallow: /search
+Allow: /
+Crawl-delay: 10
+Clean-param: ref /articles/
+Sitemap: https://nickbravo.dev/sitemap-index.xml

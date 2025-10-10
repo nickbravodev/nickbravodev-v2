@@ -1,0 +1,124 @@
+---
+// Library imports
+import { Icon } from 'astro-icon/components';
+import { getCollection } from "astro:content";
+
+// Layout imports
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+import ContactForm from '../components/forms/ContactForm.astro';
+import WorkListFeatured from "../components/WorkListFeatured.astro";
+const works = await getCollection("works");
+
+// Image imports
+import { Image } from 'astro:assets';
+import profileImageGoofy from "../img/nb-goofy.jpg";
+import profileImage from "../img/nb-new.jpg";
+---
+
+<MainLayout
+  title="Designer. Developer. Problem solver."
+>
+
+  <!-- Hero section -->
+    <section id="home" class="section__100vh">
+      <div class="container">
+        <!-- Hero text -->
+        <div class="grid-2">
+          <div>
+            <p class="superheading">Nick Bravo.</p>
+            <h1>Designer. Developer. Problem solver.</h1>
+            <div class="hr-div"></div>
+            <p class="subheading">
+              I create high-performing websites, graphics, and digital assets that strengthen brand authority and build trust across platforms.
+            </p>
+            <!-- CTA buttons -->
+            <div class="flex gap">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            </div>
+          </div>
+          <!-- Hero image SVG -->
+          <div class="hero-image">
+            <Image src={profileImageGoofy} class="profile-image" alt="This is me. Nick Bravo." format="avif" loading="eager" />
+            <!-- <Icon name="nickbravodev" /> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About section -->
+    <section id="about" class="section__100vh">
+      <div class="container flex-md-row-reverse">
+          <!-- About text -->
+          <div class="section__body flex flex-column">
+            <h2>From Cop to Creative Engineer.</h2>
+            <div class="hr-div"></div>
+            <p class="subheading">I recently transitioned from a police officer back to full-time design and development. With over five years in-house graphic and web design experience and 15 years freelancing while in law enforcement, I bring a unique perspective to solving digital challenges.</p>
+            <!-- CTA buttons -->
+            <div class="flex gap">
+              <Button href="contact" />
+              <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+            </div>
+          </div>
+          <!-- Profile photo. Yes, it's really a photo of me! -->
+          <div class="section__aside hero-image d-none flex-md">
+            <!-- <Image src={profileImage} class="profile-image" alt="This is me. Nick Bravo." format="avif" /> -->
+            <Icon name="nickbravodev" />
+          </div>
+      </div>
+    </section>
+
+    <!-- Scope section -->
+    <section id="scope" class="section__100vh">
+      <div class="container">
+        <div class="section__body">
+          <!-- Scope main text -->
+          <h2>Languages & frameworks.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading">
+            I've been engineering websites using HTML, CSS, and JavaScript and designing graphics, layouts, and brand assets with Adobe software since 2004 - you know, back when we could break MySpace. I have a solid mastery of HTML, CSS, JS and Adobe Illustrator, InDesign, and Photoshop.
+          </p>
+          <p>
+            <code>Adobe CC, VS Code, Astro, Next.js, React, Vite, Bootstrap, Webflow, WordPress</code>
+          </p>
+          <div class="flex gap">
+            <Button href="contact" />
+            <Button href="resume" data-bs-toggle="offcanvas" data-bs-target="#resume" aria-controls="resume" />
+          </div>
+        </div>
+          <!-- Scope detail text -->
+          <div class="section__aside">
+            <h3 class="mb-1">Design</h3>
+            <p>Figma, Adobe Illustrator, InDesign, Photoshop, XD.</p>
+            <h3 class="mb-1">Frontend</h3>
+            <p>HTML, CSS, JavaScript, TypeScript, React.</p>
+            <h3 class="mb-1">Backend</h3>
+            <p>Netlify, Node.js, NGINX, Contentful, Supabase, GraphQL, Rest.</p>
+            <h3 class="mb-1">Libraries & Builders</h3>
+            <p>Astro, Next.js, Vite, Bootstrap, Webflow, WordPress.</p>
+          </div>
+        <!-- </div> -->
+      </div>
+    </section>
+
+    <!-- Portfolio section -->
+    <section id="work" class="section__alt">
+      <div class="container flex-column">
+        <div class="section__body flex flex-column align-items-center">
+          <!-- Portfolio header -->
+          <h2 class="text-dark text-center">Selected Projects.</h2>
+          <div class="hr-div"></div>
+          <p class="subheading text-dark text-center pb-5">
+            A showcase of work I've created as both a designer and engineer.
+          </p>
+        </div>
+        
+        <WorkListFeatured works={works} />
+
+        <Button href="/work" text="See More" color="secondary" />
+
+      </div>
+    </section>
+
+</MainLayout>
