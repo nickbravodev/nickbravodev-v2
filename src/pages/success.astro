@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from "astro:content";
 
 // Layout imports
-import MainLayout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Component imports
 import WorkList from "../components/WorkList.astro";
@@ -21,7 +21,7 @@ import homeHero from "../img/home-hero.png";
 import ContactForm from '../components/forms/ContactForm.astro';
 ---
 
-<MainLayout
+<Layout
   title="Thanks for reaching out!"
   description="Thanks for reaching out!"
 >
@@ -44,4 +44,4 @@ import ContactForm from '../components/forms/ContactForm.astro';
 
 
   </main>
-</MainLayout>
+</Layout>

@@ -19,10 +19,10 @@ const navData = [
     //   side: "left",
     // },
   },
-  // {
-  //   name: "Blog",
-  //   path: "/blog",
-  // },
+  {
+    name: "Blog",
+    path: "/blog",
+  },
   {
     name: "Contact",
     path: "/#contact",

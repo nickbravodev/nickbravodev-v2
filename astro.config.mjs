@@ -7,14 +7,14 @@ import mdx from "@astrojs/mdx";
 import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
 import vercel from "@astrojs/vercel";
-
-import opengraphImages, { presets } from "astro-opengraph-images";
-
+// import opengraphImages, { presets } from "astro-opengraph-images";
 import turnstile from "astro-turnstile";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+	output: "server",
+
   // adapter: netlify(),
   adapter: vercel({
     isr: true,
@@ -24,7 +24,9 @@ export default defineConfig({
     imageService: true,
     maxDuration: 8,
   }),
+
   site: "https://nickbravo.dev",
+
   integrations: [
     icon(),
     sitemap(),
@@ -40,19 +42,23 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
     react(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: "Roboto",
-            weight: 400,
-            style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
-          },
-        ],
-      },
-      render: presets.backgroundImage,
-    }),
+    // opengraphImages({
+    //   options: {
+    //     fonts: [
+    //       {
+    //         name: "Roboto",
+    //         weight: 400,
+    //         style: "normal",
+    //         data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
+    //       },
+    //     ],
+    //   },
+    //   render: presets.backgroundImage,
+    // }),
     turnstile(),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });

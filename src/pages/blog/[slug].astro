@@ -1,5 +1,5 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 import Image from "astro/components/Image.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -27,7 +27,7 @@ if ( !post ) {
 const {Content} = await post.render();
 ---
 
-<MainLayout
+<Layout
   title={post.data.title}
   description={post.data.blurb}
   og_image={post.data.image}
@@ -64,7 +64,7 @@ const {Content} = await post.render();
         </div>
       </section>
 
-</MainLayout>
+</Layout>
 
 <style lang="scss">
   .description {

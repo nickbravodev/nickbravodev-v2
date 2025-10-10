@@ -13,7 +13,9 @@ import ContactFormResend from "../components/forms/ContactFormResend.astro";
 import ResumePopout from "../components/ResumePopout.astro";
 
 // Style import
-import "../css/global.scss";
+import "@/css/starwind.css";
+import LightDarkToggle from "@/components/LightDarkToggle.astro";
+// import "../css/global.scss";
 
 const {
   title = SITE_TITLE,
@@ -24,6 +26,7 @@ const {
 ---
 
 <html lang="en" prefix="og: https://ogp.me/ns#">
+  <LightDarkToggle />
   <MainHead {title} {title_tag} {description} {og_image} />
   <body>
     <Nav />

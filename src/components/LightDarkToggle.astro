@@ -3,49 +3,52 @@
 import { Icon } from 'astro-icon/components';
 ---
 
-    <aside class="theme-wrapper">
-      <div class="theme-container" role="group">
-        <button id="toggle-light" class="theme" aria-label="Apply Light Mode" data-theme="light">
-          <Icon name="light-mode-toggle" height="24" width="24" />
-        </button>
-        <button id="toggle-dark" class="theme" aria-label="Apply Dark Mode" data-theme="dark">
-          <Icon name="dark-mode-toggle" height="24" width="24" />
-        </button>
-      </div>
-    </aside>
-
-
+<aside class="theme-wrapper">
+  <div class="" role="group">
+    <!-- Toggle Light Mode -->
+    <button id="toggle-light" class="theme flex items-center gap-3" aria-label="Toggle Light Mode" data-theme="light">
+      <Icon name="light-mode-toggle" size={24} />
+    </button>
+    <!-- Toggle Dark Mode -->
+    <button id="toggle-dark" class="theme flex items-center gap-3" aria-label="Toggle Light Mode" data-theme="dark">
+      <Icon name="dark-mode-toggle" size={24} />
+    </button>
+  </div>
+</aside>
 
 <script type="module">  
-
 // TOGGLE BUTTON DISPLAY FUNCTION - Displays appropriate toggle button
   const toggleButtonDisplay = () => {
     if (document.documentElement.getAttribute('data-theme') === 'dark') {
       // Dark
-      document.getElementById('toggle-dark').classList.add('d-none');
-      document.getElementById('toggle-light').classList.remove('d-none');
+      document.documentElement.classList.add('dark')
+      document.getElementById('toggle-dark').classList.add('toggle-off');
+      document.getElementById('toggle-light').classList.remove('toggle-off');
     } else if (document.documentElement.getAttribute('data-theme') === 'light') {
       // Light
-      document.getElementById('toggle-light').classList.add('d-none');
-      document.getElementById('toggle-dark').classList.remove('d-none');
+      document.documentElement.classList.remove('dark')
+      document.getElementById('toggle-light').classList.add('toggle-off');
+      document.getElementById('toggle-dark').classList.remove('toggle-off');
     }
   }
 // END TOGGLE BUTTON DISPLAY FUNCTION
-
-
+      
+      
 // USER PREFERENCE TOGGLE DISPLAY - Initial toggle button (based on user preference)
   const colorSchemeQueryList = window.matchMedia('(prefers-color-scheme: dark)');
-
+  
   // Assigns correct toggle button based on user preference
   const setColorScheme = e => {
     if (e.matches) {
       // Dark
-      document.getElementById('toggle-dark').classList.add('d-none');
-      document.getElementById('toggle-light').classList.remove('d-none');
+      document.documentElement.classList.add('dark')
+      document.getElementById('toggle-dark').classList.add('toggle-off');
+      document.getElementById('toggle-light').classList.remove('toggle-off');
     } else {
       // Light
-      document.getElementById('toggle-light').classList.add('d-none');
-      document.getElementById('toggle-dark').classList.remove('d-none');
+      document.documentElement.classList.remove('dark')
+      document.getElementById('toggle-light').classList.add('toggle-off');
+      document.getElementById('toggle-dark').classList.remove('toggle-off');
     }
   }
   
@@ -61,7 +64,7 @@ import { Icon } from 'astro-icon/components';
   const handleThemeChange = (e) => {
     const theme = e.currentTarget.dataset.theme;
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('maverikColorTheme', theme);
+    localStorage.setItem('astroColorTheme', theme);
     toggleButtonDisplay();
     
   }
@@ -73,7 +76,7 @@ import { Icon } from 'astro-icon/components';
 // USER PREFERENCE STORAGE
   // Store user preference
   window.addEventListener('DOMContentLoaded', () => {
-    const theme = localStorage.getItem('maverikColorTheme');
+    const theme = localStorage.getItem('astroColorTheme');
     theme && document.documentElement.setAttribute('data-theme', theme);
     toggleButtonDisplay();
   })
@@ -81,16 +84,14 @@ import { Icon } from 'astro-icon/components';
 
 </script>
 
-
-
 <style lang="scss">
   .theme-wrapper {
     position: fixed;
-    right: 0rem;
-    bottom: 0rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
     display: grid;
     place-items: center;
-    padding: 1rem;
+    padding: 0rem;
     z-index: 10000;
   }
   .theme-container {
@@ -99,11 +100,17 @@ import { Icon } from 'astro-icon/components';
   }
   .theme {
     border-radius: 100vmax;
-    padding: 0.6em;
+    padding: 0.5em;
     display: grid;
     place-items: center;
     cursor: pointer;
     position: relative;
+
+    svg {
+      --_icon-size: 1.25rem;
+      height: var(--_icon-size);
+      width: var(--_icon-size);
+    }
 
     &::after {
       content: attr(aria-label);
@@ -125,5 +132,9 @@ import { Icon } from 'astro-icon/components';
       opacity: 1;
       transform: translateY(0%);
     }
+  }
+
+  .toggle-off {
+    display: none;
   }
 </style>

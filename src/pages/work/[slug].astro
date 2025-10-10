@@ -1,5 +1,5 @@
 ---
-import MainLayout from "../../layouts/MainLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 
 import Image from "astro/components/Image.astro";
 import { getCollection, getEntry } from "astro:content";
@@ -27,7 +27,7 @@ if ( !work ) {
 const {Content} = await work.render();
 ---
 
-<MainLayout
+<Layout
   title={work.data.title}
   description={work.data.blurb}
   og_image={work.data.image}
@@ -62,7 +62,7 @@ const {Content} = await work.render();
         </div>
       </section>
 
-</MainLayout>
+</Layout>
 
 <style lang="scss">
   .description {

@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from "astro:content";
 
 // Layout imports
-import MainLayout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import Button from '../components/Button.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
 import WorkListFeatured from "../components/WorkListFeatured.astro";
@@ -16,7 +16,7 @@ import profileImageGoofy from "../img/nb-goofy.jpg";
 import profileImage from "../img/nb-new.jpg";
 ---
 
-<MainLayout
+<Layout
   title="Designer. Developer. Problem solver."
 >
 
@@ -120,4 +120,4 @@ import profileImage from "../img/nb-new.jpg";
       </div>
     </section>
 
-</MainLayout>
+</Layout>
