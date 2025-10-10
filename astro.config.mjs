@@ -8,7 +8,7 @@ import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
 import vercel from "@astrojs/vercel";
 
-import opengraphImages, { presets } from "astro-opengraph-images";
+// import opengraphImages, { presets } from "astro-opengraph-images";
 
 import turnstile from "astro-turnstile";
 
@@ -27,7 +27,21 @@ export default defineConfig({
   site: "https://nickbravo.dev",
   integrations: [
     icon(),
-    sitemap(),
+    sitemap({
+      customPages: async () => {
+        const [blogPosts, works] = await Promise.all([
+          getCollection("blogPosts"),
+          getCollection("works"),
+        ]);
+
+        // Map each collection to its route pattern
+        const blogUrls = blogPosts.map((post) => `/blog/${post.slug}/`);
+        const projectUrls = works.map((work) => `/work/${work.slug}/`);
+
+        // Return a single combined array of all URLs
+        return [...blogUrls, ...projectUrls];
+      },
+    }),
     robotsTxt(),
     mdx(),
     htmlBeautifier({
@@ -40,19 +54,21 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
     react(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: "Roboto",
-            weight: 400,
-            style: "normal",
-            data: fs.readFileSync("node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"),
-          },
-        ],
-      },
-      render: presets.backgroundImage,
-    }),
+    // opengraphImages({
+    //   options: {
+    //     fonts: [
+    //       {
+    //         name: "Roboto",
+    //         weight: 400,
+    //         style: "normal",
+    //         data: fs.readFileSync(
+    //           "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
+    //         ),
+    //       },
+    //     ],
+    //   },
+    //   render: presets.backgroundImage,
+    // }),
     turnstile(),
   ],
 });
