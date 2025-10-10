@@ -73,7 +73,7 @@ input[type="submit"],
   &.secondary {
     color: var(--color-btn-secondary-text);
     background-color: var(--color-btn-secondary);
-    border-color: var(--color-btn-secondary);
+    border-color: var(--color-btn-secondary-text);
 
     &:hover,
     &:focus {

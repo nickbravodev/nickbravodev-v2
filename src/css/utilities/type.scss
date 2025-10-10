@@ -115,6 +115,9 @@ code {
 }
 
 .post-content {
+  h2 {
+    margin-block-start: var(--spacer-16);
+  }
   p {
     font-size: var(--font-body-lg);
   }

@@ -12,6 +12,6 @@ const blogPosts = (await getCollection('blogPosts', ({ data }) => {
 })).sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
-<div class="collection-grid padding-nav-height">
+<div class="blog-grid padding-nav-height">
   {blogPosts.map((post) => <BlogListingCard post={post} />)}
 </div>
