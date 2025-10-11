@@ -8,7 +8,7 @@ import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
 import vercel from "@astrojs/vercel";
 
-// import opengraphImages, { presets } from "astro-opengraph-images";
+import opengraphImages, { presets } from "astro-opengraph-images";
 
 import turnstile from "astro-turnstile";
 
@@ -28,29 +28,7 @@ export default defineConfig({
   integrations: [
     icon(),
     sitemap(),
-    robotsTxt({
-      policy: [
-        {
-          userAgent: "Googlebot",
-          allow: "/",
-          disallow: ["/search"],
-          crawlDelay: 2,
-        },
-        {
-          userAgent: "OtherBot",
-          allow: ["/allow-for-all-bots", "/allow-only-for-other-bot"],
-          disallow: ["/admin", "/login"],
-          crawlDelay: 2,
-        },
-        {
-          userAgent: "*",
-          allow: "/",
-          disallow: "/search",
-          crawlDelay: 10,
-          cleanParam: "ref /articles/",
-        },
-      ],
-    }),
+    robotsTxt(),
     mdx(),
     htmlBeautifier({
       indent_size: 2,
@@ -62,21 +40,21 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
     react(),
-    // opengraphImages({
-    //   options: {
-    //     fonts: [
-    //       {
-    //         name: "Roboto",
-    //         weight: 400,
-    //         style: "normal",
-    //         data: fs.readFileSync(
-    //           "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
-    //         ),
-    //       },
-    //     ],
-    //   },
-    //   render: presets.backgroundImage,
-    // }),
+    opengraphImages({
+      options: {
+        fonts: [
+          {
+            name: "Roboto",
+            weight: 400,
+            style: "normal",
+            data: fs.readFileSync(
+              "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
+            ),
+          },
+        ],
+      },
+      render: presets.backgroundImage,
+    }),
     turnstile(),
   ],
 });
