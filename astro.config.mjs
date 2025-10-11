@@ -8,8 +8,6 @@ import htmlBeautifier from "astro-html-beautifier";
 import netlify from "@astrojs/netlify";
 import vercel from "@astrojs/vercel";
 
-import opengraphImages, { presets } from "astro-opengraph-images";
-
 import turnstile from "astro-turnstile";
 
 // https://astro.build/config
@@ -62,21 +60,6 @@ export default defineConfig({
       wrap_line_length: 0,
     }),
     react(),
-    opengraphImages({
-      options: {
-        fonts: [
-          {
-            name: "Roboto",
-            weight: 400,
-            style: "normal",
-            data: fs.readFileSync(
-              "node_modules/@fontsource/roboto/files/roboto-latin-400-normal.woff"
-            ),
-          },
-        ],
-      },
-      render: presets.backgroundImage,
-    }),
     turnstile(),
   ],
 });
