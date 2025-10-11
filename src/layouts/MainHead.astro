@@ -1,13 +1,13 @@
 ---
-import { SEO } from "astro-seo";
-import { getImagePath } from "astro-opengraph-images";
+// import { SEO } from "astro-seo";
+// import { getImagePath } from "astro-opengraph-images";
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
 const { title, title_tag, description, og_image } = Astro.props;
 
 const { url, site } = Astro;
-const openGraphImageUrl = getImagePath({ url, site });
+// const openGraphImageUrl = getImagePath({ url, site });
 ---
 
 <head>
@@ -50,4 +50,6 @@ const openGraphImageUrl = getImagePath({ url, site });
   <meta name="twitter:description" content={description}/>
   <meta name="twitter:image" content={`${Astro.site}${og_image}`}/> 
   <meta property="twitter:url" content={canonicalURL} />
+
+  <!-- <ViewTransitions fallback="swap" /> -->
 </head>
