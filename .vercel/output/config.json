@@ -32,6 +32,10 @@
 			"dest": "/_isr?x_astro_path=$0"
 		},
 		{
+			"src": "^/blog/([^/]+?)/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
 			"src": "^/blog/?$",
 			"dest": "/_isr?x_astro_path=$0"
 		},
@@ -41,6 +45,10 @@
 		},
 		{
 			"src": "^/verify/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^/work/([^/]+?)/?$",
 			"dest": "/_isr?x_astro_path=$0"
 		},
 		{

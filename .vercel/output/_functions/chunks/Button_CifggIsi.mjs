@@ -1,5 +1,5 @@
 import { c as createComponent, a as createAstro, m as maybeRenderHead, b as addAttribute, s as spreadAttributes, e as renderComponent, d as renderTemplate } from './astro/server_D5xLaq5v.mjs';
-import { $ as $$Icon } from './MainLayout_BkJaE8bp.mjs';
+import { $ as $$Icon } from './MainLayout_4Q-umG_H.mjs';
 
 const $$Astro = createAstro();
 const $$Button = createComponent(($$result, $$props, $$slots) => {
