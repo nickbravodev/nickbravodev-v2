@@ -1,0 +1,41 @@
+
+
+.border-1px,
+.border {
+  border: var(--border);
+}
+
+.border-1px-alt,
+.border-alt {
+  border: var(--border-alt);
+}
+
+.border-bottom {
+  border-bottom: var(--border);
+}
+
+.round-corners {
+  border-radius: var(--border-radius);
+}
+
+.round-corners-sm {
+  border-radius: var(--border-radius-sm);
+}
+
+.round-corners-lg {
+  border-radius: var(--border-radius-lg);
+}
+
+.round-corners-xl {
+  border-radius: var(--border-radius-xl);
+}
+
+.round-corners-pill {
+  border-radius: var(--border-radius-pill);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-border);
+}

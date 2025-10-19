@@ -29,6 +29,7 @@
   --spacer-72: calc(var(--spacer) * 18);
   --spacer-80: calc(var(--spacer) * 20);
   --spacer-96: calc(var(--spacer) * 24);
+  --spacer-page: var(--page-padding);
 
   // spacer Negative Spacing
   --spacer-neg: calc(var(--spacer) * -1);

@@ -1,16 +1,17 @@
 // Grid Layouts
+
 // 1-Column Grid
 .grid-1 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: $spacer;
+  gap: var(--spacer);
 }
 
 // 2-Column Grid
 .grid-2 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: $spacer;
+  gap: var(--spacer);
   align-items: center;
   justify-content: center;
 
@@ -24,7 +25,7 @@
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: $spacer;
+  gap: var(--spacer);
 
   // md breakpoint
   @media (--md) {
@@ -35,7 +36,7 @@
 .grid-4 {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: $spacer;
+  gap: var(--spacer);
 
   // sm breakpoint
   @media (--sm) {
@@ -45,5 +46,307 @@
   // lg breakpoint
   @media (--lg) {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.grid-span-all {
+  grid-column: 1 / -1;
+}
+
+.row-span-all {
+  grid-row: 1 / -1;
+}
+
+.row-span-2 {
+  grid-row: 1 / 3;
+}
+
+.row-span-3 {
+  grid-row: 1 / 4;
+}
+
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-rows-1 {
+  grid-template-rows: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-rows-2 {
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-cols-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (--sm) {
+  .grid-sm {
+    display: grid;
+  }
+
+  .grid-cols-sm-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-sm-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-sm-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-sm-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-sm-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-cols-sm-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (--md) {
+  .grid-md {
+    display: grid;
+  }
+
+  .grid-cols-md-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-md-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-md-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-md-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-md-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-cols-md-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (--lg) {
+  .grid-lg {
+    display: grid;
+  }
+
+  .grid-cols-lg-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-lg-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-lg-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-lg-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-lg-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-cols-lg-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (--xl) {
+  .grid-xl {
+    display: grid;
+  }
+
+  .grid-cols-xl-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-xl-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-xl-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-xl-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-xl-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-cols-xl-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (--xxl) {
+  .grid-xxl {
+    display: grid;
+  }
+
+  .grid-cols-xxl-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-cols-xxl-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-xxl-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-cols-xxl-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grid-cols-xxl-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .grid-cols-xxl-6 {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+// Uneven Splits
+.split-60-40 {
+  grid-template-columns: 60% 40%;
+}
+
+.split-40-60 {
+  grid-template-columns: 40% 60%;
+}
+
+.split-55-45 {
+  grid-template-columns: 55% 45%;
+}
+
+.split-45-55 {
+  grid-template-columns: 45% 55%;
+}
+
+// Uneven Splits -sm
+@media (--sm) {
+  .split-sm-60-40 {
+    grid-template-columns: 60% 40%;
+  }
+
+  .split-sm-40-60 {
+    grid-template-columns: 40% 60%;
+  }
+
+  .split-sm-55-45 {
+    grid-template-columns: 55% 45%;
+  }
+
+  .split-sm-45-55 {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+// Uneven Splits -md
+@media (--md) {
+  .split-md-60-40 {
+    grid-template-columns: 60% 40%;
+  }
+
+  .split-md-40-60 {
+    grid-template-columns: 40% 60%;
+  }
+
+  .split-md-55-45 {
+    grid-template-columns: 55% 45%;
+  }
+
+  .split-md-45-55 {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+// Uneven Splits -lg
+@media (--lg) {
+  .split-lg-60-40 {
+    grid-template-columns: 60% 40%;
+  }
+  .split-lg-40-60 {
+    grid-template-columns: 40% 60%;
+  }
+  .split-lg-55-45 {
+    grid-template-columns: 55% 45%;
+  }
+  .split-lg-45-55 {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+// Uneven Splits -xl
+@media (--xl) {
+  .split-xl-60-40 {
+    grid-template-columns: 60% 40%;
+  }
+  .split-xl-40-60 {
+    grid-template-columns: 40% 60%;
+  }
+  .split-xl-55-45 {
+    grid-template-columns: 55% 45%;
+  }
+  .split-xl-45-55 {
+    grid-template-columns: 45% 55%;
+  }
+}
+
+// Uneven Splits -xxl
+@media (--xxl) {
+  .split-xxl-60-40 {
+    grid-template-columns: 60% 40%;
+  }
+  .split-xxl-40-60 {
+    grid-template-columns: 40% 60%;
+  }
+  .split-xxl-55-45 {
+    grid-template-columns: 55% 45%;
+  }
+  .split-xxl-45-55 {
+    grid-template-columns: 45% 55%;
   }
 }

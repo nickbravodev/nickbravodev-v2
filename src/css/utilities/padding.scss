@@ -1,17 +1,76 @@
-// Positive Padding
-@import "padding/padding.scss";
-@import "padding/padding-inline.scss";
-@import "padding/padding-inline-start.scss";
-@import "padding/padding-inline-end.scss";
-@import "padding/padding-block.scss";
-@import "padding/padding-block-start.scss";
-@import "padding/padding-block-end.scss";
+// Unified padding utility generator
 
-// Negative Padding
-@import "padding/padding-negative.scss";
-@import "padding/padding-inline-negative.scss";
-@import "padding/padding-inline-start-negative.scss";
-@import "padding/padding-inline-end-negative.scss";
-@import "padding/padding-block-negative.scss";
-@import "padding/padding-block-start-negative.scss";
-@import "padding/padding-block-end-negative.scss";
+$padding-directions: (
+  p: padding,
+  px: padding-inline,
+  py: padding-block,
+  pt: padding-block-start,
+  pb: padding-block-end,
+  ps: padding-inline-start,
+  pe: padding-inline-end,
+);
+
+$padding-values: (
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  12,
+  14,
+  16,
+  20,
+  24,
+  28,
+  32,
+  36,
+  40,
+  44,
+  48,
+  52,
+  56,
+  60,
+  64,
+  72,
+  80,
+  96,
+  page
+);
+$breakpoints: (
+  "": "",
+  sm: "--sm",
+  md: "--md",
+  lg: "--lg",
+  xl: "--xl",
+  xxl: "--xxl",
+);
+
+@mixin generate-padding-utilities {
+  @each $dir, $prop in $padding-directions {
+    @each $val in $padding-values {
+      @each $bp, $mq in $breakpoints {
+        $class: if($dir == "p", ".p-#{$val}", ".#{$dir}-#{$val}");
+        $selector: $class;
+        @if $bp == "" {
+          #{$selector} {
+            #{$prop}: var(--spacer-#{$val}) !important;
+          }
+        } @else {
+          @media #{'(' + $mq + ')'} {
+            #{$selector} {
+              #{$prop}: var(--spacer-#{$val}) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include generate-padding-utilities;
