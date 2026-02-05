@@ -19,7 +19,7 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
-    imageService: true,
+    // imageService: true,
     maxDuration: 8,
   }),
   site: "https://nickbravo.dev",
